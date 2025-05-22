@@ -1,0 +1,44 @@
+[
+  {
+    "id": "67f7647c197ac559e4089b96",
+    "roomType": "Giường Đơn",
+    "gia": 399,
+    "images": [
+      "https://yourcdn.com/images/roomImg1.png",
+      "https://yourcdn.com/images/roomImg2.png",
+      "https://yourcdn.com/images/roomImg3.png",
+      "https://yourcdn.com/images/roomImg4.png"
+    ],
+    "amenities": ["Room Service", "Mountain View", "Pool Access"],
+    "createdAt": "2025-04-10T06:26:04.013Z",
+    "updatedAt": "2025-04-10T06:26:04.013Z"
+  },
+  {
+    "id": "67f76452197ac559e4089b8e",
+    "roomType": "Giường Đôi",
+    "gia": 299,
+    "images": [
+      "https://yourcdn.com/images/roomImg2.png",
+      "https://yourcdn.com/images/roomImg3.png",
+      "https://yourcdn.com/images/roomImg4.png",
+      "https://yourcdn.com/images/roomImg1.png"
+    ],
+    "amenities": ["Room Service", "Mountain View", "Pool Access"],
+    "createdAt": "2025-04-10T06:25:22.593Z",
+    "updatedAt": "2025-04-10T06:25:22.593Z"
+  },
+  {
+    "id": "67f76406197ac559e4089b82",
+    "roomType": "Giường Đôi",
+    "gia": 249,
+    "images": [
+      "https://yourcdn.com/images/roomImg3.png",
+      "https://yourcdn.com/images/roomImg4.png",
+      "https://yourcdn.com/images/roomImg1.png",
+      "https://yourcdn.com/images/roomImg2.png"
+    ],
+    "amenities": ["Free WiFi", "Free Breakfast", "Room Service"],
+    "createdAt": "2025-04-10T06:24:06.285Z",
+    "updatedAt": "2025-04-10T06:24:06.285Z"
+  }
+]

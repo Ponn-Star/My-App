@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Bắn cung",
+        "description": "Tham gia trò chơi bắn cung miễn phí tại khu vực sinh hoạt chung.",
+        "image": "https://drive.google.com/file/d/1BM33OfuWXrGOmv9RKlMLe4u1-q7xqe1O/view?usp=sharing"
+    },
+    {
+        "id": 2,
+        "title": "Nghe nhạc cuối tuần",
+        "description": "Thưởng thức các buổi trình diễn nhạc sống vào mỗi tối cuối tuần.",
+        "image": "https://yourcdn.com/images/nghenhac.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Đốt lửa trại & xem phim ngoài trời",
+        "description": "Trải nghiệm không gian lửa trại ấm áp và thưởng thức phim ngoài trời dưới bầu trời sao.",
+        "image": "https://drive.google.com/drive/folders/1FHP9tAPlHbrDWRC5674gkpb-EpSHmBL8?hl=vi"
+    }
+]

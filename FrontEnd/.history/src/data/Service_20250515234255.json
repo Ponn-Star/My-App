@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Gói Nghỉ Dưỡng Mùa Hè",
+        "description": "Tận hưởng một đêm miễn phí và bữa sáng mỗi ngày tại khu nghỉ dưỡng của chúng tôi.",
+        "priceOff": 25,
+        "expiryDate": "2025-08-31",
+        "image": "https://yourcdn.com/images/khuyenmai1.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Kỳ Nghỉ Lãng Mạn",
+        "description": "Gói ưu đãi đặc biệt dành cho các cặp đôi, bao gồm liệu trình spa thư giãn.",
+        "priceOff": 20,
+        "expiryDate": "2025-09-20",
+        "image": "https://yourcdn.com/images/khuyenmai2.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Trải Nghiệm Sang Trọng",
+        "description": "Đặt trước 60 ngày để nhận ưu đãi lớn cho kỳ nghỉ tại tất cả các biệt thự cao cấp của chúng tôi trên toàn thế giới.",
+        "priceOff": 30,
+        "expiryDate": "2025-09-25",
+        "image": "https://yourcdn.com/images/khuyenmai3.jpg"
+    }
+]

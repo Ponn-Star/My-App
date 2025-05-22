@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/App.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1746660242904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746662613876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from 'react'\n-import './App.css'\n+import Navbar from './components/Navbar'\n \n function App() {\n \n   return (\n     <div>\n-\n+      <Navbar />\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1746662646542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import Navbar from './components/Navbar'\n \n function App() {\n \n+  const isOwner = true\n   return (\n     <div>\n       <Navbar />\n     </div>\n"
+                },
+                {
+                    "date": 1746662656636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import React from 'react'\n import Navbar from './components/Navbar'\n+import { useLocation } from 'react-router-dom'\n \n function App() {\n \n-  const isOwner = true\n+  const isOwner = useLocation().pathname === '/owner'\n   return (\n     <div>\n       <Navbar />\n     </div>\n"
+                },
+                {
+                    "date": 1746662665104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { useLocation } from 'react-router-dom'\n \n function App() {\n \n-  const isOwner = useLocation().pathname === '/owner'\n+  const isOwner = useLocation().pathname.includes(\"owner\")\n   return (\n     <div>\n       <Navbar />\n     </div>\n"
+                },
+                {
+                    "date": 1746662711228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,12 @@\n import { useLocation } from 'react-router-dom'\n \n function App() {\n \n-  const isOwner = useLocation().pathname.includes(\"owner\")\n+  const isOwnerPath = useLocation().pathname.includes(\"owner\");\n   return (\n     <div>\n-      <Navbar />\n+      {<Navbar />}\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1746662723732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n   const isOwnerPath = useLocation().pathname.includes(\"owner\");\n   return (\n     <div>\n-      {<Navbar />}\n+      {!isOwnerPath && <Navbar />}\n     </div>\n   )\n }\n \n"
+                },
+                {
+                    "date": 1746663664937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+import React from 'react'\n+import Navbar from './components/Navbar'\n+import { useLocation } from 'react-router-dom'\n+\n+function App() {\n+\n+  const isOwnerPath = useLocation().pathname.includes(\"owner\");\n+  return (\n+    <div>\n+      {!isOwnerPath && <Navbar />}\n+      \n+    </div>\n+  )\n+}\n+\n+export default App\n"
+                },
+                {
+                    "date": 1746663732093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,31 +1,20 @@\n import React from 'react'\n import Navbar from './components/Navbar'\n-import { useLocation } from 'react-router-dom'\n+import { Route, Routes, useLocation } from 'react-router-dom'\n \n function App() {\n \n   const isOwnerPath = useLocation().pathname.includes(\"owner\");\n   return (\n     <div>\n       {!isOwnerPath && <Navbar />}\n-      \n+      <div className='min-h-[70vh]'>\n+        <Routes>\n+          <Route path='/' element={<Home} />\n+        </Routes>\n+      </div>\n     </div>\n   )\n }\n \n export default App\n-import React from 'react'\n-import Navbar from './components/Navbar'\n-import { useLocation } from 'react-router-dom'\n-\n-function App() {\n-\n-  const isOwnerPath = useLocation().pathname.includes(\"owner\");\n-  return (\n-    <div>\n-      {!isOwnerPath && <Navbar />}\n-    </div>\n-  )\n-}\n-\n-export default App\n"
+                },
+                {
+                    "date": 1746663770599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <div>\n       {!isOwnerPath && <Navbar />}\n       <div className='min-h-[70vh]'>\n         <Routes>\n-          <Route path='/' element={<Home} />\n+          <Route path='/' element={<Home />} />\n         </Routes>\n       </div>\n     </div>\n   )\n"
+                },
+                {
+                    "date": 1746664082814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react'\n import Navbar from './components/Navbar'\n import { Route, Routes, useLocation } from 'react-router-dom'\n+import Home from './pages/Home'\n \n function App() {\n \n   const isOwnerPath = useLocation().pathname.includes(\"owner\");\n"
+                },
+                {
+                    "date": 1746723618800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from 'react'\n import Navbar from './components/Navbar'\n import { Route, Routes, useLocation } from 'react-router-dom'\n import Home from './pages/Home'\n+import AllRooms from './pages/AllRooms';\n \n function App() {\n \n   const isOwnerPath = useLocation().pathname.includes(\"owner\");\n@@ -11,8 +12,9 @@\n       {!isOwnerPath && <Navbar />}\n       <div className='min-h-[70vh]'>\n         <Routes>\n           <Route path='/' element={<Home />} />\n+          <Route path='/rooms' element={<AllRooms />} />\n         </Routes>\n       </div>\n     </div>\n   )\n"
+                },
+                {
+                    "date": 1746777332889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import Navbar from './components/Navbar'\n import { Route, Routes, useLocation } from 'react-router-dom'\n import Home from './pages/Home'\n import AllRooms from './pages/AllRooms';\n+import RoomDetails from './pages/RoomDetails';\n \n function App() {\n \n   const isOwnerPath = useLocation().pathname.includes(\"owner\");\n@@ -13,8 +14,9 @@\n       <div className='min-h-[70vh]'>\n         <Routes>\n           <Route path='/' element={<Home />} />\n           <Route path='/rooms' element={<AllRooms />} />\n+          <Route path='/rooms/:id' element={<RoomDetails />} />\n         </Routes>\n       </div>\n     </div>\n   )\n"
+                },
+                {
+                    "date": 1746869493912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { Route, Routes, useLocation } from 'react-router-dom'\n import Home from './pages/Home'\n import AllRooms from './pages/AllRooms';\n import RoomDetails from './pages/RoomDetails';\n+import Footer from './components/Footer';\n \n function App() {\n \n   const isOwnerPath = useLocation().pathname.includes(\"owner\");\n@@ -17,8 +18,9 @@\n           <Route path='/rooms' element={<AllRooms />} />\n           <Route path='/rooms/:id' element={<RoomDetails />} />\n         </Routes>\n       </div>\n+      <Footer />\n     </div>\n   )\n }\n \n"
+                }
+            ],
+            "date": 1746660242904,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport './App.css'\n\nfunction App() {\n\n  return (\n    <div>\n\n    </div>\n  )\n}\n\nexport default App\n"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "roomType": "Lều Đơn",
+    "gia": 500.000,
+    "images": [
+      "https://yourcdn.com/images/roomImg1.png",
+      "https://yourcdn.com/images/roomImg2.png",
+      "https://yourcdn.com/images/roomImg3.png",
+      "https://yourcdn.com/images/roomImg4.png"
+    ],
+    "amenities": ["Room Service", "Mountain View", "Pool Access"],
+    "createdAt": "2025-04-10T06:26:04.013Z",
+    "updatedAt": "2025-04-10T06:26:04.013Z"
+  },
+  {
+    "id": 2,
+    "roomType": "Lều Đôi",
+    "gia": 800.000,
+    "images": [
+      "https://yourcdn.com/images/roomImg2.png",
+      "https://yourcdn.com/images/roomImg3.png",
+      "https://yourcdn.com/images/roomImg4.png",
+      "https://yourcdn.com/images/roomImg1.png"
+    ],
+    "amenities": ["Room Service", "Mountain View", "Pool Access"],
+    "createdAt": "2025-04-10T06:25:22.593Z",
+    "updatedAt": "2025-04-10T06:25:22.593Z"
+  },
+  {
+    "id": 3,
+    "roomType": "Lều Gia Đình",
+    "gia": ,
+    "images": [
+      "https://yourcdn.com/images/roomImg3.png",
+      "https://yourcdn.com/images/roomImg4.png",
+      "https://yourcdn.com/images/roomImg1.png",
+      "https://yourcdn.com/images/roomImg2.png"
+    ],
+    "amenities": ["Free WiFi", "Free Breakfast", "Room Service"],
+    "createdAt": "2025-04-10T06:24:06.285Z",
+    "updatedAt": "2025-04-10T06:24:06.285Z"
+  }
+]

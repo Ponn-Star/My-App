@@ -1,0 +1,39 @@
+{
+  "tongSoDatPhong": 3,
+  "tongDoanhThu": 897,
+  "danhSachDatPhong": [
+    {
+      "id": "67f76839994a731e97d3b8ce",
+      "nguoiDung": {
+        "tenNguoiDung": "Great Stack"
+      },
+      "phong": {
+        "loaiPhong": "Giường Đôi"
+      },
+      "tongTien": 299,
+      "daThanhToan": true
+    },
+    {
+      "id": "67f76829994a731e97d3b8c3",
+      "nguoiDung": {
+        "tenNguoiDung": "Great Stack"
+      },
+      "phong": {
+        "loaiPhong": "Giường Đôi"
+      },
+      "tongTien": 399,
+      "daThanhToan": false
+    },
+    {
+      "id": "67f76810994a731e97d3b8b4",
+      "nguoiDung": {
+        "tenNguoiDung": "Great Stack"
+      },
+      "phong": {
+        "loaiPhong": "Giường Đơn"
+      },
+      "tongTien": 199,
+      "daThanhToan": false
+    }
+  ]
+}

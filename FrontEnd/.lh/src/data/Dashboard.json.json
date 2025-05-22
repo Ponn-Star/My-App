@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/data/Dashboard.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1747382915541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747382933998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,39 +1,4 @@\n {\r\n   \"tongSoDatPhong\": 3,\r\n-  \"tongDoanhThu\": 897,\r\n-  \"danhSachDatPhong\": [\r\n-    {\r\n-      \"id\": \"67f76839994a731e97d3b8ce\",\r\n-      \"nguoiDung\": {\r\n-        \"tenNguoiDung\": \"Great Stack\"\r\n-      },\r\n-      \"phong\": {\r\n-        \"loaiPhong\": \"Giường Đôi\"\r\n-      },\r\n-      \"tongTien\": 299,\r\n-      \"daThanhToan\": true\r\n-    },\r\n-    {\r\n-      \"id\": \"67f76829994a731e97d3b8c3\",\r\n-      \"nguoiDung\": {\r\n-        \"tenNguoiDung\": \"Great Stack\"\r\n-      },\r\n-      \"phong\": {\r\n-        \"loaiPhong\": \"Giường Đôi\"\r\n-      },\r\n-      \"tongTien\": 399,\r\n-      \"daThanhToan\": false\r\n-    },\r\n-    {\r\n-      \"id\": \"67f76810994a731e97d3b8b4\",\r\n-      \"nguoiDung\": {\r\n-        \"tenNguoiDung\": \"Great Stack\"\r\n-      },\r\n-      \"phong\": {\r\n-        \"loaiPhong\": \"Giường Đơn\"\r\n-      },\r\n-      \"tongTien\": 199,\r\n-      \"daThanhToan\": false\r\n-    }\r\n-  ]\r\n+  \"tongDoanhThu\": 897\r\n }\r\n"
+                }
+            ],
+            "date": 1747382915541,
+            "name": "Commit-0",
+            "content": "{\r\n  \"tongSoDatPhong\": 3,\r\n  \"tongDoanhThu\": 897,\r\n  \"danhSachDatPhong\": [\r\n    {\r\n      \"id\": \"67f76839994a731e97d3b8ce\",\r\n      \"nguoiDung\": {\r\n        \"tenNguoiDung\": \"Great Stack\"\r\n      },\r\n      \"phong\": {\r\n        \"loaiPhong\": \"Giường Đôi\"\r\n      },\r\n      \"tongTien\": 299,\r\n      \"daThanhToan\": true\r\n    },\r\n    {\r\n      \"id\": \"67f76829994a731e97d3b8c3\",\r\n      \"nguoiDung\": {\r\n        \"tenNguoiDung\": \"Great Stack\"\r\n      },\r\n      \"phong\": {\r\n        \"loaiPhong\": \"Giường Đôi\"\r\n      },\r\n      \"tongTien\": 399,\r\n      \"daThanhToan\": false\r\n    },\r\n    {\r\n      \"id\": \"67f76810994a731e97d3b8b4\",\r\n      \"nguoiDung\": {\r\n        \"tenNguoiDung\": \"Great Stack\"\r\n      },\r\n      \"phong\": {\r\n        \"loaiPhong\": \"Giường Đơn\"\r\n      },\r\n      \"tongTien\": 199,\r\n      \"daThanhToan\": false\r\n    }\r\n  ]\r\n}\r\n"
+        }
+    ]
+}

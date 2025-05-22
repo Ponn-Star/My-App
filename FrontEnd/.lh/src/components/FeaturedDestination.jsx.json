@@ -1,0 +1,146 @@
+{
+    "sourceFile": "src/components/FeaturedDestination.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1746698658983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746701384759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,11 @@\n const FeaturedDestination = () => {\r\n   return (\r\n     <div>\r\n       {roomCommonData.slice(0, 4).map((room, index) => (\r\n-        <HotelCard key={room._id} room={room} index={index} />\r\n-      ))}\r\n+  <HotelCard key={room._id || index} room={room} index={index} />\r\n+))}\r\n+\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746701750651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from 'react'\r\n-import { roomCommonData } from '../assets/assets'\r\n+import { roomsCommonData } from '../assets/assets'\r\n import HotelCard from './HotelCard'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n     <div>\r\n-      {roomCommonData.slice(0, 4).map((room, index) => (\r\n+      {roomsCommonData.slice(0, 4).map((room, index) => (\r\n   <HotelCard key={room._id || index} room={room} index={index} />\r\n ))}\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746701921822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from 'react'\r\n-import { roomsCommonData } from '../assets/assets'\r\n import HotelCard from './HotelCard'\r\n+import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n     <div>\r\n-      {roomsCommonData.slice(0, 4).map((room, index) => (\r\n+      {roomsDummyData.slice(0, 4).map((room, index) => (\r\n   <HotelCard key={room._id || index} room={room} index={index} />\r\n ))}\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746704894120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div>\r\n+    <div className='flex flex-wrap items-center'>\r\n       {roomsDummyData.slice(0, 4).map((room, index) => (\r\n   <HotelCard key={room._id || index} room={room} index={index} />\r\n ))}\r\n \r\n"
+                },
+                {
+                    "date": 1746704909102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-wrap items-center'>\r\n+    <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n       {roomsDummyData.slice(0, 4).map((room, index) => (\r\n   <HotelCard key={room._id || index} room={room} index={index} />\r\n ))}\r\n \r\n"
+                },
+                {
+                    "date": 1746704955222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,14 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n-      {roomsDummyData.slice(0, 4).map((room, index) => (\r\n-  <HotelCard key={room._id || index} room={room} index={index} />\r\n-))}\r\n-\r\n+    <div className='flex flex-col items-center justify-center mt-20'>\r\n+        <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n+        {roomsDummyData.slice(0, 4).map((room, index) => (\r\n+            <HotelCard key={room._id || index} room={room} index={index} />\r\n+        ))}\r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746705001826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   return (\r\n     <div className='flex flex-col items-center justify-center mt-20'>\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n-            <HotelCard key={room._id || index} room={room} index={index} />\r\n+            <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746705071043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-col items-center justify-center mt-20'>\r\n+    <div className='flex flex-col items-center px-6 md:'>\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705078207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-col items-center px-6 md:'>\r\n+    <div className='flex flex-col items-center px-6 md:px-12 lg:px-20 py-10'>\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705085508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-col items-center px-6 md:px-12 lg:px-20 py-10'>\r\n+    <div className='flex flex-col items-center px-6 md:px-12 lg:px-24'>\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705091530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-col items-center px-6 md:px-12 lg:px-24'>\r\n+    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24'>\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705107687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24'>\r\n+    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 '>\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705112836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 '>\r\n+    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slater'>\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705120406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slater'>\r\n+    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705631890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,16 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n-        <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n+    <div className=\"flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20\">\r\n+      <Title title=\"Featured Destination\" subtitle=\"Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.\" />\r\n+      \r\n+      <div className=\"flex flex-wrap items-center justify-center gap-6 mt-20\">\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n-            <HotelCard key={room._id} room={room} index={index} />\r\n+          <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n-        </div>\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746705652903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,14 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n-    <div className=\"flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20\">\r\n-      <Title title=\"Featured Destination\" subtitle=\"Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.\" />\r\n-      \r\n-      <div className=\"flex flex-wrap items-center justify-center gap-6 mt-20\">\r\n+    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n+        <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n-          <HotelCard key={room._id} room={room} index={index} />\r\n+            <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n-      </div>\r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746705672610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,11 @@\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n+\r\n+        <Title title=\"Featured Destination\" subtitle=\"Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.\" />\r\n+\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705687198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react'\r\n import HotelCard from './HotelCard'\r\n import { roomsDummyData } from '../assets/assets'\r\n+import Title from './Title'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n"
+                },
+                {
+                    "date": 1746705876888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,14 @@\n import React from 'react'\r\n import HotelCard from './HotelCard'\r\n import { roomsDummyData } from '../assets/assets'\r\n-import Title from './Title'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n-        <Title title=\"Featured Destination\" subtitle=\"Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.\" />\r\n-\r\n+      \r\n+      \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705894842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n-      \r\n-      \r\n+      <Title></Title>\r\n+\r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746705922855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n-      <Title></Title>\r\n+      <Title title=''/>\r\n \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n"
+                },
+                {
+                    "date": 1746705931736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n-      <Title title=''/>\r\n+        \r\n \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n"
+                },
+                {
+                    "date": 1746705944603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n-        \r\n+        <Title />\r\n \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n"
+                },
+                {
+                    "date": 1746705951286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react'\r\n import HotelCard from './HotelCard'\r\n import { roomsDummyData } from '../assets/assets'\r\n+import Title from './Title'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n"
+                },
+                {
+                    "date": 1746705968905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n-        <Title />\r\n+        <Title title='' />\r\n \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n"
+                },
+                {
+                    "date": 1746705986833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n-        <Title title='' />\r\n+        <Title title='Featured Destination' subTitle='' />\r\n \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n"
+                },
+                {
+                    "date": 1746705995337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n-        <Title title='Featured Destination' subTitle='' />\r\n+        <Title title='Featured Destination' subTitle='Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.' />\r\n \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n"
+                },
+                {
+                    "date": 1746706921989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,12 @@\n         {roomsDummyData.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n         </div>\r\n+\r\n+        <button className='my-16 px-4 py-2 text'>\r\n+          View All Destination\r\n+        </button>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746707088339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from 'react'\r\n import HotelCard from './HotelCard'\r\n import { roomsDummyData } from '../assets/assets'\r\n import Title from './Title'\r\n+import { useNavigate } from 'react-router-dom'\r\n \r\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n"
+                },
+                {
+                    "date": 1746707110477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,11 @@\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n         </div>\r\n \r\n-        <button className='my-16 px-4 py-2 text'>\r\n-          View All Destination\r\n+        <button onClick={() => { navigate('/rooms'); scrollTo(0, 0); }} \r\n+        className=\"my-16 px-4 py-2 text-sm font-medium border border-gray-300 rounded bg-white hover:bg-gray-50 transition-all cursor-pointer\">\r\n+          View All Destinations\r\n         </button>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746707133049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n import { roomsDummyData } from '../assets/assets'\r\n import Title from './Title'\r\n import { useNavigate } from 'react-router-dom'\r\n \r\n+const navigate = useNavigate() => {\r\n+\r\n const FeaturedDestination = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n"
+                },
+                {
+                    "date": 1746707154795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,12 @@\n import { roomsDummyData } from '../assets/assets'\r\n import Title from './Title'\r\n import { useNavigate } from 'react-router-dom'\r\n \r\n-const navigate = useNavigate() => {\r\n+const FeaturedDestination = () => {\r\n \r\n-const FeaturedDestination = () => {\r\n+  const navigate = useNavigate()\r\n+  \r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n         <Title title='Featured Destination' subTitle='Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.' />\r\n"
+                }
+            ],
+            "date": 1746698658983,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport { roomCommonData } from '../assets/assets'\r\nimport HotelCard from './HotelCard'\r\n\r\nconst FeaturedDestination = () => {\r\n  return (\r\n    <div>\r\n      {roomCommonData.slice(0, 4).map((room, index) => (\r\n        <HotelCard key={room._id} room={room} index={index} />\r\n      ))}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default FeaturedDestination\r\n"
+        }
+    ]
+}

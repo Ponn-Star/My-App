@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/pages/Owner/ListRoom.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1747068071508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747068708635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,21 @@\n import React from 'react'\r\n+import { useState } from 'react'\r\n \r\n const ListRoom = () => {\r\n-  \r\n+  const [rooms, setRooms] = useState(roomsDummyData);\r\n+\r\n   return (\r\n     <div>\r\n-      \r\n+      <Title align='left' font='outfit' title='Room Listings' subTitle='View, edit, or manage all listed rooms. Keep the information up-to-date to provide the best experience for users.' />\r\n+      <p className='text-gray-500 mt-8'>All Rooms</p>\r\n+      <div className='w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll'>\r\n+        <table className='w-full'>\r\n+          {/* Table contents here */}\r\n+        </table>\r\n+      </div>\r\n     </div>\r\n-  )\r\n+  );\r\n }\r\n \r\n+\r\n export default ListRoom\r\n"
+                },
+                {
+                    "date": 1747068765575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import React from 'react'\r\n import { useState } from 'react'\r\n+import { assets } from '../../assets/assets'\r\n+import Title from '../../components/Title'\r\n \r\n const ListRoom = () => {\r\n   const [rooms, setRooms] = useState(roomsDummyData);\r\n \r\n@@ -9,9 +11,9 @@\n       <Title align='left' font='outfit' title='Room Listings' subTitle='View, edit, or manage all listed rooms. Keep the information up-to-date to provide the best experience for users.' />\r\n       <p className='text-gray-500 mt-8'>All Rooms</p>\r\n       <div className='w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll'>\r\n         <table className='w-full'>\r\n-          {/* Table contents here */}\r\n+          \r\n         </table>\r\n       </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1747068784363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n import { useState } from 'react'\r\n-import { assets } from '../../assets/assets'\r\n+import { assets, roomsDummyData } from '../../assets/assets'\r\n import Title from '../../components/Title'\r\n \r\n const ListRoom = () => {\r\n   const [rooms, setRooms] = useState(roomsDummyData);\r\n"
+                },
+                {
+                    "date": 1747069488139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,18 @@\n   return (\r\n     <div>\r\n       <Title align='left' font='outfit' title='Room Listings' subTitle='View, edit, or manage all listed rooms. Keep the information up-to-date to provide the best experience for users.' />\r\n       <p className='text-gray-500 mt-8'>All Rooms</p>\r\n-      <div className='w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll'>\r\n+      <div className='w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll mt-3'>\r\n         <table className='w-full'>\r\n-          \r\n+          <thead className='bg-gray-50'>\r\n+            <tr>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium'>User Name</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>Room Name</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Total Amount</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Payment Status</th>\r\n+            </tr>\r\n+          </thead>\r\n         </table>\r\n       </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1747069518097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n       <div className='w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll mt-3'>\r\n         <table className='w-full'>\r\n           <thead className='bg-gray-50'>\r\n             <tr>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium'>User Name</th>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>Room Name</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium'>Name</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>Facility</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Total Amount</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Payment Status</th>\r\n             </tr>\r\n           </thead>\r\n"
+                },
+                {
+                    "date": 1747069529610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             <tr>\r\n               <th className='py-3 px-4 text-gray-800 font-medium'>Name</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>Facility</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Total Amount</th>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Payment Status</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Actions</th>\r\n             </tr>\r\n           </thead>\r\n         </table>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1747069537544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n           <thead className='bg-gray-50'>\r\n             <tr>\r\n               <th className='py-3 px-4 text-gray-800 font-medium'>Name</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>Facility</th>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Total Amount</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Price /</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Actions</th>\r\n             </tr>\r\n           </thead>\r\n         </table>\r\n"
+                },
+                {
+                    "date": 1747069545455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n           <thead className='bg-gray-50'>\r\n             <tr>\r\n               <th className='py-3 px-4 text-gray-800 font-medium'>Name</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>Facility</th>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Price /</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Price / night</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Actions</th>\r\n             </tr>\r\n           </thead>\r\n         </table>\r\n"
+                },
+                {
+                    "date": 1747073237514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,11 @@\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Price / night</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Actions</th>\r\n             </tr>\r\n           </thead>\r\n+          <tbody className='text-sm'>\r\n+            \r\n+          </tbody>\r\n         </table>\r\n       </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1747073278535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,15 @@\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Actions</th>\r\n             </tr>\r\n           </thead>\r\n           <tbody className='text-sm'>\r\n-            \r\n+            {rooms.map((item, index) => (\r\n+            <tr key={index}>\r\n+              <td className='py-3 px-4 text-gray-700 border-t border-gray-300'>{item.roomType}</td>\r\n+              <td className='py-3 px-4 text-gray-700 border-t border-gray-300 max-sm:hidden'>{item.amenities.join(', ')}</td>\r\n+              <td className='py-3 px-4 text-gray-700 border-t border-gray-300'>{item.pricePerNight}</td>\r\n+            </tr>\r\n+          ))}\r\n           </tbody>\r\n         </table>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747073381354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,20 @@\n             <tr key={index}>\r\n               <td className='py-3 px-4 text-gray-700 border-t border-gray-300'>{item.roomType}</td>\r\n               <td className='py-3 px-4 text-gray-700 border-t border-gray-300 max-sm:hidden'>{item.amenities.join(', ')}</td>\r\n               <td className='py-3 px-4 text-gray-700 border-t border-gray-300'>{item.pricePerNight}</td>\r\n+              <td className='py-3 px-4 border-t border-gray-300 text-sm text-center'>\r\n+              <label className='relative inline-flex items-center cursor-pointer text-gray-900 gap-3'>\r\n+                <input\r\n+                  type=\"checkbox\"\r\n+                  className='sr-only peer'\r\n+                  checked={item.isAvailable}\r\n+                  onChange={() => {/* Handle change */}}\r\n+                />\r\n+                <div className='w-12 h-7 bg-slate-300 rounded-full peer peer-checked:bg-blue-600 transition-colors duration-200'></div>\r\n+                <span className='dot absolute left-1 top-1 w-5 h-5 bg-white rounded-full transition-transform duration-200 ease-in-out peer-checked:translate-x-5'></span>\r\n+              </label>\r\n+            </td>\r\n             </tr>\r\n           ))}\r\n           </tbody>\r\n         </table>\r\n"
+                },
+                {
+                    "date": 1747073386568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,8 @@\n                 <input\r\n                   type=\"checkbox\"\r\n                   className='sr-only peer'\r\n                   checked={item.isAvailable}\r\n-                  onChange={() => {/* Handle change */}}\r\n                 />\r\n                 <div className='w-12 h-7 bg-slate-300 rounded-full peer peer-checked:bg-blue-600 transition-colors duration-200'></div>\r\n                 <span className='dot absolute left-1 top-1 w-5 h-5 bg-white rounded-full transition-transform duration-200 ease-in-out peer-checked:translate-x-5'></span>\r\n               </label>\r\n"
+                },
+                {
+                    "date": 1747179372118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n import { useState } from 'react'\r\n-import { assets, roomsDummyData } from '../../assets/assets'\r\n+import { roomsDummyData } from '../../assets/assets'\r\n import Title from '../../components/Title'\r\n \r\n const ListRoom = () => {\r\n   const [rooms, setRooms] = useState(roomsDummyData);\r\n"
+                }
+            ],
+            "date": 1747068071508,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst ListRoom = () => {\r\n  \r\n  return (\r\n    <div>\r\n      \r\n    </div>\r\n  )\r\n}\r\n\r\nexport default ListRoom\r\n"
+        }
+    ]
+}

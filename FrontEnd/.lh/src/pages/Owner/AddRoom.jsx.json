@@ -1,0 +1,166 @@
+{
+    "sourceFile": "src/pages/Owner/AddRoom.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 37,
+            "patches": [
+                {
+                    "date": 1747036373384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747036416361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-    \r\n+      const [dasboardData, setDasboardData] = useState([])\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036438509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dasboardData, setDasboardData] = useState([])\r\n+      const [dashboardData, setDashboardData] = useState([])\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036445313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState([])\r\n+      const [dashboardData, setDashboardData] = useState([dashboardData])\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036454126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState([dashboardData])\r\n+      const [dashboardData, setDashboardData] = useState(da)\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036461174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState(da)\r\n+      const [dashboardData, setDashboardData] = useState(dash)\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036467657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState(dash)\r\n+      const [dashboardData, setDashboardData] = useState(dashboard)\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036472940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState(dashboard)\r\n+      const [dashboardData, setDashboardData] = useState(dashboardDummyData)\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036502453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n-import React from 'react'\r\n+import React, { useState } from 'react'\r\n import Title from '../../components/Title'\r\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState(dashboardDummyData)\r\n+      const [dashboardData, setDashboardData] = useState()\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036563090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState()\r\n+      const [dashboardData, setDashboardData] = useState(dass)\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036568966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState(dass)\r\n+      const [dashboardData, setDashboardData] = useState(das)\r\n \r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747036603744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,9 @@\n \r\n const AddRoom = () => {\r\n   return (\r\n \r\n-      const [dashboardData, setDashboardData] = useState(das)\r\n-\r\n-    <div>\r\n-      <Title align='left' font='outfit' title='Dashboard' />\r\n-    </div>\r\n+      \r\n   )\r\n }\r\n \r\n export default AddRoom\r\n"
+                },
+                {
+                    "date": 1747036639839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n-import React, { useState } from 'react'\r\n-import Title from '../../components/Title'\r\n+import React from 'react'\r\n \r\n const AddRoom = () => {\r\n   return (\r\n+    <div>\r\n \r\n+    </div>\r\n       \r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747042517695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,27 @@\n import React from 'react'\r\n \r\n const AddRoom = () => {\r\n+\r\n+    const [images, setImages] = useState({\r\n+    1: null,\r\n+    2: null,\r\n+    3: null,\r\n+    4: null,\r\n+  });\r\n+\r\n+  const [inputs, setInputs] = useState({\r\n+    roomType: '',\r\n+    pricePerNight: 0,\r\n+    amenities: {\r\n+      'Free WiFi': false,\r\n+      'Free Breakfast': false,\r\n+      'Room Service': false,\r\n+      'Mountain View': false,\r\n+      'Pool Access': false,\r\n+    },\r\n+  });\r\n+\r\n   return (\r\n     <div>\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1747042705003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import React from 'react'\r\n-\r\n+import { useState } from 'react'\r\n+import { assets } from '../../assets/assets'\r\n+import Title from '../../components/Title'\r\n const AddRoom = () => {\r\n \r\n     const [images, setImages] = useState({\r\n     1: null,\r\n@@ -21,11 +23,22 @@\n     },\r\n   });\r\n \r\n   return (\r\n-    <div>\r\n+    <form>\r\n+      <Title align='left' font='outfit' title='Add Room' subTitle='Fill in the details carefully and accurate room details, pricing, and amenities to enhance the user booking experience.' />\r\n+      {/* Upload Area For Images */}\r\n+      <p className='text-gray-800 mt-10'>Images</p>\r\n+      <div className='grid grid-cols-2 sm:flex gap-4 my-2 flex-wrap'>\r\n+        {Object.keys(images).map((key) => (\r\n+          <label htmlFor={`roomImages${key}`} key={key}>\r\n+            <img className='max-h-13 cursor-pointer opacity-80' src={images[key] ? URL.createObjectURL(images[key]) : assets.uploadArea} alt=\"\" />\r\n+            <input type=\"file\" accept=\"image/*\" id={`roomImages${key}`} hidden onChange={e => setImages({ ...images, [key]: e.target.files[0] })} />\r\n+          </label>\r\n+        ))}\r\n+      </div>\r\n+    </form>\r\n \r\n-    </div>\r\n       \r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747042765829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,10 +36,8 @@\n           </label>\r\n         ))}\r\n       </div>\r\n     </form>\r\n-\r\n-      \r\n   )\r\n }\r\n \r\n export default AddRoom\r\n"
+                },
+                {
+                    "date": 1747043688411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,21 @@\n             <input type=\"file\" accept=\"image/*\" id={`roomImages${key}`} hidden onChange={e => setImages({ ...images, [key]: e.target.files[0] })} />\r\n           </label>\r\n         ))}\r\n       </div>\r\n+      <div className='w-full flex max-sm:flex-col sm:gap-4 mt-4'>\r\n+        <div className='flex max-w-48'>\r\n+          <p className='text-gray-800 mt-4'>Room Type</p>\r\n+          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='border opacity-70 border-gray-300 mt-1 rounded p-2 w-full'>\r\n+            <option value=\"\">Select Room Type</option>\r\n+            <option value=\"Single Bed\">Single Bed</option>\r\n+            <option value=\"Double Bed\">Double Bed</option>\r\n+            <option value=\"Luxury Room\">Luxury Room</option>\r\n+            <option value=\"Family Suite\">Family Suite</option>\r\n+          </select>\r\n+        </div>\r\n+      </div>\r\n+\r\n     </form>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747045159761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,10 +46,10 @@\n             <option value=\"Luxury Room\">Luxury Room</option>\r\n             <option value=\"Family Suite\">Family Suite</option>\r\n           </select>\r\n         </div>\r\n+        \r\n       </div>\r\n-\r\n     </form>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747045203791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,19 @@\n             <option value=\"Luxury Room\">Luxury Room</option>\r\n             <option value=\"Family Suite\">Family Suite</option>\r\n           </select>\r\n         </div>\r\n-        \r\n+        <div className='mt-4 text-gray-800'>\r\n+          <p>Price <span className='text-xs'>/night</span></p>\r\n+          <input\r\n+            type=\"number\"\r\n+            placeholder=\"0\"\r\n+            className=\"border border-gray-300 mt-1 rounded p-2 w-24\"\r\n+            value={inputs.pricePerNight}\r\n+            onChange={e => setInputs({ ...inputs, pricePerNight: e.target.value })}\r\n+          />\r\n+        </div>\r\n+\r\n       </div>\r\n     </form>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1747045316788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,10 @@\n             <option value=\"Luxury Room\">Luxury Room</option>\r\n             <option value=\"Family Suite\">Family Suite</option>\r\n           </select>\r\n         </div>\r\n-        <div className='mt-4 text-gray-800'>\r\n+        <div>\r\n+          className='mt-4 text-gray-800'>\r\n           <p>Price <span className='text-xs'>/night</span></p>\r\n           <input\r\n             type=\"number\"\r\n             placeholder=\"0\"\r\n"
+                },
+                {
+                    "date": 1747045355661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,17 +47,18 @@\n             <option value=\"Family Suite\">Family Suite</option>\r\n           </select>\r\n         </div>\r\n         <div>\r\n-          className='mt-4 text-gray-800'>\r\n-          <p>Price <span className='text-xs'>/night</span></p>\r\n+          <p className='mt-4 text-gray-800'>\r\n+          Price <span className='text-xs'>/night</span></p>\r\n           <input\r\n             type=\"number\"\r\n             placeholder=\"0\"\r\n             className=\"border border-gray-300 mt-1 rounded p-2 w-24\"\r\n             value={inputs.pricePerNight}\r\n             onChange={e => setInputs({ ...inputs, pricePerNight: e.target.value })}\r\n           />\r\n+          </div> \r\n         </div>\r\n \r\n       </div>\r\n     </form>\r\n"
+                },
+                {
+                    "date": 1747045396236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,8 @@\n           />\r\n           </div> \r\n         </div>\r\n \r\n-      </div>\r\n     </form>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747045425905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,28 @@\n             onChange={e => setInputs({ ...inputs, pricePerNight: e.target.value })}\r\n           />\r\n           </div> \r\n         </div>\r\n-\r\n+        <p className='text-gray-800 mt-4'>Amenities</p>\r\n+        <div className='flex flex-col flex-wrap mt-1 text-gray-400 max-w-sm'>\r\n+          {Object.keys(inputs.amenities).map((amenity, index) => (\r\n+            <div key={index}>\r\n+              <input\r\n+                type=\"checkbox\"\r\n+                id={`amenities${index + 1}`}\r\n+                checked={inputs.amenities[amenity]}\r\n+                onChange={() => setInputs({\r\n+                  ...inputs,\r\n+                  amenities: { ...inputs.amenities, [amenity]: !inputs.amenities[amenity] }\r\n+                })}\r\n+              />\r\n+              <label htmlFor={`amenities${index + 1}`}>{amenity}</label>\r\n+            </div>\r\n+          ))}\r\n+        </div>\r\n+        <button className='bg-primary text-white px-8 py-2 rounded mt-8 cursor-pointer'>\r\n+          Add Room\r\n+        </button>\r\n     </form>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747045847025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       </div>\r\n       <div className='w-full flex max-sm:flex-col sm:gap-4 mt-4'>\r\n         <div className='flex max-w-48'>\r\n           <p className='text-gray-800 mt-4'>Room Type</p>\r\n-          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='border opacity-70 border-gray-300 mt-1 rounded p-2 w-full'>\r\n+          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='border opacity-70 border-gray-300 mt-1 rounded py-1 px-2 w-full text-sm'>\r\n             <option value=\"\">Select Room Type</option>\r\n             <option value=\"Single Bed\">Single Bed</option>\r\n             <option value=\"Double Bed\">Double Bed</option>\r\n             <option value=\"Luxury Room\">Luxury Room</option>\r\n"
+                },
+                {
+                    "date": 1747045886001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       </div>\r\n       <div className='w-full flex max-sm:flex-col sm:gap-4 mt-4'>\r\n         <div className='flex max-w-48'>\r\n           <p className='text-gray-800 mt-4'>Room Type</p>\r\n-          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='border opacity-70 border-gray-300 mt-1 rounded py-1 px-2 w-full text-sm'>\r\n+          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='border opacity-70 border-gray-300 mt-1 rounded py-1 px-2 w-full text-xs'>\r\n             <option value=\"\">Select Room Type</option>\r\n             <option value=\"Single Bed\">Single Bed</option>\r\n             <option value=\"Double Bed\">Double Bed</option>\r\n             <option value=\"Luxury Room\">Luxury Room</option>\r\n"
+                },
+                {
+                    "date": 1747045931938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,8 @@\n \r\n   return (\r\n     <form>\r\n       <Title align='left' font='outfit' title='Add Room' subTitle='Fill in the details carefully and accurate room details, pricing, and amenities to enhance the user booking experience.' />\r\n-      {/* Upload Area For Images */}\r\n       <p className='text-gray-800 mt-10'>Images</p>\r\n       <div className='grid grid-cols-2 sm:flex gap-4 my-2 flex-wrap'>\r\n         {Object.keys(images).map((key) => (\r\n           <label htmlFor={`roomImages${key}`} key={key}>\r\n"
+                },
+                {
+                    "date": 1747045958045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         ))}\r\n       </div>\r\n       <div className='w-full flex max-sm:flex-col sm:gap-4 mt-4'>\r\n         <div className='flex max-w-48'>\r\n-          <p className='text-gray-800 mt-4'>Room Type</p>\r\n+          <p className='mt-4 text-gray-800'>Room Type</p>\r\n           <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='border opacity-70 border-gray-300 mt-1 rounded py-1 px-2 w-full text-xs'>\r\n             <option value=\"\">Select Room Type</option>\r\n             <option value=\"Single Bed\">Single Bed</option>\r\n             <option value=\"Double Bed\">Double Bed</option>\r\n"
+                },
+                {
+                    "date": 1747046031508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n       </div>\r\n       <div className='w-full flex max-sm:flex-col sm:gap-4 mt-4'>\r\n         <div className='flex max-w-48'>\r\n           <p className='mt-4 text-gray-800'>Room Type</p>\r\n-          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='border opacity-70 border-gray-300 mt-1 rounded py-1 px-2 w-full text-xs'>\r\n+          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='order opacity-70 border-gray-300 mt-1 rounded py-0.5 px-2 w-full text-xs'>\r\n             <option value=\"\">Select Room Type</option>\r\n             <option value=\"Single Bed\">Single Bed</option>\r\n             <option value=\"Double Bed\">Double Bed</option>\r\n             <option value=\"Luxury Room\">Luxury Room</option>\r\n"
+                },
+                {
+                    "date": 1747046078409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n           </label>\r\n         ))}\r\n       </div>\r\n       <div className='w-full flex max-sm:flex-col sm:gap-4 mt-4'>\r\n-        <div className='flex max-w-48'>\r\n+        <div className='flex-1 max-w-48'>\r\n           <p className='mt-4 text-gray-800'>Room Type</p>\r\n           <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='order opacity-70 border-gray-300 mt-1 rounded py-0.5 px-2 w-full text-xs'>\r\n             <option value=\"\">Select Room Type</option>\r\n             <option value=\"Single Bed\">Single Bed</option>\r\n"
+                },
+                {
+                    "date": 1747046093788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n \r\n   return (\r\n     <form>\r\n       <Title align='left' font='outfit' title='Add Room' subTitle='Fill in the details carefully and accurate room details, pricing, and amenities to enhance the user booking experience.' />\r\n+      {/* Upload Area For Images */}\r\n       <p className='text-gray-800 mt-10'>Images</p>\r\n       <div className='grid grid-cols-2 sm:flex gap-4 my-2 flex-wrap'>\r\n         {Object.keys(images).map((key) => (\r\n           <label htmlFor={`roomImages${key}`} key={key}>\r\n@@ -35,11 +36,11 @@\n           </label>\r\n         ))}\r\n       </div>\r\n       <div className='w-full flex max-sm:flex-col sm:gap-4 mt-4'>\r\n-        <div className='flex-1 max-w-48'>\r\n-          <p className='mt-4 text-gray-800'>Room Type</p>\r\n-          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='order opacity-70 border-gray-300 mt-1 rounded py-0.5 px-2 w-full text-xs'>\r\n+        <div className='flex-l max-w-48'>\r\n+          <p className='text-gray-800 mt-4'>Room Type</p>\r\n+          <select value={inputs.roomType} onChange={e => setInputs({ ...inputs, roomType: e.target.value })} className='border opacity-70 border-gray-300 mt-1 rounded p-2 w-full'>\r\n             <option value=\"\">Select Room Type</option>\r\n             <option value=\"Single Bed\">Single Bed</option>\r\n             <option value=\"Double Bed\">Double Bed</option>\r\n             <option value=\"Luxury Room\">Luxury Room</option>\r\n"
+                },
+                {
+                    "date": 1747177738020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   const [inputs, setInputs] = useState({\r\n     roomType: '',\r\n     pricePerNight: 0,\r\n     amenities: {\r\n-      'Free WiFi': false,\r\n+      'WiFi Miễn Phí': false,\r\n       'Free Breakfast': false,\r\n       'Room Service': false,\r\n       'Mountain View': false,\r\n       'Pool Access': false,\r\n"
+                },
+                {
+                    "date": 1747179020381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     roomType: '',\r\n     pricePerNight: 0,\r\n     amenities: {\r\n       'WiFi Miễn Phí': false,\r\n-      'Free Breakfast': false,\r\n+      'Bữa Sáng Miễn Phí': false,\r\n       'Room Service': false,\r\n       'Mountain View': false,\r\n       'Pool Access': false,\r\n     },\r\n"
+                },
+                {
+                    "date": 1747179049546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     amenities: {\r\n       'WiFi Miễn Phí': false,\r\n       'Bữa Sáng Miễn Phí': false,\r\n       'Room Service': false,\r\n-      'Mountain View': false,\r\n+      'View Núi Hồ': false,\r\n       'Pool Access': false,\r\n     },\r\n   });\r\n \r\n"
+                },
+                {
+                    "date": 1747179085575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,11 @@\n     pricePerNight: 0,\r\n     amenities: {\r\n       'WiFi Miễn Phí': false,\r\n       'Bữa Sáng Miễn Phí': false,\r\n-      'Room Service': false,\r\n+      'R': false,\r\n       'View Núi Hồ': false,\r\n-      'Pool Access': false,\r\n+      'Khu Ngữ Sắc': false,\r\n     },\r\n   });\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1747179093846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     pricePerNight: 0,\r\n     amenities: {\r\n       'WiFi Miễn Phí': false,\r\n       'Bữa Sáng Miễn Phí': false,\r\n-      'R': false,\r\n+      'Khu Cẩm Tú Cầu': false,\r\n       'View Núi Hồ': false,\r\n       'Khu Ngữ Sắc': false,\r\n     },\r\n   });\r\n"
+                },
+                {
+                    "date": 1747179107950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n       'Bữa Sáng Miễn Phí': false,\r\n       'Khu Cẩm Tú Cầu': false,\r\n       'View Núi Hồ': false,\r\n       'Khu Ngữ Sắc': false,\r\n+      'Khu Đồi Thông': false,\r\n     },\r\n   });\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1747179119683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     1: null,\r\n     2: null,\r\n     3: null,\r\n     4: null,\r\n+    5: null,\r\n   });\r\n \r\n   const [inputs, setInputs] = useState({\r\n     roomType: '',\r\n"
+                },
+                {
+                    "date": 1747179131542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n     1: null,\r\n     2: null,\r\n     3: null,\r\n     4: null,\r\n-    5: null,\r\n   });\r\n \r\n   const [inputs, setInputs] = useState({\r\n     roomType: '',\r\n"
+                }
+            ],
+            "date": 1747036373384,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport Title from '../../components/Title'\r\n\r\nconst AddRoom = () => {\r\n  return (\r\n\r\n    \r\n\r\n    <div>\r\n      <Title align='left' font='outfit' title='Dashboard' />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default AddRoom\r\n"
+        }
+    ]
+}

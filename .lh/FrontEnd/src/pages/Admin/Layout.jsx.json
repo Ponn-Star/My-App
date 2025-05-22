@@ -1,0 +1,22 @@
+{
+    "sourceFile": "FrontEnd/src/pages/Admin/Layout.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1747882536231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747882544636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import Sidebar from '../../components/Admin/Sidebar'\r\n import { Outlet } from 'react-router-dom'\r\n-import Navbar from '../../components/Owner/Navbar'\r\n+import Navbar from '../../components/Admin/Navbar'\r\n \r\n const Layout = () => {\r\n   return (\r\n     <div className='flex flex-col h-screen'>\r\n"
+                }
+            ],
+            "date": 1747882536231,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport Sidebar from '../../components/Admin/Sidebar'\r\nimport { Outlet } from 'react-router-dom'\r\nimport Navbar from '../../components/Owner/Navbar'\r\n\r\nconst Layout = () => {\r\n  return (\r\n    <div className='flex flex-col h-screen'>\r\n      <Navbar />\r\n      <div className='flex h-full'>\r\n        <Sidebar />\r\n        <div className='flex-1 p-4 pt-10 md:px-10 h-full'>\r\n            <Outlet />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Layout\r\n"
+        }
+    ]
+}

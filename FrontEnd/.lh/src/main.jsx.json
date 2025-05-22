@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/main.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1746662431573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746662455729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,8 @@\n import App from './App.jsx'\n import { BrowserRouter } from 'react-router-dom'\n \n createRoot(document.getElementById('root')).render(\n-  <StrictMode>\n     <BrowserRouter>\n       <App />\n     </BrowserRouter>\n-  </StrictMode>,\n )\n"
+                },
+                {
+                    "date": 1746768352203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,14 @@\n import './index.css'\n import App from './App.jsx'\n import { BrowserRouter } from 'react-router-dom'\n \n+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY\n+\n+if (!PUBLISHABLE_KEY) {\n+  throw new Error('Add your Clerk Publishable Key to the .env file')\n+}\n+\n createRoot(document.getElementById('root')).render(\n     <BrowserRouter>\n       <App />\n     </BrowserRouter>\n"
+                },
+                {
+                    "date": 1746768380574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { createRoot } from 'react-dom/client'\n import './index.css'\n import App from './App.jsx'\n import { BrowserRouter } from 'react-router-dom'\n+import { ClerkProvider } from '@clerk/clerk-react'\n \n const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY\n \n if (!PUBLISHABLE_KEY) {\n"
+                },
+                {
+                    "date": 1746768420055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n   throw new Error('Add your Clerk Publishable Key to the .env file')\n }\n \n createRoot(document.getElementById('root')).render(\n+  <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl=\"/\">\n     <BrowserRouter>\n       <App />\n     </BrowserRouter>\n+    </ClerkProvider>\n )\n"
+                }
+            ],
+            "date": 1746662431573,
+            "name": "Commit-0",
+            "content": "import { StrictMode } from 'react'\nimport { createRoot } from 'react-dom/client'\nimport './index.css'\nimport App from './App.jsx'\nimport { BrowserRouter } from 'react-router-dom'\n\ncreateRoot(document.getElementById('root')).render(\n  <StrictMode>\n    <BrowserRouter>\n      <App />\n    </BrowserRouter>\n  </StrictMode>,\n)\n"
+        }
+    ]
+}

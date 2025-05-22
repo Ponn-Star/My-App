@@ -1,0 +1,54 @@
+{
+    "sourceFile": "FrontEnd/src/data/api.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1747691119143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747881804306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,28 @@\n-const NOCODB_API_URL = \"https://app.nocodb.com/api/v2/tables\";\r\n-const NOCODB_API_KEY = \"Q77FhyKItb24O_dHv26GYa18PrWrLXeTH5A7FPFn\";\r\n-\r\n-export async function callApi<T>(tableId: string, offset = 0, limit = 25): Promise<T> {\r\n-  const url = `${NOCODB_API_URL}/${tableId}/records?offset=${offset}&limit=${limit}`;\r\n-  \r\n+export async function callApi<T>(url: string, token: string): Promise<T> {\r\n   const response = await fetch(url, {\r\n     headers: {\r\n-      \"xc-token\": NOCODB_API_KEY,\r\n+      \"xc-token\": token,\r\n       \"Content-Type\": \"application/json\",\r\n     },\r\n   });\r\n-\r\n   if (!response.ok) {\r\n     throw new Error(`API call failed: ${response.status} ${response.statusText}`);\r\n   }\r\n-  \r\n   return response.json() as Promise<T>;\r\n }\r\n+\r\n+// riêng cho bảng testimonials\r\n+const API_URL_TESTIMONIALS = \"https://app.nocodb.com/api/v2/tables/mqxdcj08df39q7u/records?offset=0&limit=25\";\r\n+const API_TOKEN_TESTIMONIALS = \"Q77FhyKItb24O_dHv26GYa18PrWrLXeTH5A7FPFn\";\r\n+\r\n+export async function fetchTestimonials() {\r\n+  return callApi(API_URL_TESTIMONIALS, API_TOKEN_TESTIMONIALS);\r\n+}\r\n+\r\n+// riêng cho bảng rooms\r\n+const API_URL_ROOMS = \"https://app.nocodb.com/api/v2/tables/your_room_table_id/records?offset=0&limit=25\";\r\n+const API_TOKEN_ROOMS = \"your_room_api_token\";\r\n+\r\n+export async function fetchRooms() {\r\n+  return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n+}\r\n"
+                },
+                {
+                    "date": 1747881838505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   return response.json() as Promise<T>;\r\n }\r\n \r\n // riêng cho bảng testimonials\r\n-const API_URL_TESTIMONIALS = \"https://app.nocodb.com/api/v2/tables/mqxdcj08df39q7u/records?offset=0&limit=25\";\r\n+const API_URL_TESTIMONIALS = \"https://app.nocodb.com/api/v2/tables/mqxdcj08df39q7u/records?offset=0&limit=25&where=&viewId=vwuk6k6pdfoz6672\";\r\n const API_TOKEN_TESTIMONIALS = \"Q77FhyKItb24O_dHv26GYa18PrWrLXeTH5A7FPFn\";\r\n \r\n export async function fetchTestimonials() {\r\n   return callApi(API_URL_TESTIMONIALS, API_TOKEN_TESTIMONIALS);\r\n"
+                },
+                {
+                    "date": 1747881964416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   return callApi(API_URL_TESTIMONIALS, API_TOKEN_TESTIMONIALS);\r\n }\r\n \r\n // riêng cho bảng rooms\r\n-const API_URL_ROOMS = \"https://app.nocodb.com/api/v2/tables/your_room_table_id/records?offset=0&limit=25\";\r\n+const API_URL_ROOMS = \"https://app.nocodb.com/api/v2/tables/my0zblcjemxemmk/records?offset=0&limit=25&where=&viewId=vw9hrowdlkdjt27x\";\r\n const API_TOKEN_ROOMS = \"your_room_api_token\";\r\n \r\n export async function fetchRooms() {\r\n   return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n"
+                },
+                {
+                    "date": 1747882143775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n }\r\n \r\n // riêng cho bảng rooms\r\n const API_URL_ROOMS = \"https://app.nocodb.com/api/v2/tables/my0zblcjemxemmk/records?offset=0&limit=25&where=&viewId=vw9hrowdlkdjt27x\";\r\n-const API_TOKEN_ROOMS = \"your_room_api_token\";\r\n+const API_TOKEN_ROOMS = \"s5xB7tQBuVu9pYiEbT1aYPrqNLZuANXmPnQqVA7n\";\r\n \r\n export async function fetchRooms() {\r\n   return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n }\r\n"
+                },
+                {
+                    "date": 1747882881895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,4 +25,11 @@\n \r\n export async function fetchRooms() {\r\n   return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n }\r\n+\r\n+const API_URL_Service = \"https://app.nocodb.com/api/v2/tables/my0zblcjemxemmk/records?offset=0&limit=25&where=&viewId=vw9hrowdlkdjt27x\";\r\n+const API_TOKEN_ervice = \"s5xB7tQBuVu9pYiEbT1aYPrqNLZuANXmPnQqVA7n\";\r\n+\r\n+export async function fetchRooms() {\r\n+  return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1747882916475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,22 +14,22 @@\n // riêng cho bảng testimonials\r\n const API_URL_TESTIMONIALS = \"https://app.nocodb.com/api/v2/tables/mqxdcj08df39q7u/records?offset=0&limit=25&where=&viewId=vwuk6k6pdfoz6672\";\r\n const API_TOKEN_TESTIMONIALS = \"Q77FhyKItb24O_dHv26GYa18PrWrLXeTH5A7FPFn\";\r\n \r\n-export async function fetchTestimonials() {\r\n+export async function Testimonials() {\r\n   return callApi(API_URL_TESTIMONIALS, API_TOKEN_TESTIMONIALS);\r\n }\r\n \r\n // riêng cho bảng rooms\r\n const API_URL_ROOMS = \"https://app.nocodb.com/api/v2/tables/my0zblcjemxemmk/records?offset=0&limit=25&where=&viewId=vw9hrowdlkdjt27x\";\r\n const API_TOKEN_ROOMS = \"s5xB7tQBuVu9pYiEbT1aYPrqNLZuANXmPnQqVA7n\";\r\n \r\n-export async function fetchRooms() {\r\n+export async function Rooms() {\r\n   return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n }\r\n \r\n const API_URL_Service = \"https://app.nocodb.com/api/v2/tables/my0zblcjemxemmk/records?offset=0&limit=25&where=&viewId=vw9hrowdlkdjt27x\";\r\n-const API_TOKEN_ervice = \"s5xB7tQBuVu9pYiEbT1aYPrqNLZuANXmPnQqVA7n\";\r\n+const API_TOKEN_Service = \"s5xB7tQBuVu9pYiEbT1aYPrqNLZuANXmPnQqVA7n\";\r\n \r\n-export async function fetchRooms() {\r\n+export async function Service() {\r\n   return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1747882952615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n const API_URL_Service = \"https://app.nocodb.com/api/v2/tables/my0zblcjemxemmk/records?offset=0&limit=25&where=&viewId=vw9hrowdlkdjt27x\";\r\n const API_TOKEN_Service = \"s5xB7tQBuVu9pYiEbT1aYPrqNLZuANXmPnQqVA7n\";\r\n \r\n export async function Service() {\r\n-  return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n+  return callApi(API_URL_Service, API_TOKEN_Service);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1747882984282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n export async function Rooms() {\r\n   return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n }\r\n \r\n-const API_URL_Service = \"https://app.nocodb.com/api/v2/tables/my0zblcjemxemmk/records?offset=0&limit=25&where=&viewId=vw9hrowdlkdjt27x\";\r\n+const API_URL_Service = \"https://app.nocodb.com/api/v2/tables/my4woihmuapnd5p/records?offset=0&limit=25&where=&viewId=vwjgbx66qshbxxa2\";\r\n const API_TOKEN_Service = \"s5xB7tQBuVu9pYiEbT1aYPrqNLZuANXmPnQqVA7n\";\r\n \r\n export async function Service() {\r\n   return callApi(API_URL_Service, API_TOKEN_Service);\r\n"
+                },
+                {
+                    "date": 1747883218187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   return callApi(API_URL_ROOMS, API_TOKEN_ROOMS);\r\n }\r\n \r\n const API_URL_Service = \"https://app.nocodb.com/api/v2/tables/my4woihmuapnd5p/records?offset=0&limit=25&where=&viewId=vwjgbx66qshbxxa2\";\r\n-const API_TOKEN_Service = \"s5xB7tQBuVu9pYiEbT1aYPrqNLZuANXmPnQqVA7n\";\r\n+const API_TOKEN_Service = \"Q77FhyKItb24O_dHv26GYa18PrWrLXeTH5A7FPFn\";\r\n \r\n export async function Service() {\r\n   return callApi(API_URL_Service, API_TOKEN_Service);\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1747691119142,
+            "name": "Commit-0",
+            "content": "const NOCODB_API_URL = \"https://app.nocodb.com/api/v2/tables\";\r\nconst NOCODB_API_KEY = \"Q77FhyKItb24O_dHv26GYa18PrWrLXeTH5A7FPFn\";\r\n\r\nexport async function callApi<T>(tableId: string, offset = 0, limit = 25): Promise<T> {\r\n  const url = `${NOCODB_API_URL}/${tableId}/records?offset=${offset}&limit=${limit}`;\r\n  \r\n  const response = await fetch(url, {\r\n    headers: {\r\n      \"xc-token\": NOCODB_API_KEY,\r\n      \"Content-Type\": \"application/json\",\r\n    },\r\n  });\r\n\r\n  if (!response.ok) {\r\n    throw new Error(`API call failed: ${response.status} ${response.statusText}`);\r\n  }\r\n  \r\n  return response.json() as Promise<T>;\r\n}\r\n"
+        }
+    ]
+}

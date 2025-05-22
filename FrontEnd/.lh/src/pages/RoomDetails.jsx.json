@@ -1,0 +1,482 @@
+{
+    "sourceFile": "src/pages/RoomDetails.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 116,
+            "patches": [
+                {
+                    "date": 1746777313789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746777369580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const RoomDetails = () => {\r\n   return (\r\n     <div>\r\n-      \r\n+      <h1 className=''>Rooms Details</h1>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746777390721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const RoomDetails = () => {\r\n   return (\r\n     <div>\r\n-      <h1 className=''>Rooms Details</h1>\r\n+      <h1 className='pt-64'>Rooms Details</h1>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746777431475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n import React from 'react'\r\n+import { useParams } from 'react-router-dom'\r\n \r\n const RoomDetails = () => {\r\n+    const {id} = useParams()\r\n+    \r\n   return (\r\n     <div>\r\n       <h1 className='pt-64'>Rooms Details</h1>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746777461346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n-import React from 'react'\r\n+import React, {userState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n-    \r\n+    const [room, setRoom] = useState(null)\r\n   return (\r\n     <div>\r\n       <h1 className='pt-64'>Rooms Details</h1>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746777467708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, {userState} from 'react'\r\n+import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n"
+                },
+                {
+                    "date": 1746777479253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n+    const [mainImage, setMainImage] = useState(null)\r\n   return (\r\n     <div>\r\n       <h1 className='pt-64'>Rooms Details</h1>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746780274843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,16 @@\n-import React, {useState} from 'react'\r\n+import React, {use, useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n+import { roomsDummyData } from '../assets/assets'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n     const [mainImage, setMainImage] = useState(null)\r\n+\r\n+    useEffect(() => {\r\n+        roomsDummyData.find((room) => {\r\n+    },[])\r\n   return (\r\n     <div>\r\n       <h1 className='pt-64'>Rooms Details</h1>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746780287626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     const [room, setRoom] = useState(null)\r\n     const [mainImage, setMainImage] = useState(null)\r\n \r\n     useEffect(() => {\r\n-        roomsDummyData.find((room) => {\r\n+        roomsDummyData.find((room => room._id === {\r\n     },[])\r\n   return (\r\n     <div>\r\n       <h1 className='pt-64'>Rooms Details</h1>\r\n"
+                },
+                {
+                    "date": 1746780307408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     const [room, setRoom] = useState(null)\r\n     const [mainImage, setMainImage] = useState(null)\r\n \r\n     useEffect(() => {\r\n-        roomsDummyData.find((room => room._id === {\r\n+        const room = roomsDummyData.find((room => room._id === id){\r\n     },[])\r\n   return (\r\n     <div>\r\n       <h1 className='pt-64'>Rooms Details</h1>\r\n"
+                },
+                {
+                    "date": 1746780332438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n     const [room, setRoom] = useState(null)\r\n     const [mainImage, setMainImage] = useState(null)\r\n \r\n     useEffect(() => {\r\n-        const room = roomsDummyData.find((room => room._id === id){\r\n+        const room = roomsDummyData.find((room => room._id === id)\r\n+        room && setRoom\r\n     },[])\r\n   return (\r\n     <div>\r\n       <h1 className='pt-64'>Rooms Details</h1>\r\n"
+                },
+                {
+                    "date": 1746780349092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n     const [mainImage, setMainImage] = useState(null)\r\n \r\n     useEffect(() => {\r\n         const room = roomsDummyData.find((room => room._id === id)\r\n-        room && setRoom\r\n+        room && setRoom(room)\r\n+        room && setMainImage(room.images[0])\r\n     },[])\r\n   return (\r\n     <div>\r\n       <h1 className='pt-64'>Rooms Details</h1>\r\n"
+                },
+                {
+                    "date": 1746780366262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     const [room, setRoom] = useState(null)\r\n     const [mainImage, setMainImage] = useState(null)\r\n \r\n     useEffect(() => {\r\n-        const room = roomsDummyData.find((room => room._id === id)\r\n+        const room = roomsDummyData.find(room => room._id === id)\r\n         room && setRoom(room)\r\n         room && setMainImage(room.images[0])\r\n     },[])\r\n   return (\r\n"
+                },
+                {
+                    "date": 1746780384174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, {use, useState} from 'react'\r\n+import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const RoomDetails = () => {\r\n"
+                },
+                {
+                    "date": 1746780409005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n         room && setRoom(room)\r\n         room && setMainImage(room.images[0])\r\n     },[])\r\n   return (\r\n-    <div>\r\n-      <h1 className='pt-64'>Rooms Details</h1>\r\n+    <div className='py-28 md:py-35 px-4 md:px-16 lg:px-'>\r\n+      \r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746780415253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         room && setRoom(room)\r\n         room && setMainImage(room.images[0])\r\n     },[])\r\n   return (\r\n-    <div className='py-28 md:py-35 px-4 md:px-16 lg:px-'>\r\n+    <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       \r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746780469899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,11 @@\n         room && setMainImage(room.images[0])\r\n     },[])\r\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n-      \r\n+        <div>\r\n+            <h1>{room.hotel.name}<span>{room.roomTypes</span></h1> \r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746780487733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     },[])\r\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div>\r\n-            <h1>{room.hotel.name}<span>{room.roomTypes</span></h1> \r\n+            <h1>{room.hotel.name}<span>{room.roomType}</span></h1> \r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746781479758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div>\r\n             <h1>{room.hotel.name}<span>{room.roomType}</span></h1> \r\n+            <p>20% OFF</p>\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746792194098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         room && setMainImage(room.images[0])\r\n     },[])\r\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n-        <div>\r\n+        <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n             <h1>{room.hotel.name}<span>{room.roomType}</span></h1> \r\n             <p>20% OFF</p>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746792241125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     },[])\r\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n-            <h1>{room.hotel.name}<span>{room.roomType}</span></h1> \r\n+            <h1>{room.hotel.name}<span className=''>{room.roomType}</span></h1> \r\n             <p>20% OFF</p>\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746792264188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     },[])\r\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n-            <h1>{room.hotel.name}<span className=''>{room.roomType}</span></h1> \r\n+            <h1>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n             <p>20% OFF</p>\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746792307037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n             <h1>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n-            <p>20% OFF</p>\r\n+            <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746792376052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n import { roomsDummyData } from '../assets/assets'\r\n+import StarRating from '../components/StarRating'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n@@ -17,8 +18,13 @@\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n             <h1>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n             <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n         </div>\r\n+\r\n+        <div>\r\n+            <StarRating/>\r\n+            <p className='ml-2'>200+ reviews</p>\r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746792471800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n import { roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n+import { assert } from 'console'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n@@ -23,8 +24,12 @@\n         <div>\r\n             <StarRating/>\r\n             <p className='ml-2'>200+ reviews</p>\r\n         </div>\r\n+\r\n+        <div className='flex items-center gap-1 '>\r\n+            <img src={assert.locationIcon} alt='location-icon' />\r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746792484802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             <StarRating/>\r\n             <p className='ml-2'>200+ reviews</p>\r\n         </div>\r\n \r\n-        <div className='flex items-center gap-1 '>\r\n+        <div className='flex items-center gap-1 text-gray-500 mt-2'>\r\n             <img src={assert.locationIcon} alt='location-icon' />\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746792610785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n         </div>\r\n \r\n         <div className='flex items-center gap-1 text-gray-500 mt-2'>\r\n             <img src={assert.locationIcon} alt='location-icon' />\r\n+            <span>{room.hotel.address}</span>\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746792627788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n import { roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n-import { assert } from 'console'\r\n+import { assert } from '../assets/assets'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n"
+                },
+                {
+                    "date": 1746792674197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n-import { roomsDummyData } from '../assets/assets'\r\n+import { assert, roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n-import { assert } from '../assets/assets'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n"
+                },
+                {
+                    "date": 1746792690230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n import { assert, roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n+import { useEffect } from 'react'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n@@ -28,8 +29,12 @@\n         <div className='flex items-center gap-1 text-gray-500 mt-2'>\r\n             <img src={assert.locationIcon} alt='location-icon' />\r\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n+\r\n+        <div>\r\n+            \r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746792754903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n         <div>\r\n-            \r\n+            <img src={mainImage} alt='Room- Image' className='w-full rounded-xl shadow-lg object-cover'\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746792773565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n         <div>\r\n-            <img src={mainImage} alt='Room- Image' className='w-full rounded-xl shadow-lg object-cover'\r\n+            <img src={mainImage} alt='Room- Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746794124464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,13 @@\n \r\n         <div>\r\n             <img src={mainImage} alt='Room- Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n         </div>\r\n+        <div>\r\n+            {room.images.length > 1 && room.images.map((image, index) => (\r\n+                <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room- Image' />\r\n+            ))}\r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746794150263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n             <img src={mainImage} alt='Room- Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n         </div>\r\n         <div>\r\n             {room.images.length > 1 && room.images.map((image, index) => (\r\n-                <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room- Image' />\r\n+                <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={``}/>\r\n             ))}\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746794217219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n             <img src={mainImage} alt='Room- Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n         </div>\r\n         <div>\r\n             {room.images.length > 1 && room.images.map((image, index) => (\r\n-                <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={``}/>\r\n+                <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746794267885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n-import { assert, roomsDummyData } from '../assets/assets'\r\n+import { roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n import { useEffect } from 'react'\r\n+import assert from '../assets/asserts'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n"
+                },
+                {
+                    "date": 1746794309304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { useParams } from 'react-router-dom'\r\n import { roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n import { useEffect } from 'react'\r\n-import assert from '../assets/asserts'\r\n+import { assets } from '../assets/asserts'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n@@ -27,9 +27,9 @@\n             <p className='ml-2'>200+ reviews</p>\r\n         </div>\r\n \r\n         <div className='flex items-center gap-1 text-gray-500 mt-2'>\r\n-            <img src={assert.locationIcon} alt='location-icon' />\r\n+            <img src={assets.locationIcon} alt='location-icon' />\r\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n         <div>\r\n"
+                },
+                {
+                    "date": 1746794353211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import React, {useState} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n-import { roomsDummyData } from '../assets/assets'\r\n+import { assets, roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n import { useEffect } from 'react'\r\n-import { assets } from '../assets/asserts'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n"
+                },
+                {
+                    "date": 1746800195757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n-import React, {useState} from 'react'\r\n+import React, { useState, useEffect} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n import { assets, roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n-import { useEffect } from 'react'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n     const [room, setRoom] = useState(null)\r\n"
+                },
+                {
+                    "date": 1746800648735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n         <div>\r\n-            <img src={mainImage} alt='Room- Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n+            <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n         </div>\r\n         <div>\r\n             {room.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n"
+                },
+                {
+                    "date": 1746800865642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     },[])\r\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n-            <h1>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n+            <h1>{room.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n             <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n         </div>\r\n \r\n         <div>\r\n"
+                },
+                {
+                    "date": 1746800883220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     },[])\r\n   return (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n-            <h1>{room.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n+            <h1>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n             <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n         </div>\r\n \r\n         <div>\r\n"
+                },
+                {
+                    "date": 1746801141079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         <div>\r\n             <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n         </div>\r\n         <div>\r\n-            {room.images.length > 1 && room.images.map((image, index) => (\r\n+            {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746801340622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         const room = roomsDummyData.find(room => room._id === id)\r\n         room && setRoom(room)\r\n         room && setMainImage(room.images[0])\r\n     },[])\r\n-  return (\r\n+  return room && (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n             <h1>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n             <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n"
+                },
+                {
+                    "date": 1746801541426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     },[])\r\n   return room && (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n-            <h1>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n+            <h1 className='text-3xl md:text-4xl font-playfair'>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n             <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n         </div>\r\n \r\n         <div>\r\n"
+                },
+                {
+                    "date": 1746801738408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,13 @@\n     },[])\r\n   return room && (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n-            <h1 className='text-3xl md:text-4xl font-playfair'>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n-            <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n-        </div>\r\n+    <h1 className='text-3xl md:text-4xl font-playfair'>\r\n+      {room.hotel.name} <span className='font-inter text-sm'>{room.roomType}</span>\r\n+    </h1>\r\n+    <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n+  </div>\r\n \r\n         <div>\r\n             <StarRating/>\r\n             <p className='ml-2'>200+ reviews</p>\r\n"
+                },
+                {
+                    "date": 1746801774893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     </h1>\r\n     <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n   </div>\r\n \r\n-        <div>\r\n+        <div className='flex items-center gap-1 mt-2'>\r\n             <StarRating/>\r\n             <p className='ml-2'>200+ reviews</p>\r\n         </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746801793067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   return room && (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n     <h1 className='text-3xl md:text-4xl font-playfair'>\r\n-      {room.hotel.name} <span className='font-inter text-sm'>{room.roomType}</span>\r\n+      {room.hotel.name} <span className='font-inter text-sm'>({room.roomType})</span>\r\n     </h1>\r\n     <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n   </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746801813816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n       {room.hotel.name} <span className='font-inter text-sm'>({room.roomType})</span>\r\n     </h1>\r\n     <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n   </div>\r\n-\r\n         <div className='flex items-center gap-1 mt-2'>\r\n             <StarRating/>\r\n             <p className='ml-2'>200+ reviews</p>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746801912401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,11 @@\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n         <div>\r\n+            <div className='lg:2-1/2 ư-full'>\r\n             <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n+            </div>\r\n         </div>\r\n         <div>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n"
+                },
+                {
+                    "date": 1746801929548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n             <img src={assets.locationIcon} alt='location-icon' />\r\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n-        <div>\r\n+        <div className='flex flex-col lg:flex-rơ mt-6 gap-'>\r\n             <div className='lg:2-1/2 ư-full'>\r\n             <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n             </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746801987500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,14 +30,14 @@\n             <img src={assets.locationIcon} alt='location-icon' />\r\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n-        <div className='flex flex-col lg:flex-rơ mt-6 gap-'>\r\n-            <div className='lg:2-1/2 ư-full'>\r\n+        <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n+            <div className='lg:2-1/2 w-full'>\r\n             <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n             </div>\r\n         </div>\r\n-        <div>\r\n+        <div className='grid gird-cols-2 gap-4 lg:w1/2'>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746801995926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n             <div className='lg:2-1/2 w-full'>\r\n             <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n             </div>\r\n         </div>\r\n-        <div className='grid gird-cols-2 gap-4 lg:w1/2'>\r\n+        <div className='grid gird-cols-2 gap-4 lg:w1/2 w-full'>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746802087857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n         <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n-            <div className='lg:2-1/2 w-full'>\r\n+            <div className='lg:w-1/2 w-full'>\r\n             <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n             </div>\r\n         </div>\r\n         <div className='grid gird-cols-2 gap-4 lg:w1/2 w-full'>\r\n"
+                },
+                {
+                    "date": 1746802249048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         </div>\r\n \r\n         <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n             <div className='lg:w-1/2 w-full'>\r\n-            <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n+            <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n             </div>\r\n         </div>\r\n         <div className='grid gird-cols-2 gap-4 lg:w1/2 w-full'>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n"
+                },
+                {
+                    "date": 1746802304048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,12 +35,18 @@\n             <div className='lg:w-1/2 w-full'>\r\n             <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n             </div>\r\n         </div>\r\n-        <div className='grid gird-cols-2 gap-4 lg:w1/2 w-full'>\r\n-            {room?.images.length > 1 && room.images.map((image, index) => (\r\n-                <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n-            ))}\r\n+        <div className='grid grid-cols-2 gap-4 lg:w-1/2 w-full'>\r\n+    {room.images.length > 1 && room.images.map((image, index) => (\r\n+      <img\r\n+        key={index}\r\n+        src={image}\r\n+        alt=\"Room Image\"\r\n+        className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}\r\n+        onClick={() => setMainImage(image)}\r\n+      />\r\n+    ))}\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746802340493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,18 +35,12 @@\n             <div className='lg:w-1/2 w-full'>\r\n             <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n             </div>\r\n         </div>\r\n-        <div className='grid grid-cols-2 gap-4 lg:w-1/2 w-full'>\r\n-    {room.images.length > 1 && room.images.map((image, index) => (\r\n-      <img\r\n-        key={index}\r\n-        src={image}\r\n-        alt=\"Room Image\"\r\n-        className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}\r\n-        onClick={() => setMainImage(image)}\r\n-      />\r\n-    ))}\r\n+        <div className='grid gird-cols-2 gap-4 lg:w1/2 w-full'>\r\n+            {room?.images.length > 1 && room.images.map((image, index) => (\r\n+                <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n+            ))}\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746802361062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n             <div className='lg:w-1/2 w-full'>\r\n             <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n             </div>\r\n         </div>\r\n-        <div className='grid gird-cols-2 gap-4 lg:w1/2 w-full'>\r\n+        <div className='grid grid-cols-2 gap-4 lg:w-1/2 w-full'>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746802418407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,14 +15,13 @@\n     },[])\r\n   return room && (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n-    <h1 className='text-3xl md:text-4xl font-playfair'>\r\n-      {room.hotel.name} <span className='font-inter text-sm'>({room.roomType})</span>\r\n-    </h1>\r\n-    <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n-  </div>\r\n-        <div className='flex items-center gap-1 mt-2'>\r\n+            <h1 className='text-3xl md:text-4xl font-playfair'>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n+            <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n+        </div>\r\n+\r\n+        <div>\r\n             <StarRating/>\r\n             <p className='ml-2'>200+ reviews</p>\r\n         </div>\r\n \r\n@@ -30,14 +29,12 @@\n             <img src={assets.locationIcon} alt='location-icon' />\r\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n-        <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n-            <div className='lg:w-1/2 w-full'>\r\n-            <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n-            </div>\r\n+        <div>\r\n+            <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n         </div>\r\n-        <div className='grid grid-cols-2 gap-4 lg:w-1/2 w-full'>\r\n+        <div>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746802553214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,15 @@\n         room && setMainImage(room.images[0])\r\n     },[])\r\n   return room && (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n+        {/* Room Details */}\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n-            <h1 className='text-3xl md:text-4xl font-playfair'>{room.hotel.name}<span className='font-inter text-sm'>{room.roomType}</span></h1> \r\n+            <h1 className='text-3xl md:text-4xl font-playfair'>\r\n+            {room.hotel.name} <span className='font-inter text-sm'>{room.roomType}</span>\r\n+            </h1>\r\n             <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n         </div>\r\n-\r\n         <div>\r\n             <StarRating/>\r\n             <p className='ml-2'>200+ reviews</p>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746802560258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,8 @@\n         room && setMainImage(room.images[0])\r\n     },[])\r\n   return room && (\r\n     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n-        {/* Room Details */}\r\n         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>\r\n             <h1 className='text-3xl md:text-4xl font-playfair'>\r\n             {room.hotel.name} <span className='font-inter text-sm'>{room.roomType}</span>\r\n             </h1>\r\n"
+                },
+                {
+                    "date": 1746802616149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,12 +30,15 @@\n             <img src={assets.locationIcon} alt='location-icon' />\r\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n-        <div>\r\n-            <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n+        {/* Room Images */}\r\n+        <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n+        <div className='lg:w-1/2 w-full'>\r\n+            <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n         </div>\r\n-        <div>\r\n+        \r\n+        <div className='grid grid-cols-2 gap-4 lg:w-1/2 w-full'>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746802644840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,15 +30,12 @@\n             <img src={assets.locationIcon} alt='location-icon' />\r\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n-        {/* Room Images */}\r\n-        <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n-        <div className='lg:w-1/2 w-full'>\r\n-            <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n+        <div>\r\n+            <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n         </div>\r\n-        \r\n-        <div className='grid grid-cols-2 gap-4 lg:w-1/2 w-full'>\r\n+        <div>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746802698561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,16 +30,18 @@\n             <img src={assets.locationIcon} alt='location-icon' />\r\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n-        <div>\r\n-            <img src={mainImage} alt='Room Image' className='w-full rounded-xl shadow-lg object-cover' />\r\n+        <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n+        <div className='lg:w-1/2 w-full'>\r\n+            <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n         </div>\r\n         <div>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n         </div>\r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746802706847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,11 +31,11 @@\n             <span>{room.hotel.address}</span>\r\n         </div>\r\n \r\n         <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n-        <div className='lg:w-1/2 w-full'>\r\n-            <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n-        </div>\r\n+            <div className='lg:w-1/2 w-full'>\r\n+                <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n+            </div>\r\n         <div>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n"
+                },
+                {
+                    "date": 1746802715483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,14 +34,14 @@\n         <div className='flex flex-col lg:flex-row mt-6 gap-6'>\r\n             <div className='lg:w-1/2 w-full'>\r\n                 <img src={mainImage} alt=\"Room Image\" className='w-full rounded-xl shadow-lg object-cover'/>\r\n             </div>\r\n-        <div>\r\n+            <div className='grid grid-cols-2 gap-4 lg:w-1/2 w-full'>\r\n             {room?.images.length > 1 && room.images.map((image, index) => (\r\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n+            </div>\r\n         </div>\r\n-        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746802767250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             {room.hotel.name} <span className='font-inter text-sm'>{room.roomType}</span>\r\n             </h1>\r\n             <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>\r\n         </div>\r\n-        <div>\r\n+        <div className='flex items-center gap-1 mt-2'>\r\n             <StarRating/>\r\n             <p className='ml-2'>200+ reviews</p>\r\n         </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746806374652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,10 @@\n                 <img onClick={() => setMainImage(image)} key={index} src={image} alt='Room Image' className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${mainImage === image && 'outline-3 outline-orange-500'}`}/>\r\n             ))}\r\n             </div>\r\n         </div>\r\n+\r\n+        \r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746806664782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,13 @@\n             ))}\r\n             </div>\r\n         </div>\r\n \r\n-        \r\n+        <div className='flex flex-col md:flex-row md:justify-between mt-10'>\r\n+            <div>\r\n+                <h1></h1>\r\n+            </div>\r\n+        </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746806796858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         </div>\r\n \r\n         <div className='flex flex-col md:flex-row md:justify-between mt-10'>\r\n             <div>\r\n-                <h1></h1>\r\n+                <h1>Experience Luxury Like Never Before</h1>\r\n             </div>\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746806818344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         </div>\r\n \r\n         <div className='flex flex-col md:flex-row md:justify-between mt-10'>\r\n             <div>\r\n-                <h1>Experience Luxury Like Never Before</h1>\r\n+                <h1 className='text-3xl md:text'>Experience Luxury Like Never Before</h1>\r\n             </div>\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746806832849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         </div>\r\n \r\n         <div className='flex flex-col md:flex-row md:justify-between mt-10'>\r\n             <div>\r\n-                <h1 className='text-3xl md:text'>Experience Luxury Like Never Before</h1>\r\n+                <h1 className='text-3xl md:text-4xl font-playfair'>Experience Luxury Like Never Before</h1>\r\n             </div>\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746806871906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,11 @@\n \r\n         <div className='flex flex-col md:flex-row md:justify-between mt-10'>\r\n             <div>\r\n                 <h1 className='text-3xl md:text-4xl font-playfair'>Experience Luxury Like Never Before</h1>\r\n+                <div>\r\n+                    {room.am}\r\n+                </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746806909276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,11 @@\n         <div className='flex flex-col md:flex-row md:justify-between mt-10'>\r\n             <div>\r\n                 <h1 className='text-3xl md:text-4xl font-playfair'>Experience Luxury Like Never Before</h1>\r\n                 <div>\r\n-                    {room.am}\r\n+                    {room.amenities.map((item, index) => (\r\n+                        <div></div>\r\n+                    ))}\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746807008266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React, { useState, useEffect} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n-import { assets, roomsDummyData } from '../assets/assets'\r\n+import { assets, facilityIcons, roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n@@ -46,9 +46,12 @@\n             <div>\r\n                 <h1 className='text-3xl md:text-4xl font-playfair'>Experience Luxury Like Never Before</h1>\r\n                 <div>\r\n                     {room.amenities.map((item, index) => (\r\n-                        <div></div>\r\n+                        <div key={index} className='flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100'>\r\n+                            <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n+                            <p className='text-xs'>{item}</p>\r\n+                        </div>\r\n                     ))}\r\n                 </div>\r\n             </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746807040847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \r\n         <div className='flex flex-col md:flex-row md:justify-between mt-10'>\r\n             <div>\r\n                 <h1 className='text-3xl md:text-4xl font-playfair'>Experience Luxury Like Never Before</h1>\r\n-                <div>\r\n+                <div className='flex items-center gap-3 mb-6 mt-4'>\r\n                     {room.amenities.map((item, index) => (\r\n                         <div key={index} className='flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100'>\r\n                             <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                             <p className='text-xs'>{item}</p>\r\n"
+                },
+                {
+                    "date": 1746810389534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n             </div>\r\n         </div>\r\n \r\n         <div className='flex flex-col md:flex-row md:justify-between mt-10'>\r\n-            <div>\r\n+            <div className='flex flex-col'>\r\n                 <h1 className='text-3xl md:text-4xl font-playfair'>Experience Luxury Like Never Before</h1>\r\n                 <div className='flex items-center gap-3 mb-6 mt-4'>\r\n                     {room.amenities.map((item, index) => (\r\n                         <div key={index} className='flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100'>\r\n"
+                },
+                {
+                    "date": 1746810473228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,9 @@\n                         </div>\r\n                     ))}\r\n                 </div>\r\n             </div>\r\n+            <p>${room.priceP}</p>\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746810486357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                         </div>\r\n                     ))}\r\n                 </div>\r\n             </div>\r\n-            <p>${room.priceP}</p>\r\n+            <p>${room.pricePerNight}</p>\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746810498551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                         </div>\r\n                     ))}\r\n                 </div>\r\n             </div>\r\n-            <p>${room.pricePerNight}</p>\r\n+            <p>${room.pricePerNight}/night</p>\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746810505437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                         </div>\r\n                     ))}\r\n                 </div>\r\n             </div>\r\n-            <p>${room.pricePerNight}/night</p>\r\n+            <p className=''>${room.pricePerNight}/night</p>\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746810519125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                         </div>\r\n                     ))}\r\n                 </div>\r\n             </div>\r\n-            <p className=''>${room.pricePerNight}/night</p>\r\n+            <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>\r\n         </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746810591062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,13 @@\n                 </div>\r\n             </div>\r\n             <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>\r\n         </div>\r\n+\r\n+        <form className=''>\r\n+\r\n+        </form>\r\n+\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746810666468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,11 @@\n             </div>\r\n             <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>\r\n         </div>\r\n \r\n-        <form className=''>\r\n+        <form className='flex flex-col md:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl mx-auto mt-16 max-w-6xl'>\r\n+            <div className='flex flex-col flex-wrap md:flex-row items-start md:items-center gap-4 md:gap-10 text-gray-500'>\r\n+            </div>\r\n \r\n         </form>\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746810688310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,8 +58,9 @@\n         </div>\r\n \r\n         <form className='flex flex-col md:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl mx-auto mt-16 max-w-6xl'>\r\n             <div className='flex flex-col flex-wrap md:flex-row items-start md:items-center gap-4 md:gap-10 text-gray-500'>\r\n+            \r\n             </div>\r\n \r\n         </form>\r\n \r\n"
+                },
+                {
+                    "date": 1746810994961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,16 @@\n         </div>\r\n \r\n         <form className='flex flex-col md:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl mx-auto mt-16 max-w-6xl'>\r\n             <div className='flex flex-col flex-wrap md:flex-row items-start md:items-center gap-4 md:gap-10 text-gray-500'>\r\n-            \r\n+                <div className='flex flex-col'>\r\n+                    <label htmlFor=\"checkInDate\" className='font-medium'>Check-In</label>\r\n+                    <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n+                    </div>\r\n+\r\n+                    <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n+                    Book Now\r\n+                    </button>\r\n             </div>\r\n \r\n         </form>\r\n \r\n"
+                },
+                {
+                    "date": 1746811026962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,10 @@\n             <div className='flex flex-col flex-wrap md:flex-row items-start md:items-center gap-4 md:gap-10 text-gray-500'>\r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"checkInDate\" className='font-medium'>Check-In</label>\r\n                     <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n-                    </div>\r\n+                </div>\r\n+                \r\n \r\n                     <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n                     </button>\r\n"
+                },
+                {
+                    "date": 1746811069776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,13 +63,18 @@\n                     <label htmlFor=\"checkInDate\" className='font-medium'>Check-In</label>\r\n                     <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n                 \r\n+                <div className='flex flex-col'>\r\n+                    <label htmlFor=\"checkInDate\" className='font-medium'>Check-In</label>\r\n+                    <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n+                </div>\r\n \r\n-                    <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n+            </div>\r\n+            \r\n+            <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n-                    </button>\r\n-            </div>\r\n+                </button>\r\n \r\n         </form>\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746811114361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,14 +64,14 @@\n                     <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n                 \r\n                 <div className='flex flex-col'>\r\n-                    <label htmlFor=\"checkInDate\" className='font-medium'>Check-In</label>\r\n+                    <label htmlFor=\"checkOutDate\" className='font-medium'>Check-In</label>\r\n                     <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n-            \r\n+\r\n             <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n                 </button>\r\n \r\n"
+                },
+                {
+                    "date": 1746811126529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n                 </div>\r\n                 \r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"checkOutDate\" className='font-medium'>Check-In</label>\r\n-                    <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n+                    <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746811136854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n                     <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n                 \r\n                 <div className='flex flex-col'>\r\n-                    <label htmlFor=\"checkOutDate\" className='font-medium'>Check-In</label>\r\n+                    <label htmlFor=\"checkOutDate\" className='font-medium'>Check-Out</label>\r\n                     <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n"
+                },
+                {
+                    "date": 1746811145206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n                 </div>\r\n                 \r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"checkOutDate\" className='font-medium'>Check-Out</label>\r\n-                    <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n+                    <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746811167786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,13 @@\n                     <label htmlFor=\"checkOutDate\" className='font-medium'>Check-Out</label>\r\n                     <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n+                <div className='flex flex-col'>\r\n+                    <label htmlFor=\"guests\" className='font-medium'>Check-Out</label>\r\n+                    <input type=\"date\" id=\"guests\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n+                </div>\r\n+\r\n             </div>\r\n \r\n             <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n"
+                },
+                {
+                    "date": 1746811180187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n                     <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n                 <div className='flex flex-col'>\r\n-                    <label htmlFor=\"guests\" className='font-medium'>Check-Out</label>\r\n+                    <label htmlFor=\"guests\" className='font-medium'>Suests</label>\r\n                     <input type=\"date\" id=\"guests\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n"
+                },
+                {
+                    "date": 1746811196262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,10 +69,10 @@\n                     <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n                 <div className='flex flex-col'>\r\n-                    <label htmlFor=\"guests\" className='font-medium'>Suests</label>\r\n-                    <input type=\"date\" id=\"guests\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n+                    <label htmlFor=\"guests\" className='font-medium'>Guests</label>\r\n+                    <input type=\"date\" id=\"guests\" placeholder=\"0\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746811271293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n                 </div>\r\n \r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"guests\" className='font-medium'>Guests</label>\r\n-                    <input type=\"date\" id=\"guests\" placeholder=\"0\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n+                    <input type=\"date\" id=\"guests\" placeholder=\"0\" className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746811292194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n             </div>\r\n \r\n             <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n-                </button>\r\n+            </button>\r\n \r\n         </form>\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746811322374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,17 +70,16 @@\n                 </div>\r\n \r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"guests\" className='font-medium'>Guests</label>\r\n-                    <input type=\"date\" id=\"guests\" placeholder=\"0\" className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n+                    <input type=\"number\" id=\"guests\" placeholder=\"0\" className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n \r\n             <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n             </button>\r\n-\r\n         </form>\r\n \r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746811431034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,17 +67,17 @@\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"checkOutDate\" className='font-medium'>Check-Out</label>\r\n                     <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n-\r\n+                <div></div>\r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"guests\" className='font-medium'>Guests</label>\r\n                     <input type=\"number\" id=\"guests\" placeholder=\"0\" className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n \r\n             </div>\r\n \r\n-            <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n+            <button type=\"submit\" className='bg-blue hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n             </button>\r\n         </form>\r\n \r\n"
+                },
+                {
+                    "date": 1746811447097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 </div>\r\n \r\n             </div>\r\n \r\n-            <button type=\"submit\" className='bg-blue hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n+            <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n             </button>\r\n         </form>\r\n \r\n"
+                },
+                {
+                    "date": 1746811851076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 </div>\r\n \r\n             </div>\r\n \r\n-            <button type=\"submit\" className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n+            <button type=\"submit\" className='bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n                     Book Now\r\n             </button>\r\n         </form>\r\n \r\n"
+                },
+                {
+                    "date": 1746812082633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"checkOutDate\" className='font-medium'>Check-Out</label>\r\n                     <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n-                <div></div>\r\n+                <div className='w-px'></div>\r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"guests\" className='font-medium'>Guests</label>\r\n                     <input type=\"number\" id=\"guests\" placeholder=\"0\" className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1746812096196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"checkOutDate\" className='font-medium'>Check-Out</label>\r\n                     <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n-                <div className='w-px'></div>\r\n+                <div className='w-px h-15 bg-gray-300/70 max'></div>\r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"guests\" className='font-medium'>Guests</label>\r\n                     <input type=\"number\" id=\"guests\" placeholder=\"0\" className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1746812112091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,14 +62,14 @@\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"checkInDate\" className='font-medium'>Check-In</label>\r\n                     <input type=\"date\" id=\"checkInDate\" placeholder=\"Check-In\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n-                \r\n+                <div className='w-px h-15 bg-gray-300/70 max-md:hidden'></div>\r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"checkOutDate\" className='font-medium'>Check-Out</label>\r\n                     <input type=\"date\" id=\"checkOutDate\" placeholder=\"Check-Out\" className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n-                <div className='w-px h-15 bg-gray-300/70 max'></div>\r\n+                <div className='w-px h-15 bg-gray-300/70 max-md:hidden'></div>\r\n                 <div className='flex flex-col'>\r\n                     <label htmlFor=\"guests\" className='font-medium'>Guests</label>\r\n                     <input type=\"number\" id=\"guests\" placeholder=\"0\" className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1746812157336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n \r\n             </div>\r\n \r\n             <button type=\"submit\" className='bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:px-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>\r\n-                    Book Now\r\n+                    Check Availability\r\n             </button>\r\n         </form>\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746860065360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,8 +80,16 @@\n                     Check Availability\r\n             </button>\r\n         </form>\r\n \r\n+        <div>\r\n+            {roomsDummyData.map((room, index) => (\r\n+                <div key={index} className='flex items-start gap-2'>\r\n+                    <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n+                </div>\r\n+            ))}\r\n+        </div>\r\n+\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746860075386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n             </button>\r\n         </form>\r\n \r\n         <div>\r\n-            {roomsDummyData.map((room, index) => (\r\n+            {roomsDummyData.map((spec, index) => (\r\n                 <div key={index} className='flex items-start gap-2'>\r\n                     <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n                 </div>\r\n             ))}\r\n"
+                },
+                {
+                    "date": 1746860114357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,8 +84,12 @@\n         <div>\r\n             {roomsDummyData.map((spec, index) => (\r\n                 <div key={index} className='flex items-start gap-2'>\r\n                     <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n+                    <div>\r\n+                        <p></p>\r\n+                        <p></p>\r\n+                    </div>\r\n                 </div>\r\n             ))}\r\n         </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746860397093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,10 +85,10 @@\n             {roomsDummyData.map((spec, index) => (\r\n                 <div key={index} className='flex items-start gap-2'>\r\n                     <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n                     <div>\r\n-                        <p></p>\r\n-                        <p></p>\r\n+                        <p>{spec.title}</p>\r\n+                        <p>{spec.description}</p>\r\n                     </div>\r\n                 </div>\r\n             ))}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746860796623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n             {roomsDummyData.map((spec, index) => (\r\n                 <div key={index} className='flex items-start gap-2'>\r\n                     <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n                     <div>\r\n-                        <p>{spec.title}</p>\r\n+                        <p className='text-base'>{spec.title}</p>\r\n                         <p>{spec.description}</p>\r\n                     </div>\r\n                 </div>\r\n             ))}\r\n"
+                },
+                {
+                    "date": 1746860806462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n                 <div key={index} className='flex items-start gap-2'>\r\n                     <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n                     <div>\r\n                         <p className='text-base'>{spec.title}</p>\r\n-                        <p>{spec.description}</p>\r\n+                        <p className='text-gray-500'>{spec.description}</p>\r\n                     </div>\r\n                 </div>\r\n             ))}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746860952873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n                     Check Availability\r\n             </button>\r\n         </form>\r\n \r\n-        <div>\r\n+        <div className='mt-25 space-y-4'>\r\n             {roomsDummyData.map((spec, index) => (\r\n                 <div key={index} className='flex items-start gap-2'>\r\n                     <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n                     <div>\r\n"
+                },
+                {
+                    "date": 1746868254523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,6 +95,6 @@\n \r\n     </div>\r\n   )\r\n }\r\n-\r\n+    \r\n export default RoomDetails\r\n"
+                },
+                {
+                    "date": 1746868432848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n             </button>\r\n         </form>\r\n \r\n         <div className='mt-25 space-y-4'>\r\n-            {roomsDummyData.map((spec, index) => (\r\n+            {roomDummyData.map((spec, index) => (\r\n                 <div key={index} className='flex items-start gap-2'>\r\n                     <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n                     <div>\r\n                         <p className='text-base'>{spec.title}</p>\r\n@@ -95,6 +95,6 @@\n \r\n     </div>\r\n   )\r\n }\r\n-    \r\n+\r\n export default RoomDetails\r\n"
+                },
+                {
+                    "date": 1746868439839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React, { useState, useEffect} from 'react'\r\n import { useParams } from 'react-router-dom'\r\n-import { assets, facilityIcons, roomsDummyData } from '../assets/assets'\r\n+import { assets, facilityIcons, roomCommonData, roomsDummyData } from '../assets/assets'\r\n import StarRating from '../components/StarRating'\r\n \r\n const RoomDetails = () => {\r\n     const {id} = useParams()\r\n@@ -81,9 +81,9 @@\n             </button>\r\n         </form>\r\n \r\n         <div className='mt-25 space-y-4'>\r\n-            {roomDummyData.map((spec, index) => (\r\n+            {roomCommonData.map((spec, index) => (\r\n                 <div key={index} className='flex items-start gap-2'>\r\n                     <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />\r\n                     <div>\r\n                         <p className='text-base'>{spec.title}</p>\r\n"
+                },
+                {
+                    "date": 1746868511941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,8 +92,14 @@\n                 </div>\r\n             ))}\r\n         </div>\r\n \r\n+        <div className='max-w-3xl border-y border-gray-300 my-15 py-10 text-gray-500'>\r\n+            <p>\r\n+                Guests will be allocated on the ground floor according to availability. You get a comfortable Two bedroom apartment has a true city feeling. The price quoted is for two guest, at the guest slot please mark the number of guests to get the exact price for groups. The Guests will be allocated ground floor according to availability. You get the comfortable two bedroom apartment that has a true city feeling.\r\n+            </p>\r\n+        </div>\r\n+\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746868928038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,15 +91,8 @@\n                     </div>\r\n                 </div>\r\n             ))}\r\n         </div>\r\n-\r\n-        <div className='max-w-3xl border-y border-gray-300 my-15 py-10 text-gray-500'>\r\n-            <p>\r\n-                Guests will be allocated on the ground floor according to availability. You get a comfortable Two bedroom apartment has a true city feeling. The price quoted is for two guest, at the guest slot please mark the number of guests to get the exact price for groups. The Guests will be allocated ground floor according to availability. You get the comfortable two bedroom apartment that has a true city feeling.\r\n-            </p>\r\n-        </div>\r\n-\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1746777313789,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst RoomDetails = () => {\r\n  return (\r\n    <div>\r\n      \r\n    </div>\r\n  )\r\n}\r\n\r\nexport default RoomDetails\r\n"
+        }
+    ]
+}

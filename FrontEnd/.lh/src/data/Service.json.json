@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/data/Service.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1747379155217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1747379155217,
+            "name": "Commit-0",
+            "content": "[\r\n    {\r\n        \"id\": 1,\r\n        \"title\": \"Bắn cung\",\r\n        \"description\": \"Tham gia trò chơi bắn cung hoàn toàn miễn phí tại khu vực sinh hoạt chung, dành cho mọi lứa tuổi.\",\r\n        \"image\": \"https://drive.google.com/file/d/1BM33OfuWXrGOmv9RKlMLe4u1-q7xqe1O/view?usp=sharing\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"title\": \"Đốt lửa trại\",\r\n        \"description\": \"Thưởng thức những buổi trình diễn nhạc sống sôi động và ấm áp bên ánh lửa trại mỗi tối cuối tuần.\",\r\n        \"image\": \"https://drive.google.com/file/d/1zmqpAXUl4K-07pG5A__V8TgYP5Yk-crz/view?usp=sharing\"\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"title\": \"Xem phim ngoài trời\",\r\n        \"description\": \"Trải nghiệm không gian lửa trại ấm cúng và thưởng thức những bộ phim hấp dẫn dưới bầu trời đầy sao.\",\r\n        \"image\": \"https://drive.google.com/file/d/1zmqpAXUl4K-07pG5A__V8TgYP5Yk-crz/view?usp=sharing\"\r\n    }\r\n]\r\n"
+        }
+    ]
+}

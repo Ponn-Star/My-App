@@ -1,0 +1,190 @@
+{
+    "sourceFile": "src/components/ExclusiveOffers.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 43,
+            "patches": [
+                {
+                    "date": 1746707332633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746707344010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,55 @@\n import Title from './Title';\r\n import { assets, exclusiveOffers } from '../../public/assets/assets';\r\n \r\n const ExclusiveOffers = () => {\r\n-  return (\n\\ No newline at end of file\n+  return (\r\n+    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n+      <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n+        <Title\r\n+          align='left'\r\n+          title='Exclusive Offers'\r\n+          subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'\r\n+        />\r\n+        <button>\r\n+          View All Offers\r\n+          <img\r\n+            src={assets.arrowIcon}\r\n+            alt=\"arrow-icon\"\r\n+            className='group-hover:translate-x-1 transition-all'\r\n+          />\r\n+        </button>\r\n+      </div>\r\n+\r\n+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12'>\r\n+        {exclusiveOffers.map((item) => (\r\n+          <div\r\n+            key={item._id}\r\n+            className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n+            style={{ backgroundImage: `url(\"${item.image}\")` }}\r\n+          >\r\n+            <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>\r\n+              {item.priceOff}% OFF\r\n+            </p>\r\n+\r\n+            <div>\r\n+              <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n+              <p>{item.description}</p>\r\n+              <p className='text-xs text-white/70 mt-3'>Expires {item.expiryDate}</p>\r\n+            </div>\r\n+\r\n+            <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n+              View Offers\r\n+              <img\r\n+                className='invert group-hover:translate-x-1 transition-all'\r\n+                src={assets.arrowIcon}\r\n+                alt=\"arrow-icon\"\r\n+              />\r\n+            </button>\r\n+          </div>\r\n+        ))}\r\n+      </div>\r\n+    </div>\r\n+  );\r\n+};\r\n+\r\n+export default ExclusiveOffers;\r\n"
+                },
+                {
+                    "date": 1746707356165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\r\n import Title from './Title';\r\n-import { assets, exclusiveOffers } from '../../public/assets/assets';\r\n+import assets from '../assets/assets';\r\n+import { exclusiveOffers } from '../constants/exclusiveOffers';\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n"
+                },
+                {
+                    "date": 1746707476636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\r\n import Title from './Title';\r\n import assets from '../assets/assets';\r\n-import { exclusiveOffers } from '../constants/exclusiveOffers';\r\n+import { exclusiveOffers } from './';\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n"
+                },
+                {
+                    "date": 1746707561299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\r\n import Title from './Title';\r\n import assets from '../assets/assets';\r\n-import { exclusiveOffers } from './';\r\n+import { exclusiveOffers } from '../assets/assets';\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n"
+                },
+                {
+                    "date": 1746719726048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,57 +0,0 @@\n-import React from 'react';\r\n-import Title from './Title';\r\n-import assets from '../assets/assets';\r\n-import { exclusiveOffers } from '../assets/assets';\r\n-\r\n-const ExclusiveOffers = () => {\r\n-  return (\r\n-    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n-      <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n-        <Title\r\n-          align='left'\r\n-          title='Exclusive Offers'\r\n-          subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'\r\n-        />\r\n-        <button>\r\n-          View All Offers\r\n-          <img\r\n-            src={assets.arrowIcon}\r\n-            alt=\"arrow-icon\"\r\n-            className='group-hover:translate-x-1 transition-all'\r\n-          />\r\n-        </button>\r\n-      </div>\r\n-\r\n-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12'>\r\n-        {exclusiveOffers.map((item) => (\r\n-          <div\r\n-            key={item._id}\r\n-            className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n-            style={{ backgroundImage: `url(\"${item.image}\")` }}\r\n-          >\r\n-            <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>\r\n-              {item.priceOff}% OFF\r\n-            </p>\r\n-\r\n-            <div>\r\n-              <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n-              <p>{item.description}</p>\r\n-              <p className='text-xs text-white/70 mt-3'>Expires {item.expiryDate}</p>\r\n-            </div>\r\n-\r\n-            <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n-              View Offers\r\n-              <img\r\n-                className='invert group-hover:translate-x-1 transition-all'\r\n-                src={assets.arrowIcon}\r\n-                alt=\"arrow-icon\"\r\n-              />\r\n-            </button>\r\n-          </div>\r\n-        ))}\r\n-      </div>\r\n-    </div>\r\n-  );\r\n-};\r\n-\r\n-export default ExclusiveOffers;\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1746719731811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-\n+import React from 'react'\r\n+\r\n+const ExclusiveOffers = () => {\r\n+  return (\r\n+    <div>\r\n+      \r\n+    </div>\r\n+  )\r\n+}\r\n+\r\n+export default ExclusiveOffers\r\n"
+                },
+                {
+                    "date": 1746719787959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n-      \r\n+      <div>\r\n+        <Title />\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746719838072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n-        <Title />\r\n+        <Title align='left' title=/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746719877641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react'\r\n+import Title from './Title'\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1746719891347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n-        <Title align='left' title=/>\r\n+        <Title align='left' title='' />\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746720013364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n-        <Title align='left' title='' />\r\n+        <Title align='left' title='Exclusive Offers' />\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746720024761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n-        <Title align='left' title='Exclusive Offers' />\r\n+        <Title align='left' title='Exclusive Offers' subTitle=''/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746720033220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n-        <Title align='left' title='Exclusive Offers' subTitle=''/>\r\n+        <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746720091153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,17 @@\n import React from 'react'\r\n import Title from './Title'\r\n+import {assets} from '../assets'\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n       <div>\r\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n+        <button>\r\n+            View All Offers\r\n+            <img src={assets.}\r\n+        </button>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746720119670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n import Title from './Title'\r\n-import {assets} from '../assets'\r\n+import { assets } from '../assets'\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1746720129975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       <div>\r\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n         <button>\r\n             View All Offers\r\n-            <img src={assets.}\r\n+            <img src={assets.a}\r\n         </button>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746720143231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n import Title from './Title'\r\n-import { assets } from '../assets'\r\n+import { assets } from '../assets/assets'\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1746720154672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       <div>\r\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n         <button>\r\n             View All Offers\r\n-            <img src={assets.a}\r\n+            <img src={assets.arrowIcon} alt=\"arrow-icon\" />\r\n         </button>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746720198885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import React from 'react'\r\n+import Title from './Title'\r\n+import { assets } from '../assets/assets'\r\n+\r\n+const ExclusiveOffers = () => {\r\n+  return (\r\n+    <div>\r\n+      <div>\r\n+        <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n+        <button>\r\n+            View All Offers\r\n+            <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n+            className=''/>\r\n+        </button>\r\n+      </div>\r\n+    </div>\r\n+  )\r\n+}\r\n+\r\n+export default ExclusiveOffers\r\n"
+                },
+                {
+                    "date": 1746720210974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,31 +9,12 @@\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n         <button>\r\n             View All Offers\r\n             <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n-            className=''/>\r\n+            className='group-hover:translate-x-1 transition-all'/>\r\n         </button>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n export default ExclusiveOffers\r\n-import React from 'react'\r\n-import Title from './Title'\r\n-import { assets } from '../assets/assets'\r\n-\r\n-const ExclusiveOffers = () => {\r\n-  return (\r\n-    <div>\r\n-      <div>\r\n-        <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n-        <button>\r\n-            View All Offers\r\n-            <img src={assets.arrowIcon} alt=\"arrow-icon\" />\r\n-        </button>\r\n-      </div>\r\n-    </div>\r\n-  )\r\n-}\r\n-\r\n-export default ExclusiveOffers\r\n"
+                },
+                {
+                    "date": 1746720238773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { assets } from '../assets/assets'\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n-    <div>\r\n+    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n       <div>\r\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n         <button>\r\n             View All Offers\r\n"
+                },
+                {
+                    "date": 1746720247031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n-      <div>\r\n+      <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n         <button>\r\n             View All Offers\r\n             <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n"
+                },
+                {
+                    "date": 1746720350174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n       <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n-        <button>\r\n+        <button className='group flex items-center justify-center bg-primary text-white rounded-full px-6 py-3 mt-4 md:mt-0 hover:bg-opacity-90 transition-all'>\r\n             View All Offers\r\n             <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n             className='group-hover:translate-x-1 transition-all'/>\r\n         </button>\r\n"
+                },
+                {
+                    "date": 1746720389200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n       <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n-        <button className='group flex items-center justify-center bg-primary text-white rounded-full px-6 py-3 mt-4 md:mt-0 hover:bg-opacity-90 transition-all'>\r\n+        <button className='group flex items-center gap-2 font-medium cursor-pointer max-md:mt-12'>\r\n             View All Offers\r\n             <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n             className='group-hover:translate-x-1 transition-all'/>\r\n         </button>\r\n"
+                },
+                {
+                    "date": 1746720510128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react'\r\n import Title from './Title'\r\n-import { assets } from '../assets/assets'\r\n+import { assets, exclusiveOffers } from '../assets/assets'\r\n \r\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n@@ -12,8 +12,14 @@\n             <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n             className='group-hover:translate-x-1 transition-all'/>\r\n         </button>\r\n       </div>\r\n+\r\n+      <div>\r\n+        {exclusiveOffers.map((item) => (\r\n+\r\n+        ))}\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746720527765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       </div>\r\n \r\n       <div>\r\n         {exclusiveOffers.map((item) => (\r\n-\r\n+            <div key={item._id} className='flex flex-col md:flex-row items-center justify-between bg-white shadow-lg rounded-lg p-6 mt-6'>\r\n         ))}\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746720550036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       </div>\r\n \r\n       <div>\r\n         {exclusiveOffers.map((item) => (\r\n-            <div key={item._id} className='flex flex-col md:flex-row items-center justify-between bg-white shadow-lg rounded-lg p-6 mt-6'>\r\n+            <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n         ))}\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746720567331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,10 @@\n \r\n       <div>\r\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n+            \r\n+            >\r\n         ))}\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746720591313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \r\n       <div>\r\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n-            \r\n+            style={{ backgroundImage: `url(${item.image})` }}>\r\n             >\r\n         ))}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746720646143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n       <div>\r\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n-            >\r\n+\r\n+            </div>\r\n         ))}\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746720678764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       <div>\r\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n-\r\n+                <p>{item.priceOff}% OFF</p>\r\n             </div>\r\n         ))}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746720710378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       <div>\r\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n-                <p>{item.priceOff}% OFF</p>\r\n+                <pclassName='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</pclassName=>\r\n             </div>\r\n         ))}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746720715615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       <div>\r\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n-                <pclassName='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</pclassName=>\r\n+                <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n             </div>\r\n         ))}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746720775238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,13 @@\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n                 <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n+                <div>\r\n+                    <p>{item.title}</p>\r\n+                    <p>{item.description}</p>\r\n+                    <p>{item.description}</p>\r\n+                </div>\r\n             </div>\r\n         ))}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746720799809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                 <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n                 <div>\r\n                     <p>{item.title}</p>\r\n                     <p>{item.description}</p>\r\n-                    <p>{item.description}</p>\r\n+                    <p>Expires {item.expiryDate}</p>\r\n                 </div>\r\n             </div>\r\n         ))}\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746720836699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,12 @@\n                     <p>{item.title}</p>\r\n                     <p>{item.description}</p>\r\n                     <p>Expires {item.expiryDate}</p>\r\n                 </div>\r\n+                <button>\r\n+                    View offers\r\n+                    <img src={assets.arrowIcon} alt=\"\" />\r\n+                </button>\r\n             </div>\r\n         ))}\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746720861110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n                 <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n                 <div>\r\n-                    <p>{item.title}</p>\r\n+                    <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n                     <p>{item.description}</p>\r\n                     <p>Expires {item.expiryDate}</p>\r\n                 </div>\r\n                 <button>\r\n"
+                },
+                {
+                    "date": 1746720874586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n                     <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n                     <p>{item.description}</p>\r\n                     <p>Expires {item.expiryDate}</p>\r\n                 </div>\r\n-                <button>\r\n+                <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n                     View offers\r\n                     <img src={assets.arrowIcon} alt=\"\" />\r\n                 </button>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1746720892478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                     <p>Expires {item.expiryDate}</p>\r\n                 </div>\r\n                 <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n                     View offers\r\n-                    <img src={assets.arrowIcon} alt=\"\" />\r\n+                    <img className='invert group-hover:translate-x-1 transition-all' src={assets.arrowIcon} alt=\"\" />\r\n                 </button>\r\n             </div>\r\n         ))}\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746720907879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,11 @@\n                     <p>Expires {item.expiryDate}</p>\r\n                 </div>\r\n                 <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n                     View offers\r\n-                    <img className='invert group-hover:translate-x-1 transition-all' src={assets.arrowIcon} alt=\"\" />\r\n+                    <img className='invert group-hover:translate-x-1 transition-all' \r\n+                    src={assets.arrowIcon} alt=\"\" \r\n+                    />\r\n                 </button>\r\n             </div>\r\n         ))}\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746720925092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                 <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n                 <div>\r\n                     <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n                     <p>{item.description}</p>\r\n-                    <p>Expires {item.expiryDate}</p>\r\n+                    <p className='text-xs text-white/70 mt-3'>Expires {item.expiryDate}</p>\r\n                 </div>\r\n                 <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n                     View offers\r\n                     <img className='invert group-hover:translate-x-1 transition-all' \r\n"
+                },
+                {
+                    "date": 1746720948527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n             className='group-hover:translate-x-1 transition-all'/>\r\n         </button>\r\n       </div>\r\n \r\n-      <div>\r\n+      <div >\r\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n                 <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n"
+                },
+                {
+                    "date": 1746720956833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n             className='group-hover:translate-x-1 transition-all'/>\r\n         </button>\r\n       </div>\r\n \r\n-      <div >\r\n+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12'>\r\n         {exclusiveOffers.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n                 <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n"
+                }
+            ],
+            "date": 1746707332633,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\nimport Title from './Title';\r\nimport { assets, exclusiveOffers } from '../../public/assets/assets';\r\n\r\nconst ExclusiveOffers = () => {\r\n  return ("
+        }
+    ]
+}

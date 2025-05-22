@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/components/StarRating.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1746722623697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746722653114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const StarRating = () => {\r\n   return (\r\n     <>\r\n       {Array(5).fill(0).map((_, index) => (\r\n-            <Star key={index} filled={testimonial.rating > index} />\r\n+            <img src={}\r\n         ))}\r\n     </>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746722668774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react'\r\n \r\n+\r\n const StarRating = () => {\r\n   return (\r\n     <>\r\n       {Array(5).fill(0).map((_, index) => (\r\n"
+                },
+                {
+                    "date": 1746722679595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \r\n const StarRating = () => {\r\n   return (\r\n     <>\r\n-      {Array(5).fill(0).map((_, index) => (\r\n-            <img src={}\r\n+      {Array(5).fill('').map((_, index) => (\r\n+            <img src={rat}\r\n         ))}\r\n     </>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746722727542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import React from 'react'\r\n+import { assets } from '../assets/assets'\r\n \r\n \r\n const StarRating = () => {\r\n   return (\r\n     <>\r\n       {Array(5).fill('').map((_, index) => (\r\n-            <img src={rat}\r\n+            <img src={rating > index ? assets.starIconFilled : assets.starIconOutlined} alt=\"star-icon\" className='w-4.5'/>\r\n         ))}\r\n     </>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746722736325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const StarRating = () => {\r\n   return (\r\n     <>\r\n       {Array(5).fill('').map((_, index) => (\r\n-            <img src={rating > index ? assets.starIconFilled : assets.starIconOutlined} alt=\"star-icon\" className='w-4.5'/>\r\n+            <img src={rating > index ? assets.starIconFilled : assets.starIconOutlined} alt=\"star-icon\" className='w-4.5 h-4.5'/>\r\n         ))}\r\n     </>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746722820411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n import { assets } from '../assets/assets'\r\n \r\n \r\n-const StarRating = () => {\r\n+const StarRating = ({rating = 4}) => {\r\n   return (\r\n     <>\r\n       {Array(5).fill('').map((_, index) => (\r\n             <img src={rating > index ? assets.starIconFilled : assets.starIconOutlined} alt=\"star-icon\" className='w-4.5 h-4.5'/>\r\n"
+                }
+            ],
+            "date": 1746722623697,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst StarRating = () => {\r\n  return (\r\n    <>\r\n      {Array(5).fill(0).map((_, index) => (\r\n            <Star key={index} filled={testimonial.rating > index} />\r\n        ))}\r\n    </>\r\n  )\r\n}\r\n\r\nexport default StarRating\r\n"
+        }
+    ]
+}

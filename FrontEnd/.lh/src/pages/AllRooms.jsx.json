@@ -1,0 +1,426 @@
+{
+    "sourceFile": "src/pages/AllRooms.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 102,
+            "patches": [
+                {
+                    "date": 1746723568158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746723582725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n const AllRooms = () => {\r\n   return (\r\n     <div>\r\n-      \r\n+      <h1>Hi</h1>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746723665499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const AllRooms = () => {\r\n   return (\r\n-    <div>\r\n+    <div className='flex flex-col'>\r\n       <h1>Hi</h1>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746723730977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const AllRooms = () => {\r\n   return (\r\n-    <div className='flex flex-col'>\r\n+    <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24'>\r\n       <h1>Hi</h1>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746723743000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n \r\n const AllRooms = () => {\r\n   return (\r\n-    <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24'>\r\n+    <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <h1>Hi</h1>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746723856079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,17 @@\n \r\n const AllRooms = () => {\r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n-      <h1>Hi</h1>\r\n+      <div>\r\n+        <div>\r\n+            <h1 className='font-playfair text-4xl md:text-[40px]'>Danh Sách Glamping</h1>\r\n+        </div>\r\n+      </div>\r\n+\r\n+      <div>\r\n+\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746723922245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n         <div>\r\n             <h1 className='font-playfair text-4xl md:text-[40px]'>Danh Sách Glamping</h1>\r\n+            <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n         </div>\r\n       </div>\r\n \r\n       <div>\r\n"
+                },
+                {
+                    "date": 1746723942605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import React from 'react'\r\n+\r\n+const AllRooms = () => {\r\n+  return (\r\n+    <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n+      <div>\r\n+        <div className='flex flex-col items-start text-left'>\r\n+            <h1 className='font-playfair text-4xl md:text-[40px]'>Danh Sách Glamping</h1>\r\n+            <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n+        </div>\r\n+      </div>\r\n+\r\n+      <div>\r\n+\r\n+      </div>\r\n+    </div>\r\n+  )\r\n+}\r\n+\r\n+export default AllRooms\r\n"
+                },
+                {
+                    "date": 1746724062830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,32 +7,14 @@\n         <div className='flex flex-col items-start text-left'>\r\n             <h1 className='font-playfair text-4xl md:text-[40px]'>Danh Sách Glamping</h1>\r\n             <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n         </div>\r\n-      </div>\r\n \r\n-      <div>\r\n-\r\n+        {roomsDummyData.map}\r\n       </div>\r\n-    </div>\r\n-  )\r\n-}\r\n \r\n-export default AllRooms\r\n-import React from 'react'\r\n-\r\n-const AllRooms = () => {\r\n-  return (\r\n-    <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n-        <div>\r\n-            <h1 className='font-playfair text-4xl md:text-[40px]'>Danh Sách Glamping</h1>\r\n-            <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n-        </div>\r\n-      </div>\r\n \r\n-      <div>\r\n-\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746724079510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react'\r\n+import { }\r\n \r\n const AllRooms = () => {\r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n"
+                },
+                {
+                    "date": 1746724098957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\r\n-import { }\r\n+import { roomsDummyData } from '../assets/assets'\r\n \r\n const AllRooms = () => {\r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n"
+                },
+                {
+                    "date": 1746724112928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n             <h1 className='font-playfair text-4xl md:text-[40px]'>Danh Sách Glamping</h1>\r\n             <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n         </div>\r\n \r\n-        {roomsDummyData.map}\r\n+        {roomsDummyData.map((room, index) => (\r\n+            \r\n+        ))}\r\n       </div>\r\n \r\n       <div>\r\n \r\n"
+                },
+                {
+                    "date": 1746724215265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,12 @@\n             <h1 className='font-playfair text-4xl md:text-[40px]'>Danh Sách Glamping</h1>\r\n             <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n         </div>\r\n \r\n-        {roomsDummyData.map((room, index) => (\r\n-            \r\n+        {roomsDummyData.map((room) => (\r\n+            <div>\r\n+                <img src={room.images[0]} alt='hotel-img' title='View Room Details' className='max-h-65 md:w-1/2 rounded-xl shadow'\r\n+            </div>\r\n         ))}\r\n       </div>\r\n \r\n       <div>\r\n"
+                },
+                {
+                    "date": 1746724252859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n             <div>\r\n-                <img src={room.images[0]} alt='hotel-img' title='View Room Details' className='max-h-65 md:w-1/2 rounded-xl shadow'\r\n+                <img src={room.images[0]} alt='hotel-img' title='View Room Details' className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'\r\n             </div>\r\n         ))}\r\n       </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746724275205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n             <div>\r\n-                <img src={room.images[0]} alt='hotel-img' title='View Room Details' className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'\r\n+                <img src={room.images[0]} alt='hotel-img' title='View Room Details' className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n             </div>\r\n         ))}\r\n       </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746724298431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,13 @@\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n             <div>\r\n-                <img src={room.images[0]} alt='hotel-img' title='View Room Details' className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n+                <img onClick={}\r\n+                src={room.images[0]} \r\n+                alt='hotel-img'\r\n+                 title='View Room Details' \r\n+                 className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n             </div>\r\n         ))}\r\n       </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746724329391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from 'react'\r\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const AllRooms = () => {\r\n+    const navigate = useNavigate()\r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n         <div className='flex flex-col items-start text-left'>\r\n"
+                },
+                {
+                    "date": 1746724335125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react'\r\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const AllRooms = () => {\r\n-    const navigate = useNavigate()\r\n+    const navigate = useNavigate();\r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n         <div className='flex flex-col items-start text-left'>\r\n"
+                },
+                {
+                    "date": 1746724346423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n             <div>\r\n-                <img onClick={}\r\n+                <img onClick={() => navigate(`/room/${room._id}`)}\r\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n"
+                },
+                {
+                    "date": 1746724364127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n             <div>\r\n-                <img onClick={() => navigate(`/room/${room._id}`)}\r\n+                <img onClick={() => navigate(`/rooms/${room._id}`)}\r\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n"
+                },
+                {
+                    "date": 1746724427770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,12 @@\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n+                 <div>\r\n+                    <p>{room.hotel.city}</p>\r\n+                    <p>{room.hotel.name}</p>\r\n+                 </div>\r\n             </div>\r\n         ))}\r\n       </div>\r\n \r\n"
+                },
+                {
+                    "date": 1746724450867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n+    \r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n         <div className='flex flex-col items-start text-left'>\r\n"
+                },
+                {
+                    "date": 1746724498104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { roomsDummyData } from '../assets/assets'\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n-    \r\n+\r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n         <div className='flex flex-col items-start text-left'>\r\n@@ -21,8 +21,12 @@\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n                  <div>\r\n                     <p>{room.hotel.city}</p>\r\n                     <p>{room.hotel.name}</p>\r\n+                    <div>\r\n+                        <StarRating/>\r\n+                        <p></p>\r\n+                    </div>\r\n                  </div>\r\n             </div>\r\n         ))}\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746724542149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,11 @@\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n                  <div>\r\n                     <p>{room.hotel.city}</p>\r\n                     <p>{room.hotel.name}</p>\r\n-                    <div>\r\n+                    <div className='flex items-center'>\r\n                         <StarRating/>\r\n-                        <p></p>\r\n+                        <p className='ml-2'>200+ reviews</p>\r\n                     </div>\r\n                  </div>\r\n             </div>\r\n         ))}\r\n"
+                },
+                {
+                    "date": 1746724568568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n-                 <div>\r\n+                 <div className='md:w-1/2 flex flex-col gap-2'>\r\n                     <p>{room.hotel.city}</p>\r\n                     <p>{room.hotel.name}</p>\r\n                     <div className='flex items-center'>\r\n                         <StarRating/>\r\n"
+                },
+                {
+                    "date": 1746724598708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n                  <div className='md:w-1/2 flex flex-col gap-2'>\r\n-                    <p>{room.hotel.city}</p>\r\n+                    <p className=''>{room.hotel.city}</p>\r\n                     <p>{room.hotel.name}</p>\r\n                     <div className='flex items-center'>\r\n                         <StarRating/>\r\n                         <p className='ml-2'>200+ reviews</p>\r\n"
+                },
+                {
+                    "date": 1746724637007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n                  <div className='md:w-1/2 flex flex-col gap-2'>\r\n-                    <p className=''>{room.hotel.city}</p>\r\n-                    <p>{room.hotel.name}</p>\r\n+                    <p className='text-gray-500'>{room.hotel.city}</p>\r\n+                    <p className='text-gray-800 text-3xl font-playfair cursor-pointer'>{room.hotel.name}</p>\r\n                     <div className='flex items-center'>\r\n                         <StarRating/>\r\n                         <p className='ml-2'>200+ reviews</p>\r\n                     </div>\r\n"
+                },
+                {
+                    "date": 1746724679421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n             <div>\r\n-                <img onClick={() => navigate(`/rooms/${room._id}`)}\r\n+                <img onClick={() => {navigate(`/rooms/${room._id}`)}}\r\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n"
+                },
+                {
+                    "date": 1746724742889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n             <div>\r\n-                <img onClick={() => {navigate(`/rooms/${room._id}`)}}\r\n+                <img onClick={() => {navigate(`/rooms/${room._id}`); scrollTo(0, 0)}}\r\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n"
+                },
+                {
+                    "date": 1746724772742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n                  title='View Room Details' \r\n                  className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>\r\n                  <div className='md:w-1/2 flex flex-col gap-2'>\r\n                     <p className='text-gray-500'>{room.hotel.city}</p>\r\n-                    <p className='text-gray-800 text-3xl font-playfair cursor-pointer'>{room.hotel.name}</p>\r\n+                    <p onClick={() => {navigate(`/rooms/${room._id}`); scrollTo(0, 0)}} className='text-gray-800 text-3xl font-playfair cursor-pointer'>{room.hotel.name}</p>\r\n                     <div className='flex items-center'>\r\n                         <StarRating/>\r\n                         <p className='ml-2'>200+ reviews</p>\r\n                     </div>\r\n"
+                },
+                {
+                    "date": 1746724834578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\r\n-import { roomsDummyData } from '../assets/assets'\r\n+import { assets, roomsDummyData } from '../assets/assets'\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n \r\n@@ -25,8 +25,12 @@\n                     <div className='flex items-center'>\r\n                         <StarRating/>\r\n                         <p className='ml-2'>200+ reviews</p>\r\n                     </div>\r\n+                    <div>\r\n+                        <img src={assets.locationIcon} alt='location-icon' />\r\n+                        <span>{room.hotel.address}</span>\r\n+                    </div>\r\n                  </div>\r\n             </div>\r\n         ))}\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746724859774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                     <div className='flex items-center'>\r\n                         <StarRating/>\r\n                         <p className='ml-2'>200+ reviews</p>\r\n                     </div>\r\n-                    <div>\r\n+                    <div className='flex items-center gap-1 text-gray-500 mt-2 text-sm'>\r\n                         <img src={assets.locationIcon} alt='location-icon' />\r\n                         <span>{room.hotel.address}</span>\r\n                     </div>\r\n                  </div>\r\n"
+                },
+                {
+                    "date": 1746727033876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n             <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n-            <div>\r\n+            <div className='flex flex-col md:flex-rơ items-start py-10 gap-6 border-b border-gray-300 last:pb-30 last:border-0'>\r\n                 <img onClick={() => {navigate(`/rooms/${room._id}`); scrollTo(0, 0)}}\r\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n"
+                },
+                {
+                    "date": 1746727056058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n             <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n-            <div className='flex flex-col md:flex-rơ items-start py-10 gap-6 border-b border-gray-300 last:pb-30 last:border-0'>\r\n+            <div key={room._id} className='flex flex-col md:flex-rơ items-start py-10 gap-6 border-b border-gray-300 last:pb-30 last:border-0'>\r\n                 <img onClick={() => {navigate(`/rooms/${room._id}`); scrollTo(0, 0)}}\r\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n"
+                },
+                {
+                    "date": 1746727838360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react'\r\n import { assets, roomsDummyData } from '../assets/assets'\r\n+import { useNavigate } from 'react-router-dom';\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n \r\n"
+                },
+                {
+                    "date": 1746728761358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react'\r\n import { assets, roomsDummyData } from '../assets/assets'\r\n import { useNavigate } from 'react-router-dom';\r\n+import StarRating from '../components/StarRating'\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n \r\n"
+                },
+                {
+                    "date": 1746728985052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n             <p className='text-sm md:text-base text-gray-500/90 mt-2'>Description</p>\r\n         </div>\r\n \r\n         {roomsDummyData.map((room) => (\r\n-            <div key={room._id} className='flex flex-col md:flex-rơ items-start py-10 gap-6 border-b border-gray-300 last:pb-30 last:border-0'>\r\n+            <div key={room._id} className='flex flex-col md:flex-row items-start py-10 gap-6 border-b border-gray-300 last:pb-30 last:border-0'>\r\n                 <img onClick={() => {navigate(`/rooms/${room._id}`); scrollTo(0, 0)}}\r\n                 src={room.images[0]} \r\n                 alt='hotel-img'\r\n                  title='View Room Details' \r\n"
+                },
+                {
+                    "date": 1746770943699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,14 @@\n                     <div className='flex items-center gap-1 text-gray-500 mt-2 text-sm'>\r\n                         <img src={assets.locationIcon} alt='location-icon' />\r\n                         <span>{room.hotel.address}</span>\r\n                     </div>\r\n+\r\n+                    <div>\r\n+                      {room.amenities.map((amenity, index) => (\r\n+                        \r\n+                      ))}\r\n+                    </div>\r\n                  </div>\r\n             </div>\r\n         ))}\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746770951843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,10 @@\n                         <span>{room.hotel.address}</span>\r\n                     </div>\r\n \r\n                     <div>\r\n-                      {room.amenities.map((amenity, index) => (\r\n-                        \r\n+                      {room.amenities.map((item, index) => (\r\n+\r\n                       ))}\r\n                     </div>\r\n                  </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1746770970829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react'\r\n-import { assets, roomsDummyData } from '../assets/assets'\r\n+import { assets, facilityIcons, roomsDummyData } from '../assets/assets'\r\n import { useNavigate } from 'react-router-dom';\r\n import StarRating from '../components/StarRating'\r\n \r\n const AllRooms = () => {\r\n@@ -34,9 +34,11 @@\n                     </div>\r\n \r\n                     <div>\r\n                       {room.amenities.map((item, index) => (\r\n-\r\n+                        <div>\r\n+                          <img src={facilityIcons}\r\n+                        </div>\r\n                       ))}\r\n                     </div>\r\n                  </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1746770978548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \r\n                     <div>\r\n                       {room.amenities.map((item, index) => (\r\n                         <div>\r\n-                          <img src={facilityIcons}\r\n+                          <img src={facilityIcons[item]}\r\n                         </div>\r\n                       ))}\r\n                     </div>\r\n                  </div>\r\n"
+                },
+                {
+                    "date": 1746770987282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \r\n                     <div>\r\n                       {room.amenities.map((item, index) => (\r\n                         <div>\r\n-                          <img src={facilityIcons[item]}\r\n+                          <img src={facilityIcons[item]} alt={item}\r\n                         </div>\r\n                       ))}\r\n                     </div>\r\n                  </div>\r\n"
+                },
+                {
+                    "date": 1746771012801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,10 @@\n \r\n                     <div>\r\n                       {room.amenities.map((item, index) => (\r\n                         <div>\r\n-                          <img src={facilityIcons[item]} alt={item}\r\n+                          <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n+                          <p className='text-xs'>{item}</p>\r\n                         </div>\r\n                       ))}\r\n                     </div>\r\n                  </div>\r\n"
+                },
+                {
+                    "date": 1746771022772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                         <img src={assets.locationIcon} alt='location-icon' />\r\n                         <span>{room.hotel.address}</span>\r\n                     </div>\r\n \r\n-                    <div>\r\n+                    <div className='flex items-center gap-2 mt-4'>\r\n                       {room.amenities.map((item, index) => (\r\n                         <div>\r\n                           <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                           <p className='text-xs'>{item}</p>\r\n"
+                },
+                {
+                    "date": 1746771030818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                         <img src={assets.locationIcon} alt='location-icon' />\r\n                         <span>{room.hotel.address}</span>\r\n                     </div>\r\n \r\n-                    <div className='flex items-center gap-2 mt-4'>\r\n+                    <div className='flex flex-wrap items-center gap-2 mt-4'>\r\n                       {room.amenities.map((item, index) => (\r\n                         <div>\r\n                           <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                           <p className='text-xs'>{item}</p>\r\n"
+                },
+                {
+                    "date": 1746771038044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                         <img src={assets.locationIcon} alt='location-icon' />\r\n                         <span>{room.hotel.address}</span>\r\n                     </div>\r\n \r\n-                    <div className='flex flex-wrap items-center gap-2 mt-4'>\r\n+                    <div className='flex flex-wrap items-center gap-2 mt-3'>\r\n                       {room.amenities.map((item, index) => (\r\n                         <div>\r\n                           <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                           <p className='text-xs'>{item}</p>\r\n"
+                },
+                {
+                    "date": 1746771044680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                         <img src={assets.locationIcon} alt='location-icon' />\r\n                         <span>{room.hotel.address}</span>\r\n                     </div>\r\n \r\n-                    <div className='flex flex-wrap items-center gap-2 mt-3'>\r\n+                    <div className='flex flex-wrap items-center gap-4 mb-6mt-3'>\r\n                       {room.amenities.map((item, index) => (\r\n                         <div>\r\n                           <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                           <p className='text-xs'>{item}</p>\r\n"
+                },
+                {
+                    "date": 1746771058608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,11 @@\n                         <img src={assets.locationIcon} alt='location-icon' />\r\n                         <span>{room.hotel.address}</span>\r\n                     </div>\r\n \r\n-                    <div className='flex flex-wrap items-center gap-4 mb-6mt-3'>\r\n+                    <div className='flex flex-wrap items-center gap-4 mb-6 mt-3'>\r\n                       {room.amenities.map((item, index) => (\r\n-                        <div>\r\n+                        <div key ={index} className='flex flex-col items-center gap-1'>\r\n                           <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                           <p className='text-xs'>{item}</p>\r\n                         </div>\r\n                       ))}\r\n"
+                },
+                {
+                    "date": 1746771074180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                     </div>\r\n \r\n                     <div className='flex flex-wrap items-center gap-4 mb-6 mt-3'>\r\n                       {room.amenities.map((item, index) => (\r\n-                        <div key ={index} className='flex flex-col items-center gap-1'>\r\n+                        <div key ={index} className='flex items-center gap-1'>\r\n                           <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                           <p className='text-xs'>{item}</p>\r\n                         </div>\r\n                       ))}\r\n"
+                },
+                {
+                    "date": 1746771091366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                     </div>\r\n \r\n                     <div className='flex flex-wrap items-center gap-4 mb-6 mt-3'>\r\n                       {room.amenities.map((item, index) => (\r\n-                        <div key ={index} className='flex items-center gap-1'>\r\n+                        <div key ={index} className='flex items-center gap-2 px-3 py-2 rounded-lg bg-['>\r\n                           <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                           <p className='text-xs'>{item}</p>\r\n                         </div>\r\n                       ))}\r\n"
+                },
+                {
+                    "date": 1746771116764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                     </div>\r\n \r\n                     <div className='flex flex-wrap items-center gap-4 mb-6 mt-3'>\r\n                       {room.amenities.map((item, index) => (\r\n-                        <div key ={index} className='flex items-center gap-2 px-3 py-2 rounded-lg bg-['>\r\n+                        <div key ={index} className='flex items-center gap-2 px-3 py-2 rounded-lg bg-[#F5F5FF]/70'>\r\n                           <img src={facilityIcons[item]} alt={item} className='w-5 h-5' />\r\n                           <p className='text-xs'>{item}</p>\r\n                         </div>\r\n                       ))}\r\n"
+                },
+                {
+                    "date": 1746771205597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,11 @@\n                           <p className='text-xs'>{item}</p>\r\n                         </div>\r\n                       ))}\r\n                     </div>\r\n+                    <p>\r\n+                      ${room.pricePerNight} / night\r\n+                    </p>\r\n                  </div>\r\n             </div>\r\n         ))}\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746771224756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n                           <p className='text-xs'>{item}</p>\r\n                         </div>\r\n                       ))}\r\n                     </div>\r\n-                    <p>\r\n+                    <p className='text-xl font-'>\r\n                       ${room.pricePerNight} / night\r\n                     </p>\r\n                  </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1746771234663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n                           <p className='text-xs'>{item}</p>\r\n                         </div>\r\n                       ))}\r\n                     </div>\r\n-                    <p className='text-xl font-'>\r\n+                    <p className='text-xl font-medium text-gray-700'>\r\n                       ${room.pricePerNight} / night\r\n                     </p>\r\n                  </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1746771343301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n             </div>\r\n         ))}\r\n       </div>\r\n \r\n-      <div>\r\n+      <div className='bg-white w-80 border border-gray-300 rounded-xl shadow-lg p-6 hidden lg:flex flex-col gap-6'>\r\n \r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746771401999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,10 +48,12 @@\n             </div>\r\n         ))}\r\n       </div>\r\n \r\n-      <div className='bg-white w-80 border border-gray-300 rounded-xl shadow-lg p-6 hidden lg:flex flex-col gap-6'>\r\n-\r\n+      <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n+        <div>\r\n+          <p>FILTERS</p>\r\n+        </div>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746771418731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,11 @@\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n           <p>FILTERS</p>\r\n+          <div>\r\n+            Clear\r\n+          </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746771454729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n           <p>FILTERS</p>\r\n           <div>\r\n-            Clear\r\n+            <span>Clear</span>\r\n           </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746771476066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,10 @@\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n           <p>FILTERS</p>\r\n           <div>\r\n-            <span>Clear</span>\r\n+            <span></span>\r\n+            <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746771501472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n           <p>FILTERS</p>\r\n           <div>\r\n-            <span></span>\r\n+            <span className='lg:hidden'>HIDE</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746771517438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n           <p>FILTERS</p>\r\n-          <div>\r\n+          <div className='text-xs cursor-pointer'>\r\n             <span className='lg:hidden'>HIDE</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746771545207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n-          <p>FILTERS</p>\r\n+          <p className='text-base font-medium text-gray '>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span className='lg:hidden'>HIDE</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1746771576986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import StarRating from '../components/StarRating'\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n+    const [openFilters, setOpenFilters] = React.useState(false);\r\n \r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n@@ -50,9 +51,9 @@\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n-          <p className='text-base font-medium text-gray '>FILTERS</p>\r\n+          <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span className='lg:hidden'>HIDE</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1746771583610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import StarRating from '../components/StarRating'\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n-    const [openFilters, setOpenFilters] = React.useState(false);\r\n+    const [openFilters, setOpenFilters] = useState(false);\r\n \r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1746771591299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import StarRating from '../components/StarRating'\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n-    const [openFilters, setOpenFilters] = useState(false);\r\n+    const [openFilters, setOpenFilters] = useState(false)\r\n \r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1746771651464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n-            <span className='lg:hidden'>HIDE</span>\r\n+            <span className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746771686577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n-            <span className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n+            <span onClick={()=> setOpenFilters(!open)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746771696083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n         <div>\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n-            <span onClick={()=> setOpenFilters(!open)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n+            <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746771720485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         ))}\r\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n-        <div>\r\n+        <div className={}>\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n"
+                },
+                {
+                    "date": 1746771746842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         ))}\r\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n-        <div className={}>\r\n+        <div className={`flex items-center justify-between px-4 py-3 border-b border-gray-300 ${openFilters ? 'bg-[#F5F5FF]' : 'bg-white'}`} onClick={() => setOpenFilters(!openFilters)}>\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n"
+                },
+                {
+                    "date": 1746771774165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         ))}\r\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n-        <div className={`flex items-center justify-between px-4 py-3 border-b border-gray-300 ${openFilters ? 'bg-[#F5F5FF]' : 'bg-white'}`} onClick={() => setOpenFilters(!openFilters)}>\r\n+        <div className={`flex items-center justify-between px-4 py-3 border-b border-gray-300 ${openFilters ? 'bg-[#F5F5FF]' : 'bg-white'}`} >\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n"
+                },
+                {
+                    "date": 1746771786758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         ))}\r\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n-        <div className={`flex items-center justify-between px-4 py-3 border-b border-gray-300 ${openFilters ? 'bg-[#F5F5FF]' : 'bg-white'}`} >\r\n+        <div className={`flex items-center justify-between px-5 py-3 border-b border-gray-300 ${openFilters ? 'bg-[#F5F5FF]' : 'bg-white'}`} >\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n"
+                },
+                {
+                    "date": 1746771810453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         ))}\r\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n-        <div className={`flex items-center justify-between px-5 py-3 border-b border-gray-300 ${openFilters ? 'bg-[#F5F5FF]' : 'bg-white'}`} >\r\n+        <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters ? 'bg-[#F5F5FF]' : 'bg-white'}`} >\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n"
+                },
+                {
+                    "date": 1746771817028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         ))}\r\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n-        <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters ? 'bg-[#F5F5FF]' : 'bg-white'}`} >\r\n+        <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters && 'bg-[#F5F5FF]' : 'bg-white'}`} >\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n"
+                },
+                {
+                    "date": 1746771828509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         ))}\r\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n-        <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters && 'bg-[#F5F5FF]' : 'bg-white'}`} >\r\n+        <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters && 'border'}`} >\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n"
+                },
+                {
+                    "date": 1746771833777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         ))}\r\n       </div>\r\n \r\n       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>\r\n-        <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters && 'border'}`} >\r\n+        <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters && 'border-b'}`} >\r\n           <p className='text-base font-medium text-gray-800'>FILTERS</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n"
+                },
+                {
+                    "date": 1746771885053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,12 @@\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n         </div>\r\n+        \r\n+        <div className={`${openFilters ? 'h-auto' : \"h-\"}`}>\r\n+\r\n+        </div>\r\n       </div>\r\n     </div>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746771925940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n             <span className='hidden lg:block'>Clear</span>\r\n           </div>\r\n         </div>\r\n         \r\n-        <div className={`${openFilters ? 'h-auto' : \"h-\"}`}>\r\n+        <div className={`${openFilters ? 'h-auto' : \"h-0 lg:h-auto\"} overflow-hidden transition-all duration-700`}>\r\n \r\n         </div>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746771980251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,11 @@\n           </div>\r\n         </div>\r\n         \r\n         <div className={`${openFilters ? 'h-auto' : \"h-0 lg:h-auto\"} overflow-hidden transition-all duration-700`}>\r\n-\r\n+          <div className='px-5 pt-5'>\r\n+            <p className='font-medium text-gray-800 pb-2'>Popular filters</p>\r\n+          </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746772013631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,12 @@\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n     const [openFilters, setOpenFilters] = useState(false)\r\n \r\n+    const rooomTypes = [\r\n+      \r\n+    ];\r\n+\r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n         <div className='flex flex-col items-start text-left'>\r\n"
+                },
+                {
+                    "date": 1746772071488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,28 @@\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n     const [openFilters, setOpenFilters] = useState(false)\r\n \r\n-    const rooomTypes = [\r\n-      \r\n-    ];\r\n+    const roomTypes = [\r\n+      \"Single Bed\",\r\n+      \"Double Bed\",\r\n+      \"Luxury Room\",\r\n+      \"Family Suite\",\r\n+  ];\r\n+  \r\n+  const priceRanges = [\r\n+      '0 to 500',\r\n+      '500 to 1000',\r\n+      '1000 to 2000',\r\n+      '2000 to 3000',\r\n+  ];\r\n+  \r\n+  const sortOptions = [\r\n+      \"Price Low to High\",\r\n+      \"Price High to Low\",\r\n+      \"Newest First\",\r\n+  ];\r\n+  \r\n \r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <div>\r\n"
+                },
+                {
+                    "date": 1746772160831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,12 @@\n import { assets, facilityIcons, roomsDummyData } from '../assets/assets'\r\n import { useNavigate } from 'react-router-dom';\r\n import StarRating from '../components/StarRating'\r\n \r\n+const CheckBox = ({label, selected = false, onChange = () => {}}) => {\r\n+\r\n+}\r\n+\r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n     const [openFilters, setOpenFilters] = useState(false)\r\n \r\n@@ -11,22 +15,22 @@\n       \"Single Bed\",\r\n       \"Double Bed\",\r\n       \"Luxury Room\",\r\n       \"Family Suite\",\r\n-  ];\r\n+    ];\r\n   \r\n   const priceRanges = [\r\n       '0 to 500',\r\n       '500 to 1000',\r\n       '1000 to 2000',\r\n       '2000 to 3000',\r\n-  ];\r\n+    ];\r\n   \r\n   const sortOptions = [\r\n       \"Price Low to High\",\r\n       \"Price High to Low\",\r\n       \"Newest First\",\r\n-  ];\r\n+    ];\r\n   \r\n \r\n   return (\r\n     <div className='flex flex-col-reverse lg:flex-row justify-between items-start pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n"
+                },
+                {
+                    "date": 1746772189905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n import { useNavigate } from 'react-router-dom';\r\n import StarRating from '../components/StarRating'\r\n \r\n const CheckBox = ({label, selected = false, onChange = () => {}}) => {\r\n-\r\n+  return (\r\n+    <label htmlFor=\"\"></label>\r\n+  )\r\n }\r\n \r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n"
+                },
+                {
+                    "date": 1746772238010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,12 @@\n import StarRating from '../components/StarRating'\r\n \r\n const CheckBox = ({label, selected = false, onChange = () => {}}) => {\r\n   return (\r\n-    <label htmlFor=\"\"></label>\r\n+    <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm'>\r\n+      <input type='checkbox' checked={selected} onChange={onChange} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n+      <span className='text-gray-600'>{label}</span>\r\n+    </label>\r\n   )\r\n }\r\n \r\n const AllRooms = () => {\r\n"
+                },
+                {
+                    "date": 1746772285398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n const CheckBox = ({label, selected = false, onChange = () => {}}) => {\r\n   return (\r\n     <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm'>\r\n-      <input type='checkbox' checked={selected} onChange={onChange} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n+      <input type='checkbox' checked={selected} onChange={(e)=>onChange(e.target.checked, label)} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n       <span className='text-gray-600'>{label}</span>\r\n     </label>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746772304054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const CheckBox = ({label, selected = false, onChange = () => {}}) => {\r\n   return (\r\n     <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm'>\r\n       <input type='checkbox' checked={selected} onChange={(e)=>onChange(e.target.checked, label)} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n-      <span className='text-gray-600'>{label}</span>\r\n+      <span className='font-light select-none'>{label}</span>\r\n     </label>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1746772355577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,17 @@\n     </label>\r\n   )\r\n }\r\n \r\n+const RaioButton = ({label, selected = false, onChange = () => {}}) => {\r\n+  return (\r\n+    <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm'>\r\n+      <input type='radio' name='sortOption' checked={selected} onChange={(e)=>onChange(e.target.checked, label)} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n+      <span className='font-light select-none'>{label}</span>\r\n+    </label>\r\n+  )\r\n+}\r\n+\r\n const AllRooms = () => {\r\n     const navigate = useNavigate();\r\n     const [openFilters, setOpenFilters] = useState(false)\r\n \r\n"
+                },
+                {
+                    "date": 1746772372844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n const RaioButton = ({label, selected = false, onChange = () => {}}) => {\r\n   return (\r\n     <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm'>\r\n-      <input type='radio' name='sortOption' checked={selected} onChange={(e)=>onChange(e.target.checked, label)} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n+      <input type='radio' name='sortOption' checked={selected} onChange={()=>onChange(label)} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n       <span className='font-light select-none'>{label}</span>\r\n     </label>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746772388026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,18 @@\n \r\n const CheckBox = ({label, selected = false, onChange = () => {}}) => {\r\n   return (\r\n     <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm'>\r\n-      <input type='checkbox' checked={selected} onChange={(e)=>onChange(e.target.checked, label)} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n+      <input type='checkbox' checked={selected} onChange={(e)=>onChange(e.target.checked, label)} />\r\n       <span className='font-light select-none'>{label}</span>\r\n     </label>\r\n   )\r\n }\r\n \r\n const RaioButton = ({label, selected = false, onChange = () => {}}) => {\r\n   return (\r\n     <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm'>\r\n-      <input type='radio' name='sortOption' checked={selected} onChange={()=>onChange(label)} className='w-4 h-4 accent-primary rounded-sm cursor-pointer'/>\r\n+      <input type='radio' name='sortOption' checked={selected} onChange={()=>onChange(label)} />\r\n       <span className='font-light select-none'>{label}</span>\r\n     </label>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1746772443111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,8 +100,11 @@\n         \r\n         <div className={`${openFilters ? 'h-auto' : \"h-0 lg:h-auto\"} overflow-hidden transition-all duration-700`}>\r\n           <div className='px-5 pt-5'>\r\n             <p className='font-medium text-gray-800 pb-2'>Popular filters</p>\r\n+            {roomTypes.map((room, index) => (\r\n+\r\n+            ))}\r\n           </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1746772484252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,11 +101,17 @@\n         <div className={`${openFilters ? 'h-auto' : \"h-0 lg:h-auto\"} overflow-hidden transition-all duration-700`}>\r\n           <div className='px-5 pt-5'>\r\n             <p className='font-medium text-gray-800 pb-2'>Popular filters</p>\r\n             {roomTypes.map((room, index) => (\r\n-\r\n+              <CheckBox key={index} label={room}/>\r\n             ))}\r\n           </div>\r\n+          <div className='px-5 pt-5'>\r\n+            <p className='font-medium text-gray-800 pb-2'>Popular filters</p>\r\n+            {priceRanges.map((room, index) => (\r\n+              <CheckBox key={index} label={room}/>\r\n+            ))}\r\n+          </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746772493927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,9 @@\n             ))}\r\n           </div>\r\n           <div className='px-5 pt-5'>\r\n             <p className='font-medium text-gray-800 pb-2'>Popular filters</p>\r\n-            {priceRanges.map((room, index) => (\r\n+            {priceRanges.map((range, index) => (\r\n               <CheckBox key={index} label={room}/>\r\n             ))}\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746772510573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n           </div>\r\n           <div className='px-5 pt-5'>\r\n             <p className='font-medium text-gray-800 pb-2'>Popular filters</p>\r\n             {priceRanges.map((range, index) => (\r\n-              <CheckBox key={index} label={room}/>\r\n+              <CheckBox key={index} label={'$ $range}'/>\r\n             ))}\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746772527903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n           </div>\r\n           <div className='px-5 pt-5'>\r\n             <p className='font-medium text-gray-800 pb-2'>Popular filters</p>\r\n             {priceRanges.map((range, index) => (\r\n-              <CheckBox key={index} label={'$ $range}'/>\r\n+              <CheckBox key={index} label={`$ ${range}`}/>\r\n             ))}\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746772538763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n               <CheckBox key={index} label={room}/>\r\n             ))}\r\n           </div>\r\n           <div className='px-5 pt-5'>\r\n-            <p className='font-medium text-gray-800 pb-2'>Popular filters</p>\r\n+            <p className='font-medium text-gray-800 pb-2'>Price Range</p>\r\n             {priceRanges.map((range, index) => (\r\n               <CheckBox key={index} label={`$ ${range}`}/>\r\n             ))}\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1746772571152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,8 +110,14 @@\n             {priceRanges.map((range, index) => (\r\n               <CheckBox key={index} label={`$ ${range}`}/>\r\n             ))}\r\n           </div>\r\n+          <div className='px-5 pt-5'>\r\n+            <p className='font-medium text-gray-800 pb-2'>Sort By</p>\r\n+            {sortOptions.map((room, index) => (\r\n+              <CheckBox key={index} label={room}/>\r\n+            ))}\r\n+          </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1746772578782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,9 +112,9 @@\n             ))}\r\n           </div>\r\n           <div className='px-5 pt-5'>\r\n             <p className='font-medium text-gray-800 pb-2'>Sort By</p>\r\n-            {sortOptions.map((room, index) => (\r\n+            {sortOptions.map((option, index) => (\r\n               <CheckBox key={index} label={room}/>\r\n             ))}\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1746772586315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,9 +113,9 @@\n           </div>\r\n           <div className='px-5 pt-5'>\r\n             <p className='font-medium text-gray-800 pb-2'>Sort By</p>\r\n             {sortOptions.map((option, index) => (\r\n-              <CheckBox key={index} label={room}/>\r\n+              <CheckBox key={index} label={option}/>\r\n             ))}\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1746772668843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react'\r\n+import React, { useState } from 'react'\r\n import { assets, facilityIcons, roomsDummyData } from '../assets/assets'\r\n import { useNavigate } from 'react-router-dom';\r\n import StarRating from '../components/StarRating'\r\n \r\n"
+                },
+                {
+                    "date": 1747179484557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     const navigate = useNavigate();\r\n     const [openFilters, setOpenFilters] = useState(false)\r\n \r\n     const roomTypes = [\r\n-      \"Single Bed\",\r\n+      \"Lều Đơn\",\r\n       \"Double Bed\",\r\n       \"Luxury Room\",\r\n       \"Family Suite\",\r\n     ];\r\n"
+                },
+                {
+                    "date": 1747179491205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     const [openFilters, setOpenFilters] = useState(false)\r\n \r\n     const roomTypes = [\r\n       \"Lều Đơn\",\r\n-      \"Double Bed\",\r\n+      \"Lều Đôi\",\r\n       \"Luxury Room\",\r\n       \"Family Suite\",\r\n     ];\r\n   \r\n"
+                },
+                {
+                    "date": 1747179499618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,9 @@\n \r\n     const roomTypes = [\r\n       \"Lều Đơn\",\r\n       \"Lều Đôi\",\r\n-      \"Luxury Room\",\r\n-      \"Family Suite\",\r\n+      \"Lều Gia Đình\",\r\n     ];\r\n   \r\n   const priceRanges = [\r\n       '0 to 500',\r\n"
+                },
+                {
+                    "date": 1747298288083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n                         </div>\r\n                       ))}\r\n                     </div>\r\n                     <p className='text-xl font-medium text-gray-700'>\r\n-                      ${room.pricePerNight} / night\r\n+                      {room.pricePerNight} VND / night\r\n                     </p>\r\n                  </div>\r\n             </div>\r\n         ))}\r\n"
+                }
+            ],
+            "date": 1746723568158,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst AllRooms = () => {\r\n  return (\r\n    <div>\r\n      \r\n    </div>\r\n  )\r\n}\r\n\r\nexport default AllRooms\r\n"
+        }
+    ]
+}

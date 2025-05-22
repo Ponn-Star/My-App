@@ -1,0 +1,134 @@
+{
+    "sourceFile": "src/pages/Owner/Dashboard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1747036627291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747036661865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n-import React from 'react'\r\n+import React, { useState } from 'react'\r\n \r\n const Dashboard = () => {\r\n \r\n-    const [dashboardData, setDashboardData] = useState(das)\r\n+    const [dashboardData, setDashboardData] = useState()\r\n \r\n   return (\r\n \r\n     <div>\r\n"
+                },
+                {
+                    "date": 1747036669711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useState } from 'react'\r\n \r\n const Dashboard = () => {\r\n \r\n-    const [dashboardData, setDashboardData] = useState()\r\n+    const [dashboardData, setDashboardData] = useState(dashboardDummyData)\r\n \r\n   return (\r\n \r\n     <div>\r\n"
+                },
+                {
+                    "date": 1747036711331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import React, { useState } from 'react'\r\n+import Title from '../../components/Title'\r\n+import { assets, dashboardDummyData } from '../../assets/assets'\r\n \r\n const Dashboard = () => {\r\n \r\n     const [dashboardData, setDashboardData] = useState(dashboardDummyData)\r\n"
+                },
+                {
+                    "date": 1747038887052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,15 @@\n \r\n     const [dashboardData, setDashboardData] = useState(dashboardDummyData)\r\n \r\n   return (\r\n-\r\n     <div>\r\n-      <Title align='left' font='outfit' title='Dashboard' />\r\n+      <Title align='left' font='outfit' title='Dashboard' subtitle='Monitor your room listings, track bookings and analyze revenue—all in one place. Stay updated with real-time insights to ensure smooth operations.' />\r\n+      <div className='flex gap-4 my-8'>\r\n+        {/* ----- Total Bookings ----- */}\r\n+        <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n+        </div>\r\n+      </div>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747038992919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n       <Title align='left' font='outfit' title='Dashboard' subtitle='Monitor your room listings, track bookings and analyze revenue—all in one place. Stay updated with real-time insights to ensure smooth operations.' />\r\n       <div className='flex gap-4 my-8'>\r\n         {/* ----- Total Bookings ----- */}\r\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n+        <img src={assets.totalBookingIcon} alt=\"\" \r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1747038999079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       <Title align='left' font='outfit' title='Dashboard' subtitle='Monitor your room listings, track bookings and analyze revenue—all in one place. Stay updated with real-time insights to ensure smooth operations.' />\r\n       <div className='flex gap-4 my-8'>\r\n         {/* ----- Total Bookings ----- */}\r\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n-        <img src={assets.totalBookingIcon} alt=\"\" \r\n+        <img src={assets.totalBookingIcon} alt=\"\" className='max-sm'\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1747039011011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       <Title align='left' font='outfit' title='Dashboard' subtitle='Monitor your room listings, track bookings and analyze revenue—all in one place. Stay updated with real-time insights to ensure smooth operations.' />\r\n       <div className='flex gap-4 my-8'>\r\n         {/* ----- Total Bookings ----- */}\r\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n-        <img src={assets.totalBookingIcon} alt=\"\" className='max-sm'\r\n+        <img src={assets.totalBookingIcon} alt=\"\" className='max-sm:hidden h-10'\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1747039100726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       <Title align='left' font='outfit' title='Dashboard' subtitle='Monitor your room listings, track bookings and analyze revenue—all in one place. Stay updated with real-time insights to ensure smooth operations.' />\r\n       <div className='flex gap-4 my-8'>\r\n         {/* ----- Total Bookings ----- */}\r\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n-        <img src={assets.totalBookingIcon} alt=\"\" className='max-sm:hidden h-10'\r\n+        <img src={assets.totalBookingIcon} alt=\"\" className='max-sm:hidden h-10'></img>\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1747039149168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,14 @@\n       <Title align='left' font='outfit' title='Dashboard' subtitle='Monitor your room listings, track bookings and analyze revenue—all in one place. Stay updated with real-time insights to ensure smooth operations.' />\r\n       <div className='flex gap-4 my-8'>\r\n         {/* ----- Total Bookings ----- */}\r\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n-        <img src={assets.totalBookingIcon} alt=\"\" className='max-sm:hidden h-10'></img>\r\n+          <img src={assets.totalBookingIcon} alt=\"\" className='max-sm:hidden h-10'/>\r\n+          <div className='flex flex-col sm:ml-4 font-medium'>\r\n+            <p className='text-blue-500 text-lg'>Total Bookings</p>\r\n+            <p className='text-neutral-400 text-base'>{dashboardData.totalBookings}</p>\r\n+          </div>\r\n+\r\n         </div>\r\n       </div>\r\n     </div>\r\n   )\r\n"
+                },
+                {
+                    "date": 1747039188703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,19 @@\n           <div className='flex flex-col sm:ml-4 font-medium'>\r\n             <p className='text-blue-500 text-lg'>Total Bookings</p>\r\n             <p className='text-neutral-400 text-base'>{dashboardData.totalBookings}</p>\r\n           </div>\r\n+        </div>\r\n \r\n+        <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n+          <img src={assets.totalBookingIcon} alt=\"\" className='max-sm:hidden h-10'/>\r\n+          <div className='flex flex-col sm:ml-4 font-medium'>\r\n+            <p className='text-blue-500 text-lg'>Total Bookings</p>\r\n+            <p className='text-neutral-400 text-base'>{dashboardData.totalBookings}</p>\r\n+          </div>\r\n         </div>\r\n       </div>\r\n+      \r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747039205627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,16 +19,16 @@\n           </div>\r\n         </div>\r\n \r\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n-          <img src={assets.totalBookingIcon} alt=\"\" className='max-sm:hidden h-10'/>\r\n+          <img src={assets.totalRevenueIcon} alt=\"\" className='max-sm:hidden h-10'/>\r\n           <div className='flex flex-col sm:ml-4 font-medium'>\r\n             <p className='text-blue-500 text-lg'>Total Bookings</p>\r\n             <p className='text-neutral-400 text-base'>{dashboardData.totalBookings}</p>\r\n           </div>\r\n         </div>\r\n       </div>\r\n-      \r\n+\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747039216944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n           <img src={assets.totalRevenueIcon} alt=\"\" className='max-sm:hidden h-10'/>\r\n           <div className='flex flex-col sm:ml-4 font-medium'>\r\n-            <p className='text-blue-500 text-lg'>Total Bookings</p>\r\n+            <p className='text-blue-500 text-lg'>Total </p>\r\n             <p className='text-neutral-400 text-base'>{dashboardData.totalBookings}</p>\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1747039224409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n           <img src={assets.totalRevenueIcon} alt=\"\" className='max-sm:hidden h-10'/>\r\n           <div className='flex flex-col sm:ml-4 font-medium'>\r\n-            <p className='text-blue-500 text-lg'>Total </p>\r\n+            <p className='text-blue-500 text-lg'>Total Revenue</p>\r\n             <p className='text-neutral-400 text-base'>{dashboardData.totalBookings}</p>\r\n           </div>\r\n         </div>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1747039952889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         <div className='bg-primary/3 border border-primary/10 rounded flex p-4 pr-8'>\r\n           <img src={assets.totalRevenueIcon} alt=\"\" className='max-sm:hidden h-10'/>\r\n           <div className='flex flex-col sm:ml-4 font-medium'>\r\n             <p className='text-blue-500 text-lg'>Total Revenue</p>\r\n-            <p className='text-neutral-400 text-base'>{dashboardData.totalBookings}</p>\r\n+            <p className='text-neutral-400 text-base'>$ {dashboardData.totalRevenue}</p>\r\n           </div>\r\n         </div>\r\n       </div>\r\n \r\n"
+                },
+                {
+                    "date": 1747040030446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,10 @@\n           </div>\r\n         </div>\r\n       </div>\r\n \r\n+      <h2></h2>\r\n+\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747040114892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,23 @@\n           </div>\r\n         </div>\r\n       </div>\r\n \r\n-      <h2></h2>\r\n+      <h2 className='text-xl text-blue-950/70 font-medium mb-5'>Recent Bookings</h2>\r\n+      <div className='w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll'>\r\n+        <table className='w-full'>\r\n+          <thead className='bg-gray-50'>\r\n+            <tr>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium'>User Name</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium'>Room Name</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium'>Total Amount</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium'>Payment Status</th>\r\n+            </tr>\r\n+          </thead>\r\n+        </table>\r\n+      </div>\r\n \r\n+\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1747040148399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,10 @@\n         <table className='w-full'>\r\n           <thead className='bg-gray-50'>\r\n             <tr>\r\n               <th className='py-3 px-4 text-gray-800 font-medium'>User Name</th>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium'>Room Name</th>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium'>Total Amount</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>Room Name</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium '>Total Amount</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium'>Payment Status</th>\r\n             </tr>\r\n           </thead>\r\n         </table>\r\n"
+                },
+                {
+                    "date": 1747040166160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n           <thead className='bg-gray-50'>\r\n             <tr>\r\n               <th className='py-3 px-4 text-gray-800 font-medium'>User Name</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium max-sm:hidden'>Room Name</th>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium '>Total Amount</th>\r\n-              <th className='py-3 px-4 text-gray-800 font-medium'>Payment Status</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Total Amount</th>\r\n+              <th className='py-3 px-4 text-gray-800 font-medium text-center'>Payment Status</th>\r\n             </tr>\r\n           </thead>\r\n         </table>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1747040177374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,10 @@\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Total Amount</th>\r\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Payment Status</th>\r\n             </tr>\r\n           </thead>\r\n+\r\n+          \r\n         </table>\r\n       </div>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1747040308970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,20 @@\n               <th className='py-3 px-4 text-gray-800 font-medium text-center'>Payment Status</th>\r\n             </tr>\r\n           </thead>\r\n \r\n-          \r\n+          <tbody className='text-sm'>\r\n+            {dashboardData.bookings.map((item, index) => (\r\n+              <tr key={index}>\r\n+                <td className='py-3 px-4 text-gray-700 border-t border-gray'>{item.user.username}</td>\r\n+                <td className='py-3 px-4 text-gray-700 border-t border-gray max-sm:hidden'>{item.room.roomType}</td>\r\n+                <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>\r\n+                  ${item.totalPrice}\r\n+                </td>\r\n+              </tr>\r\n+            ))}\r\n+          </tbody>\r\n+\r\n         </table>\r\n       </div>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1747040321045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,9 @@\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray max-sm:hidden'>{item.room.roomType}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>\r\n                   ${item.totalPrice}\r\n                 </td>\r\n+                \r\n               </tr>\r\n             ))}\r\n           </tbody>\r\n \r\n"
+                },
+                {
+                    "date": 1747040350785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,12 +44,12 @@\n             {dashboardData.bookings.map((item, index) => (\r\n               <tr key={index}>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray'>{item.user.username}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray max-sm:hidden'>{item.room.roomType}</td>\r\n+                <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>${item.totalPrice}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>\r\n                   ${item.totalPrice}\r\n                 </td>\r\n-                \r\n               </tr>\r\n             ))}\r\n           </tbody>\r\n \r\n"
+                },
+                {
+                    "date": 1747040368258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               <tr key={index}>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray'>{item.user.username}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray max-sm:hidden'>{item.room.roomType}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>${item.totalPrice}</td>\r\n-                <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>\r\n+                <td className='py-3 px-4 text-gray-700 border-t border-gray-300 flex'>\r\n                   ${item.totalPrice}\r\n                 </td>\r\n               </tr>\r\n             ))}\r\n"
+                },
+                {
+                    "date": 1747040384654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,11 @@\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray'>{item.user.username}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray max-sm:hidden'>{item.room.roomType}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>${item.totalPrice}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 flex'>\r\n-                  ${item.totalPrice}\r\n+                  <button>\r\n+                    \r\n+                  </button>\r\n                 </td>\r\n               </tr>\r\n             ))}\r\n           </tbody>\r\n"
+                },
+                {
+                    "date": 1747040402910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray max-sm:hidden'>{item.room.roomType}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>${item.totalPrice}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 flex'>\r\n                   <button>\r\n-                    \r\n+                    {item.isPaid ? ''}\r\n                   </button>\r\n                 </td>\r\n               </tr>\r\n             ))}\r\n"
+                },
+                {
+                    "date": 1747040452023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,10 +46,10 @@\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray'>{item.user.username}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray max-sm:hidden'>{item.room.roomType}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>${item.totalPrice}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 flex'>\r\n-                  <button>\r\n-                    {item.isPaid ? ''}\r\n+                  <button className={`py-1 px-3 text-xs rounded`}>\r\n+                    {item.isPaid ? 'Conpleted' : 'Pending'}\r\n                   </button>\r\n                 </td>\r\n               </tr>\r\n             ))}\r\n"
+                },
+                {
+                    "date": 1747040514894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,11 +45,15 @@\n               <tr key={index}>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray'>{item.user.username}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray max-sm:hidden'>{item.room.roomType}</td>\r\n                 <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>${item.totalPrice}</td>\r\n-                <td className='py-3 px-4 text-gray-700 border-t border-gray-300 flex'>\r\n-                  <button className={`py-1 px-3 text-xs rounded`}>\r\n-                    {item.isPaid ? 'Conpleted' : 'Pending'}\r\n+                <td className='py-3 px-4 border-t border-gray-300 flex'>\r\n+                  <button\r\n+                    className={`py-1 px-3 text-xs rounded-full mx-auto ${\r\n+                      item.isPaid ? 'bg-green-200 text-green-600' : 'bg-amber-200 text-yellow-600'\r\n+                    }`}\r\n+                  >\r\n+                    {item.isPaid ? 'Completed' : 'Pending'}\r\n                   </button>\r\n                 </td>\r\n               </tr>\r\n             ))}\r\n"
+                },
+                {
+                    "date": 1747040548192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { assets, dashboardDummyData } from '../../assets/assets'\r\n \r\n const Dashboard = () => {\r\n \r\n-    const [dashboardData, setDashboardData] = useState(dashboardDummyData)\r\n+    const [dashboardData] = useState(dashboardDummyData) //, setDashboardData\r\n \r\n   return (\r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' subtitle='Monitor your room listings, track bookings and analyze revenue—all in one place. Stay updated with real-time insights to ensure smooth operations.' />\r\n"
+                },
+                {
+                    "date": 1747071743502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,9 @@\n import { assets, dashboardDummyData } from '../../assets/assets'\r\n \r\n const Dashboard = () => {\r\n \r\n-    const [dashboardData] = useState(dashboardDummyData) //, setDashboardData\r\n-\r\n+    const [dashboardData, setDashboardData] = useState(dashboardDummyData)\r\n   return (\r\n     <div>\r\n       <Title align='left' font='outfit' title='Dashboard' subtitle='Monitor your room listings, track bookings and analyze revenue—all in one place. Stay updated with real-time insights to ensure smooth operations.' />\r\n       <div className='flex gap-4 my-8'>\r\n"
+                }
+            ],
+            "date": 1747036627291,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\n\r\nconst Dashboard = () => {\r\n\r\n    const [dashboardData, setDashboardData] = useState(das)\r\n\r\n  return (\r\n\r\n    <div>\r\n      <Title align='left' font='outfit' title='Dashboard' />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Dashboard\r\n"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/data/__cities.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1746764794945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1746764812641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +0,0 @@\n-export const exclusiveOffers = [\r\n-    { _id: 1, title: \"Summer Escape Package\", description: \"Enjoy a complimentary night and daily breakfast\", priceOff: 25, expiryDate: \"Aug 31\", image: exclusiveOfferCardImg1 },\r\n-    { _id: 2, title: \"Romantic Getaway\", description: \"Special couples package including spa treatment\", priceOff: 20, expiryDate: \"Sep 20\", image: exclusiveOfferCardImg2 },\r\n-    { _id: 3, title: \"Luxury Retreat\", description: \"Book 60 days in advance and save on your stay at any of our luxury properties worldwide.\", priceOff: 30, expiryDate: \"Sep 25\", image: exclusiveOfferCardImg3 },\r\n-]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1746764819092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+[\r\n+    \"Dubai\",\r\n+    \"Singapore\",\r\n+    \"New York\",\r\n+    \"London\",\r\n+];\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1746764827805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +0,0 @@\n-[\r\n-    \"Dubai\",\r\n-    \"Singapore\",\r\n-    \"New York\",\r\n-    \"London\",\r\n-];\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1746764794945,
+            "name": "Commit-0",
+            "content": "export const exclusiveOffers = [\r\n    { _id: 1, title: \"Summer Escape Package\", description: \"Enjoy a complimentary night and daily breakfast\", priceOff: 25, expiryDate: \"Aug 31\", image: exclusiveOfferCardImg1 },\r\n    { _id: 2, title: \"Romantic Getaway\", description: \"Special couples package including spa treatment\", priceOff: 20, expiryDate: \"Sep 20\", image: exclusiveOfferCardImg2 },\r\n    { _id: 3, title: \"Luxury Retreat\", description: \"Book 60 days in advance and save on your stay at any of our luxury properties worldwide.\", priceOff: 30, expiryDate: \"Sep 25\", image: exclusiveOfferCardImg3 },\r\n]"
+        }
+    ]
+}

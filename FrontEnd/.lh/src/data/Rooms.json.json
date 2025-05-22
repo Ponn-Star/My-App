@@ -1,0 +1,66 @@
+{
+    "sourceFile": "src/data/Rooms.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1747176336328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747379183372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,44 @@\n [\r\n-    {\r\n-        \"id\": 1,\r\n-        \"name\": \"Lều Đơn\"\r\n-    },\r\n-    {\r\n-        \"id\": 2,\r\n-        \"name\": \"Lều Đôi\"\r\n-    },\r\n-    {\r\n-        \"id\": 3,\r\n-        \"name\": \"Lều Gia Đình\"\r\n-    }\r\n+  {\r\n+    \"id\": \"1\",\r\n+    \"roomType\": \"Lều Đơn\",\r\n+    \"gia\": 399,\r\n+    \"images\": [\r\n+      \"https://yourcdn.com/images/roomImg1.png\",\r\n+      \"https://yourcdn.com/images/roomImg2.png\",\r\n+      \"https://yourcdn.com/images/roomImg3.png\",\r\n+      \"https://yourcdn.com/images/roomImg4.png\"\r\n+    ],\r\n+    \"amenities\": [\"Room Service\", \"Mountain View\", \"Pool Access\"],\r\n+    \"createdAt\": \"2025-04-10T06:26:04.013Z\",\r\n+    \"updatedAt\": \"2025-04-10T06:26:04.013Z\"\r\n+  },\r\n+  {\r\n+    \"id\": \"67f76452197ac559e4089b8e\",\r\n+    \"roomType\": \"Lều Đôi\",\r\n+    \"gia\": 299,\r\n+    \"images\": [\r\n+      \"https://yourcdn.com/images/roomImg2.png\",\r\n+      \"https://yourcdn.com/images/roomImg3.png\",\r\n+      \"https://yourcdn.com/images/roomImg4.png\",\r\n+      \"https://yourcdn.com/images/roomImg1.png\"\r\n+    ],\r\n+    \"amenities\": [\"Room Service\", \"Mountain View\", \"Pool Access\"],\r\n+    \"createdAt\": \"2025-04-10T06:25:22.593Z\",\r\n+    \"updatedAt\": \"2025-04-10T06:25:22.593Z\"\r\n+  },\r\n+  {\r\n+    \"id\": \"67f76406197ac559e4089b82\",\r\n+    \"roomType\": \"Lều Gia Đình\",\r\n+    \"gia\": 249,\r\n+    \"images\": [\r\n+      \"https://yourcdn.com/images/roomImg3.png\",\r\n+      \"https://yourcdn.com/images/roomImg4.png\",\r\n+      \"https://yourcdn.com/images/roomImg1.png\",\r\n+      \"https://yourcdn.com/images/roomImg2.png\"\r\n+    ],\r\n+    \"amenities\": [\"Free WiFi\", \"Free Breakfast\", \"Room Service\"],\r\n+    \"createdAt\": \"2025-04-10T06:24:06.285Z\",\r\n+    \"updatedAt\": \"2025-04-10T06:24:06.285Z\"\r\n+  }\r\n ]\r\n"
+                },
+                {
+                    "date": 1747379197893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n [\r\n   {\r\n-    \"id\": \"1\",\r\n+    \"id\": 1,\r\n     \"roomType\": \"Lều Đơn\",\r\n     \"gia\": 399,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg1.png\",\r\n@@ -13,9 +13,9 @@\n     \"createdAt\": \"2025-04-10T06:26:04.013Z\",\r\n     \"updatedAt\": \"2025-04-10T06:26:04.013Z\"\r\n   },\r\n   {\r\n-    \"id\": \"67f76452197ac559e4089b8e\",\r\n+    \"id\": 2,\r\n     \"roomType\": \"Lều Đôi\",\r\n     \"gia\": 299,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n@@ -27,9 +27,9 @@\n     \"createdAt\": \"2025-04-10T06:25:22.593Z\",\r\n     \"updatedAt\": \"2025-04-10T06:25:22.593Z\"\r\n   },\r\n   {\r\n-    \"id\": \"67f76406197ac559e4089b82\",\r\n+    \"id\": 3,\r\n     \"roomType\": \"Lều Gia Đình\",\r\n     \"gia\": 249,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n"
+                },
+                {
+                    "date": 1747379235915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n [\r\n   {\r\n     \"id\": 1,\r\n     \"roomType\": \"Lều Đơn\",\r\n-    \"gia\": 399,\r\n+    \"gia\": ,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg1.png\",\r\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n"
+                },
+                {
+                    "date": 1747379281810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n [\r\n   {\r\n     \"id\": 1,\r\n     \"roomType\": \"Lều Đơn\",\r\n-    \"gia\": ,\r\n+    \"gia\": 500.000,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg1.png\",\r\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n"
+                },
+                {
+                    "date": 1747379292203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   },\r\n   {\r\n     \"id\": 2,\r\n     \"roomType\": \"Lều Đôi\",\r\n-    \"gia\": 299,\r\n+    \"gia\": 800.000,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\",\r\n@@ -29,9 +29,9 @@\n   },\r\n   {\r\n     \"id\": 3,\r\n     \"roomType\": \"Lều Gia Đình\",\r\n-    \"gia\": 249,\r\n+    \"gia\": ,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\",\r\n       \"https://yourcdn.com/images/roomImg1.png\",\r\n"
+                },
+                {
+                    "date": 1747379352156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n [\r\n   {\r\n     \"id\": 1,\r\n     \"roomType\": \"Lều Đơn\",\r\n-    \"gia\": 500.000,\r\n+    \"gia\": 500,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg1.png\",\r\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n@@ -15,9 +15,9 @@\n   },\r\n   {\r\n     \"id\": 2,\r\n     \"roomType\": \"Lều Đôi\",\r\n-    \"gia\": 800.000,\r\n+    \"gia\": 800,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\",\r\n@@ -29,9 +29,9 @@\n   },\r\n   {\r\n     \"id\": 3,\r\n     \"roomType\": \"Lều Gia Đình\",\r\n-    \"gia\": ,\r\n+    \"gia\": 1.200,\r\n     \"images\": [\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\",\r\n       \"https://yourcdn.com/images/roomImg1.png\",\r\n"
+                },
+                {
+                    "date": 1747379555012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\"\r\n     ],\r\n-    \"amenities\": [\"Room Service\", \"Mountain View\", \"Pool Access\"],\r\n+    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"\"],\r\n     \"createdAt\": \"2025-04-10T06:26:04.013Z\",\r\n     \"updatedAt\": \"2025-04-10T06:26:04.013Z\"\r\n   },\r\n   {\r\n"
+                },
+                {
+                    "date": 1747379595896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\"\r\n     ],\r\n-    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"\"],\r\n+    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Khu Đồi Thông\"],\r\n     \"createdAt\": \"2025-04-10T06:26:04.013Z\",\r\n     \"updatedAt\": \"2025-04-10T06:26:04.013Z\"\r\n   },\r\n   {\r\n"
+                },
+                {
+                    "date": 1747379622469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       \"https://yourcdn.com/images/roomImg2.png\",\r\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\"\r\n     ],\r\n-    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Khu Đồi Thông\"],\r\n+    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Khu Đồi Thông\", \"Khu Ngũ Sắc\"],\r\n     \"createdAt\": \"2025-04-10T06:26:04.013Z\",\r\n     \"updatedAt\": \"2025-04-10T06:26:04.013Z\"\r\n   },\r\n   {\r\n"
+                },
+                {
+                    "date": 1747379645358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\",\r\n       \"https://yourcdn.com/images/roomImg1.png\"\r\n     ],\r\n-    \"amenities\": [\"Room Service\", \"Mountain View\", \"Pool Access\"],\r\n+    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Pool Access\"],\r\n     \"createdAt\": \"2025-04-10T06:25:22.593Z\",\r\n     \"updatedAt\": \"2025-04-10T06:25:22.593Z\"\r\n   },\r\n   {\r\n@@ -36,9 +36,9 @@\n       \"https://yourcdn.com/images/roomImg4.png\",\r\n       \"https://yourcdn.com/images/roomImg1.png\",\r\n       \"https://yourcdn.com/images/roomImg2.png\"\r\n     ],\r\n-    \"amenities\": [\"Free WiFi\", \"Free Breakfast\", \"Room Service\"],\r\n+    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Room Service\"],\r\n     \"createdAt\": \"2025-04-10T06:24:06.285Z\",\r\n     \"updatedAt\": \"2025-04-10T06:24:06.285Z\"\r\n   }\r\n ]\r\n"
+                },
+                {
+                    "date": 1747379689895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       \"https://yourcdn.com/images/roomImg3.png\",\r\n       \"https://yourcdn.com/images/roomImg4.png\",\r\n       \"https://yourcdn.com/images/roomImg1.png\"\r\n     ],\r\n-    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Pool Access\"],\r\n+    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Khu Ngũ Sắc\", \"Khu Cẩm Tú Cầu\"],\r\n     \"createdAt\": \"2025-04-10T06:25:22.593Z\",\r\n     \"updatedAt\": \"2025-04-10T06:25:22.593Z\"\r\n   },\r\n   {\r\n"
+                },
+                {
+                    "date": 1747379703479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n       \"https://yourcdn.com/images/roomImg4.png\",\r\n       \"https://yourcdn.com/images/roomImg1.png\",\r\n       \"https://yourcdn.com/images/roomImg2.png\"\r\n     ],\r\n-    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Room Service\"],\r\n+    \"amenities\": [\"Wifi Miễn Phí\", \"Bữa Sáng Miễn Phí\", \"Khu Cẩm Tú Cầu\"],\r\n     \"createdAt\": \"2025-04-10T06:24:06.285Z\",\r\n     \"updatedAt\": \"2025-04-10T06:24:06.285Z\"\r\n   }\r\n ]\r\n"
+                }
+            ],
+            "date": 1747176336328,
+            "name": "Commit-0",
+            "content": "[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Lều Đơn\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Lều Đôi\"\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"name\": \"Lều Gia Đình\"\r\n    }\r\n]\r\n"
+        }
+    ]
+}

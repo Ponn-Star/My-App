@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/data/Test.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1746765718966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1746765718966,
+            "name": "Commit-0",
+            "content": "[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Emma Rodriguez\",\r\n        \"address\": \"London, UK\",\r\n        \"image\": \"https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200\",\r\n        \"rating\": 5,\r\n        \"review\": \"I've used many booking platforms before, but none compare to the personalized experience and attention to detail that QuickStay provides.\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Liam Johnson\",\r\n        \"address\": \"New York, USA\",\r\n        \"image\": \"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200\",\r\n        \"rating\": 4,\r\n        \"review\": \"QuickStay exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!\"\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"name\": \"Sophia Lee\",\r\n        \"address\": \"Seoul, South Korea\",\r\n        \"image\": \"https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200\",\r\n        \"rating\": 4,\r\n        \"review\": \"Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!\"\r\n    }\r\n]\r\n"
+        }
+    ]
+}
