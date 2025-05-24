@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 const AdminRoute = ({ children }) => {
   const { user, isLoaded } = useUser();
 
-  if (!isLoaded) return null;
+  if (!isLoaded) return null; // hoặc loading spinner
 
   if (!user || user.publicMetadata.role !== 'admin') {
     return <Navigate to="/" replace />;

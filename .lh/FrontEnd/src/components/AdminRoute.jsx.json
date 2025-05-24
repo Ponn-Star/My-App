@@ -1,0 +1,18 @@
+{
+    "sourceFile": "FrontEnd/src/components/AdminRoute.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1747930484496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1747930484496,
+            "name": "Commit-0",
+            "content": "import { useUser } from '@clerk/clerk-react';\r\nimport { Navigate } from 'react-router-dom';\r\n\r\nconst AdminRoute = ({ children }) => {\r\n  const { user, isLoaded } = useUser();\r\n\r\n  if (!isLoaded) return null; // hoặc loading spinner\r\n\r\n  if (!user || user.publicMetadata.role !== 'admin') {\r\n    return <Navigate to=\"/\" replace />;\r\n  }\r\n\r\n  return children;\r\n};\r\n\r\nexport default AdminRoute;"
+        }
+    ]
+}

@@ -11,7 +11,7 @@ import Layout from './pages/Admin/Layout';
 import Dashboard from './pages/Admin/Dashboard';
 import ListRoom from './pages/Admin/ListRoom';
 import AddRoom from './pages/Admin/AddRoom';
-import AdminRoute from './components/AdminRoute'
+import AdminRoute from './data/AdminRoute'
 
 function App() {
 

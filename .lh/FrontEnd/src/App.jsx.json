@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1747882477094,
@@ -16,6 +16,10 @@
                 {
                     "date": 1747884720981,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react'\n import Navbar from './components/Navbar'\n+import AdminNavbar from './components/Admin/Navbar'\n import { Route, Routes, useLocation } from 'react-router-dom'\n import Home from './pages/Home'\n import AllRooms from './pages/AllRooms';\n import RoomDetails from './pages/RoomDetails';\n@@ -12,12 +13,14 @@\n import AddRoom from './pages/Admin/AddRoom';\n \n function App() {\n \n-  const isOwnerPath = useLocation().pathname.includes(\"owner\");\n+  const location = useLocation();\n+  const isAdminRoute = location.pathname.startsWith('/admin');\n+\n   return (\n     <div>\n-      {!isOwnerPath && <Navbar />}\n+      {isAdminRoute ? <AdminNavbar /> : <Navbar />}\n       <div className='min-h-[70vh]'>\n         <Routes>\n           <Route path='/' element={<Home />} />\n           <Route path='/rooms' element={<AllRooms />} />\n"
+                },
+                {
+                    "date": 1747930521886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n import Layout from './pages/Admin/Layout';\n import Dashboard from './pages/Admin/Dashboard';\n import ListRoom from './pages/Admin/ListRoom';\n import AddRoom from './pages/Admin/AddRoom';\n+import AdminRoute from './components/AdminRoute'\n \n function App() {\n \n   const location = useLocation();\n@@ -21,18 +22,31 @@\n     <div>\n       {isAdminRoute ? <AdminNavbar /> : <Navbar />}\n       <div className='min-h-[70vh]'>\n         <Routes>\n-          <Route path='/' element={<Home />} />\n-          <Route path='/rooms' element={<AllRooms />} />\n-          <Route path='/rooms/:id' element={<RoomDetails />} />\n-          <Route path='/my-bookings' element={<MyBookings />} />\n-          <Route path='/owner' element={<Layout />} >\n-            <Route index element={<Dashboard />} />\n-            <Route path='add-room' element={<AddRoom />} />\n-            <Route path='list-room' element={<ListRoom />} />\n-           </Route>\n-        </Routes>\n+        <Route path='/' element={<Home />} />\n+        <Route path='/rooms' element={<AllRooms />} />\n+        <Route path='/rooms/:id' element={<RoomDetails />} />\n+        <Route path='/my-bookings' element={<MyBookings />} />\n+        \n+        <Route path='/admin' element={<Layout />}>\n+          <Route index element={\n+            <AdminRoute>\n+              <Dashboard />\n+            </AdminRoute>\n+          } />\n+          <Route path='add-room' element={\n+            <AdminRoute>\n+              <AddRoom />\n+            </AdminRoute>\n+          } />\n+          <Route path='list-room' element={\n+            <AdminRoute>\n+              <ListRoom />\n+            </AdminRoute>\n+          } />\n+        </Route>\n+      </Routes>\n       </div>\n       <Footer />\n     </div>\n   )\n"
                 }
             ],
             "date": 1747882477094,

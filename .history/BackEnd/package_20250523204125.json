@@ -5,25 +5,17 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "server": "nodemon server.js",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.1.6",
-    "@clerk/express": "^1.5.0",
-    "cloudinary": "^2.6.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "mongoose": "^8.15.0",
-    "multer": "^2.0.0",
-    "node-fetch": "^3.3.2",
-    "svix": "^1.66.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
+    "node-fetch": "^3.3.2"
   }
+  
 }
