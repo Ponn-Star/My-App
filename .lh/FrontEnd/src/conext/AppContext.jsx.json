@@ -1,0 +1,38 @@
+{
+    "sourceFile": "FrontEnd/src/conext/AppContext.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1748613050031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748613068311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,11 +39,13 @@\n                 toast.error(error.message)\r\n             }\r\n         }\r\n \r\n-        useEffect(()=> )\r\n+        useEffect(()=> {\r\n \r\n+        },[user])\r\n \r\n+\r\n   const value = {\r\n         currency, navigate, user, getToken, isOwner, setIsOwner, axios, showRoomReg, setRoomReg, \r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1748613083765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n             }\r\n         }\r\n \r\n         useEffect(()=> {\r\n-\r\n+            if(user))\r\n         },[user])\r\n \r\n \r\n   const value = {\r\n"
+                },
+                {
+                    "date": 1748613101078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,11 @@\n             }\r\n         }\r\n \r\n         useEffect(()=> {\r\n-            if(user))\r\n+            if(user){\r\n+                fetchUser();\r\n+            }\r\n         },[user])\r\n \r\n \r\n   const value = {\r\n"
+                },
+                {
+                    "date": 1748613330687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         },[user])\r\n \r\n \r\n   const value = {\r\n-        currency, navigate, user, getToken, isOwner, setIsOwner, axios, showRoomReg, setRoomReg, \r\n+        currency, navigate, user, getToken, isOwner, setIsOwner, axios, showRoomReg, setRoomReg, searchedRoomType, setsearchedRoomType\r\n   }\r\n \r\n   return (\r\n     <AppContext.Provider value={value}>\r\n"
+                },
+                {
+                    "date": 1748613346021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,7 +57,7 @@\n     </AppContext.Provider>\r\n   )\r\n }\r\n \r\n-export const useAppContext = () => useContext(AppContext);\r\n+export const useAppContext = ()=> useContext(AppContext);\r\n \r\n \r\n"
+                }
+            ],
+            "date": 1748613050031,
+            "name": "Commit-0",
+            "content": "import axios from \"axios\";\r\nimport { createContext, useAppContext, useState} from \"react\";\r\nimport { useNavigate } from \"react-router-dom\";\r\nimport { useUser, useAuth} from \"@clerk/clerk-react\";\r\nimport { toast } from 'react-hot-toast';\r\nimport { useEffect } from \"react\";\r\n\r\n\r\naxios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;\r\n\r\nconst AppContext = createContext();\r\n\r\nexport const AppProvider = ({ children }) => {\r\n\r\n    const currency = import.meta.env.VITE_CURENCY || \".000 VND\";\r\n    const navigate = useNavigate();\r\n    const {user} = useUser();\r\n    const { getToken } = useAuth();\r\n\r\n    const [isOwner, setIsOwner] = useState(false)\r\n    const [showRoomReg, setRoomReg] = useState(false)\r\n    const [searchedRoomType, setsearchedRoomType] = useState([])\r\n\r\n    const fetchUser = async ()=>{\r\n        try {\r\n            const { data } = await axios.get('/api/user', {\r\n                headers: { Authorization: `Bearer ${await getToken()}` }\r\n            });\r\n\r\n            if (data.success) {\r\n                setIsOwner(data.role === \"Admin\");\r\n                setSearchedCities(data.recentSearchedCities);\r\n            } else {\r\n                setTimeout(() => {\r\n                fetchUser();\r\n                }, 5000);\r\n            }\r\n            } catch (error) {\r\n                toast.error(error.message)\r\n            }\r\n        }\r\n\r\n        useEffect(()=> )\r\n\r\n\r\n  const value = {\r\n        currency, navigate, user, getToken, isOwner, setIsOwner, axios, showRoomReg, setRoomReg, \r\n  }\r\n\r\n  return (\r\n    <AppContext.Provider value={value}>\r\n      {children}\r\n    </AppContext.Provider>\r\n  )\r\n}\r\n\r\nexport const useAppContext = () => useContext(AppContext);\r\n\r\n\r\n"
+        }
+    ]
+}

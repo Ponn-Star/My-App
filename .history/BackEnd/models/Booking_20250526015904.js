@@ -1,0 +1,9 @@
+import mongoose from "mongoose";
+
+const bookingSchema = new mongoose.Schema({
+  user: {type: String, ref: "User", require: true},
+}, { timestamps: true });
+
+const Booking = mongoose.model("Booking", bookingSchema);
+
+export default Booking;

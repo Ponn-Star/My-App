@@ -1,0 +1,26 @@
+{
+    "sourceFile": "FrontEnd/src/main.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1748612963912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748613003647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import './index.css'\n import App from './App.jsx'\n import { BrowserRouter } from 'react-router-dom'\n import { ClerkProvider } from '@clerk/clerk-react'\n-import { AppProvider }\n+import { AppProvider } from './conext/AppContext.jsx'\n \n const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY\n \n if (!PUBLISHABLE_KEY) {\n@@ -14,8 +14,10 @@\n \n createRoot(document.getElementById('root')).render(\n   <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl=\"/\">\n     <BrowserRouter>\n-      <App />\n+    <AppProvider>\n+            <App />\n+    </AppProvider>\n     </BrowserRouter>\n     </ClerkProvider>,\n )\n"
+                },
+                {
+                    "date": 1748613012137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n \n createRoot(document.getElementById('root')).render(\n   <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl=\"/\">\n     <BrowserRouter>\n-    <AppProvider>\n-            <App />\n-    </AppProvider>\n+      <AppProvider>\n+        <App />\n+      </AppProvider>\n     </BrowserRouter>\n     </ClerkProvider>,\n )\n"
+                }
+            ],
+            "date": 1748612963912,
+            "name": "Commit-0",
+            "content": "import { StrictMode } from 'react'\nimport { createRoot } from 'react-dom/client'\nimport './index.css'\nimport App from './App.jsx'\nimport { BrowserRouter } from 'react-router-dom'\nimport { ClerkProvider } from '@clerk/clerk-react'\nimport { AppProvider }\n\nconst PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY\n\nif (!PUBLISHABLE_KEY) {\n  throw new Error('Add your Clerk Publishable Key to the .env file')\n}\n\ncreateRoot(document.getElementById('root')).render(\n  <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl=\"/\">\n    <BrowserRouter>\n      <App />\n    </BrowserRouter>\n    </ClerkProvider>,\n)\n"
+        }
+    ]
+}

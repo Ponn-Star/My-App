@@ -1,0 +1,9 @@
+import express from "express";
+import { protect } from "../middleware/authMiddleware.js";
+import { registerHotel } from "../controllers/hotelController.js";
+
+const roomRouter = express.Router();
+
+roomRouter.post('/', protect, registerHotel);
+
+export default hotelRouter;
