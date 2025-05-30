@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1748613050031,
@@ -28,6 +28,14 @@
                 {
                     "date": 1748613346021,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,7 +57,7 @@\n     </AppContext.Provider>\r\n   )\r\n }\r\n \r\n-export const useAppContext = () => useContext(AppContext);\r\n+export const useAppContext = ()=> useContext(AppContext);\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1748622145025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import axios from \"axios\";\r\n-import { createContext, useAppContext, useState} from \"react\";\r\n+import { createContext, useContext, useState } from \"react\";\r\n import { useNavigate } from \"react-router-dom\";\r\n import { useUser, useAuth} from \"@clerk/clerk-react\";\r\n import { toast } from 'react-hot-toast';\r\n import { useEffect } from \"react\";\r\n"
+                },
+                {
+                    "date": 1748622201500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             });\r\n \r\n             if (data.success) {\r\n                 setIsOwner(data.role === \"Admin\");\r\n-                setSearchedCities(data.recentSearchedCities);\r\n+                setsearchedRoomType(data.recentSearchedRoomType);\r\n             } else {\r\n                 setTimeout(() => {\r\n                 fetchUser();\r\n                 }, 5000);\r\n"
                 }
             ],
             "date": 1748613050031,

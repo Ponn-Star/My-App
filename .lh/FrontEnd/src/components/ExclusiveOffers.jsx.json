@@ -1,0 +1,42 @@
+{
+    "sourceFile": "FrontEnd/src/components/ExclusiveOffers.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1748622543546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748622621655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12'>\r\n         {services.map((item) => (\r\n             <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n-                <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n                 <div>\r\n                     <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n                     <p>{item.description}</p>\r\n                     <p className='text-xs text-white/70 mt-3'>Expires {item.expiryDate}</p>\r\n"
+                },
+                {
+                    "date": 1748622639399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n             style={{ backgroundImage: `url(${item.image})` }}>\r\n                 <div>\r\n                     <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n                     <p>{item.description}</p>\r\n-                    <p className='text-xs text-white/70 mt-3'>Expires {item.expiryDate}</p>\r\n                 </div>\r\n                 <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n                     View offers\r\n                     <img className='invert group-hover:translate-x-1 transition-all' \r\n"
+                },
+                {
+                    "date": 1748630986332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n       <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n         <button className='group flex items-center gap-2 font-medium cursor-pointer max-md:mt-12'>\r\n-            View All Offers\r\n+            Xem Thêm\r\n             <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n             className='group-hover:translate-x-1 transition-all'/>\r\n         </button>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1748631079550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n       <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n-        <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n+        <Title align='left' title='Dịch Vụ Đi Kèm' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n         <button className='group flex items-center gap-2 font-medium cursor-pointer max-md:mt-12'>\r\n             Xem Thêm\r\n             <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n             className='group-hover:translate-x-1 transition-all'/>\r\n"
+                },
+                {
+                    "date": 1748631091680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const ExclusiveOffers = () => {\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n       <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n-        <Title align='left' title='Dịch Vụ Đi Kèm' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n+        <Title align='left' title='Trải Nghiệm Miễn Phí' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n         <button className='group flex items-center gap-2 font-medium cursor-pointer max-md:mt-12'>\r\n             Xem Thêm\r\n             <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n             className='group-hover:translate-x-1 transition-all'/>\r\n"
+                },
+                {
+                    "date": 1748631309627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n                     <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n                     <p>{item.description}</p>\r\n                 </div>\r\n                 <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n-                    View offers\r\n+                    Xem Thêm\r\n                     <img className='invert group-hover:translate-x-1 transition-all' \r\n                     src={assets.arrowIcon} alt=\"\" \r\n                     />\r\n                 </button>\r\n"
+                }
+            ],
+            "date": 1748622543546,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport Title from './Title'\r\nimport { assets, services } from '../assets/assets'\r\n\r\nconst ExclusiveOffers = () => {\r\n  return (\r\n    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30'>\r\n      <div className='flex flex-col md:flex-row items-center justify-between w-full'>\r\n        <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>\r\n        <button className='group flex items-center gap-2 font-medium cursor-pointer max-md:mt-12'>\r\n            View All Offers\r\n            <img src={assets.arrowIcon} alt=\"arrow-icon\"\r\n            className='group-hover:translate-x-1 transition-all'/>\r\n        </button>\r\n      </div>\r\n\r\n      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12'>\r\n        {services.map((item) => (\r\n            <div key={item._id} className='group relative flex flex-col items-start justify-between gap-1 pt-12 md:pt-18 px-4 rounded-xl text-white bg-no-repeat bg-cover bg-center'\r\n            style={{ backgroundImage: `url(${item.image})` }}>\r\n                <p className='px-3 py-1 absolute top-4 left-4 text-xs bg-white text-gray-800 font-medium rounded-full'>{item.priceOff}% OFF</p>\r\n                <div>\r\n                    <p className='text-2xl font-medium font-playfair'>{item.title}</p>\r\n                    <p>{item.description}</p>\r\n                    <p className='text-xs text-white/70 mt-3'>Expires {item.expiryDate}</p>\r\n                </div>\r\n                <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>\r\n                    View offers\r\n                    <img className='invert group-hover:translate-x-1 transition-all' \r\n                    src={assets.arrowIcon} alt=\"\" \r\n                    />\r\n                </button>\r\n            </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default ExclusiveOffers\r\n"
+        }
+    ]
+}

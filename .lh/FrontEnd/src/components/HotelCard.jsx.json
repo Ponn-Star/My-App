@@ -1,0 +1,38 @@
+{
+    "sourceFile": "FrontEnd/src/components/HotelCard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1748625301282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748625350659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { Link } from 'react-router-dom'\r\n import { assets } from '../assets/assets'\r\n \r\n const HOTEL_NAME = \"Forest Scent Glamping\"\r\n-const HOTEL_ADDRESS = \"Lâm Đồng, Việt Nam\"\r\n+const HOTEL_ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n \r\n const HotelCard = ({ room, index }) => {\r\n   return (\r\n     <Link\r\n"
+                },
+                {
+                    "date": 1748625457193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         </div>\r\n \r\n         <div className='flex items-center justify-between mt-4'>\r\n           <p>\r\n-            <span className='text-xl text-gray-800'>${room.pricePerNight}</span>/night\r\n+            <span className='text-xl text-gray-800'>{room.pricePerNight}</span>/night\r\n           </p>\r\n           <button className='px-4 py-2 text-sm font-medium border border-gray-300 rounded bg-gray-50 transition-all cursor-pointer'>\r\n             Book Now\r\n           </button>\r\n"
+                },
+                {
+                    "date": 1748625467601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         </div>\r\n \r\n         <div className='flex items-center justify-between mt-4'>\r\n           <p>\r\n-            <span className='text-xl text-gray-800'>{room.pricePerNight}</span>/night\r\n+            <span className='text-xl text-gray-800'>{room.pricePerNight}</span>.000/night\r\n           </p>\r\n           <button className='px-4 py-2 text-sm font-medium border border-gray-300 rounded bg-gray-50 transition-all cursor-pointer'>\r\n             Book Now\r\n           </button>\r\n"
+                },
+                {
+                    "date": 1748625486415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         </div>\r\n \r\n         <div className='flex items-center justify-between mt-4'>\r\n           <p>\r\n-            <span className='text-xl text-gray-800'>{room.pricePerNight}</span>.000/night\r\n+            <span className='text-xl text-gray-800'>{room.pricePerNight}</span>.000/đêm\r\n           </p>\r\n           <button className='px-4 py-2 text-sm font-medium border border-gray-300 rounded bg-gray-50 transition-all cursor-pointer'>\r\n             Book Now\r\n           </button>\r\n"
+                },
+                {
+                    "date": 1748625492093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         </div>\r\n \r\n         <div className='flex items-center justify-between mt-4'>\r\n           <p>\r\n-            <span className='text-xl text-gray-800'>{room.pricePerNight}</span>.000/đêm\r\n+            <span className='text-xl text-gray-800'>{room.pricePerNight}</span>.000/Đêm\r\n           </p>\r\n           <button className='px-4 py-2 text-sm font-medium border border-gray-300 rounded bg-gray-50 transition-all cursor-pointer'>\r\n             Book Now\r\n           </button>\r\n"
+                }
+            ],
+            "date": 1748625301282,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport { Link } from 'react-router-dom'\r\nimport { assets } from '../assets/assets'\r\n\r\nconst HOTEL_NAME = \"Forest Scent Glamping\"\r\nconst HOTEL_ADDRESS = \"Lâm Đồng, Việt Nam\"\r\n\r\nconst HotelCard = ({ room, index }) => {\r\n  return (\r\n    <Link\r\n      to={'/room/' + room._id}\r\n      onClick={() => window.scrollTo(0, 0)}\r\n      className='relative max-w-70 w-full rounded-xl overflow-hidden bg-white text-gray-500/90 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]'\r\n    >\r\n      <img src={room.images[0]} alt={room.roomType} className=\"w-full object-cover\" />\r\n\r\n      {index % 2 === 0 && (\r\n        <p className='px-3 py-1 absolute top-3 left-3 text-xs bg-white text-gray-800 font-medium rounded-full'>\r\n          Best Seller\r\n        </p>\r\n      )}\r\n\r\n      <div className='p-4 pt-5'>\r\n        <div className='flex items-center justify-between'>\r\n          <p className='font-playfair text-xl font-medium text-gray-800'>{HOTEL_NAME}</p>\r\n          <div className='flex items-center gap-1'>\r\n            <img src={assets.starIconFilled} alt=\"star-icon\" className=\"w-4 h-4\" /> 4.5\r\n          </div>\r\n        </div>\r\n\r\n        <div className='flex items-center gap-1 text-sm mt-1'>\r\n          <img src={assets.locationIcon} alt=\"location-icon\" className=\"w-4 h-4\" />\r\n          <span>{HOTEL_ADDRESS}</span>\r\n        </div>\r\n\r\n        <div className='flex items-center justify-between mt-4'>\r\n          <p>\r\n            <span className='text-xl text-gray-800'>${room.pricePerNight}</span>/night\r\n          </p>\r\n          <button className='px-4 py-2 text-sm font-medium border border-gray-300 rounded bg-gray-50 transition-all cursor-pointer'>\r\n            Book Now\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </Link>\r\n  )\r\n}\r\n\r\nexport default HotelCard\r\n"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "FrontEnd/src/components/FeaturedDestination.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1748622426246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748622435966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \r\n         <Title title='Featured Destination' subTitle='Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.' />\r\n \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n-        {roomsDummyData.slice(0, 4).map((room, index) => (\r\n+        {Rooms.slice(0, 4).map((room, index) => (\r\n             <HotelCard key={room._id} room={room} index={index} />\r\n         ))}\r\n         </div>\r\n \r\n"
+                }
+            ],
+            "date": 1748622426246,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport HotelCard from './HotelCard'\r\nimport { Rooms } from '../assets/assets'\r\nimport Title from './Title'\r\nimport { useNavigate } from 'react-router-dom'\r\n\r\nconst FeaturedDestination = () => {\r\n\r\n  const navigate = useNavigate()\r\n  \r\n  return (\r\n    <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n\r\n        <Title title='Featured Destination' subTitle='Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.' />\r\n\r\n        <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n        {roomsDummyData.slice(0, 4).map((room, index) => (\r\n            <HotelCard key={room._id} room={room} index={index} />\r\n        ))}\r\n        </div>\r\n\r\n        <button onClick={() => { navigate('/rooms'); scrollTo(0, 0); }} \r\n        className=\"my-16 px-4 py-2 text-sm font-medium border border-gray-300 rounded bg-white hover:bg-gray-50 transition-all cursor-pointer\">\r\n          View All Destinations\r\n        </button>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default FeaturedDestination\r\n"
+        }
+    ]
+}
