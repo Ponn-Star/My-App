@@ -1,0 +1,30 @@
+{
+    "sourceFile": "BackEnd/controllers/clerkWebhooks.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1748616943977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748616968294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,14 @@\n \r\n \r\n     switch (type) {\r\n         case \"user.created\": {\r\n+            const userData = {\r\n+            _id: data.id,\r\n+            email: data.email_addresses[0].email_address,\r\n+            username: data.first_name + \" \" + data.last_name,\r\n+            image: data.image_url,\r\n+        }\r\n             await User.create(userData);\r\n             break;\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1748616990935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,13 +20,13 @@\n \r\n     switch (type) {\r\n         case \"user.created\": {\r\n             const userData = {\r\n-            _id: data.id,\r\n-            email: data.email_addresses[0].email_address,\r\n-            username: data.first_name + \" \" + data.last_name,\r\n-            image: data.image_url,\r\n-        }\r\n+                _id: data.id,\r\n+                email: data.email_addresses[0].email_address,\r\n+                username: data.first_name + \" \" + data.last_name,\r\n+                image: data.image_url,\r\n+            }\r\n             await User.create(userData);\r\n             break;\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1748616998208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,14 @@\n             break;\r\n         }\r\n \r\n         case \"user.updated\": {\r\n+            const userData = {\r\n+            _id: data.id,\r\n+            email: data.email_addresses[0].email_address,\r\n+            username: data.first_name + \" \" + data.last_name,\r\n+            image: data.image_url,\r\n+            }\r\n             await User.findByIdAndUpdate(data.id, userData);\r\n             break;\r\n         }\r\n         case \"user.delete\": {\r\n"
+                }
+            ],
+            "date": 1748616943977,
+            "name": "Commit-0",
+            "content": "import User from \"../models/User.js\";\r\nimport { Webhook } from \"svix\";\r\n\r\nconst clerkWebhooks = async (req, res) => {\r\n  try {\r\n    // Create a Svix instance with clerk webhook secret.\r\n    const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET);\r\n\r\n    // Getting Headers\r\n    const headers = {\r\n      \"svix-id\": req.headers[\"svix-id\"],\r\n      \"svix-timestamp\": req.headers[\"svix-timestamp\"],\r\n      \"svix-signature\": req.headers[\"svix-signature\"],\r\n    };\r\n\r\n    await whook.verify(JSON.stringify(req.body), headers)\r\n\r\n    const {data, type} = req.body\r\n\r\n\r\n    switch (type) {\r\n        case \"user.created\": {\r\n            await User.create(userData);\r\n            break;\r\n        }\r\n\r\n        case \"user.updated\": {\r\n            await User.findByIdAndUpdate(data.id, userData);\r\n            break;\r\n        }\r\n        case \"user.delete\": {\r\n            await User.findByIdAndDelete(data.id);\r\n            break;\r\n        }\r\n\r\n        default:\r\n            break;\r\n    }\r\n    res.json({ success: true, message: \"Webhook Recieved\" })\r\n    } catch (error) {\r\n        console.log(error.message);\r\n        res.json({ success: false, message: error.message });\r\n    }\r\n}\r\n\r\nexport default clerkWebhooks;"
+        }
+    ]
+}
