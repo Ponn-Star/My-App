@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1747882477094,
@@ -20,6 +20,14 @@
                 {
                     "date": 1747930521886,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n import Layout from './pages/Admin/Layout';\n import Dashboard from './pages/Admin/Dashboard';\n import ListRoom from './pages/Admin/ListRoom';\n import AddRoom from './pages/Admin/AddRoom';\n+import AdminRoute from './components/AdminRoute'\n \n function App() {\n \n   const location = useLocation();\n@@ -21,18 +22,31 @@\n     <div>\n       {isAdminRoute ? <AdminNavbar /> : <Navbar />}\n       <div className='min-h-[70vh]'>\n         <Routes>\n-          <Route path='/' element={<Home />} />\n-          <Route path='/rooms' element={<AllRooms />} />\n-          <Route path='/rooms/:id' element={<RoomDetails />} />\n-          <Route path='/my-bookings' element={<MyBookings />} />\n-          <Route path='/owner' element={<Layout />} >\n-            <Route index element={<Dashboard />} />\n-            <Route path='add-room' element={<AddRoom />} />\n-            <Route path='list-room' element={<ListRoom />} />\n-           </Route>\n-        </Routes>\n+        <Route path='/' element={<Home />} />\n+        <Route path='/rooms' element={<AllRooms />} />\n+        <Route path='/rooms/:id' element={<RoomDetails />} />\n+        <Route path='/my-bookings' element={<MyBookings />} />\n+        \n+        <Route path='/admin' element={<Layout />}>\n+          <Route index element={\n+            <AdminRoute>\n+              <Dashboard />\n+            </AdminRoute>\n+          } />\n+          <Route path='add-room' element={\n+            <AdminRoute>\n+              <AddRoom />\n+            </AdminRoute>\n+          } />\n+          <Route path='list-room' element={\n+            <AdminRoute>\n+              <ListRoom />\n+            </AdminRoute>\n+          } />\n+        </Route>\n+      </Routes>\n       </div>\n       <Footer />\n     </div>\n   )\n"
+                },
+                {
+                    "date": 1748886472657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,23 +11,26 @@\n import Dashboard from './pages/Admin/Dashboard';\n import ListRoom from './pages/Admin/ListRoom';\n import AddRoom from './pages/Admin/AddRoom';\n import AdminRoute from './components/AdminRoute'\n+import { Toaster } from 'react-hot-toast';\n \n function App() {\n \n   const location = useLocation();\n   const isAdminRoute = location.pathname.startsWith('/admin');\n \n   return (\n     <div>\n+      <Toaster />\n       {isAdminRoute ? <AdminNavbar /> : <Navbar />}\n       <div className='min-h-[70vh]'>\n         <Routes>\n         <Route path='/' element={<Home />} />\n         <Route path='/rooms' element={<AllRooms />} />\n         <Route path='/rooms/:id' element={<RoomDetails />} />\n         <Route path='/my-bookings' element={<MyBookings />} />\n+        <Route path='/loader'\n         \n         <Route path='/admin' element={<Layout />}>\n           <Route index element={\n             <AdminRoute>\n"
+                },
+                {
+                    "date": 1748886510353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n import ListRoom from './pages/Admin/ListRoom';\n import AddRoom from './pages/Admin/AddRoom';\n import AdminRoute from './components/AdminRoute'\n import { Toaster } from 'react-hot-toast';\n+import Loader from './components/Loader'\n \n function App() {\n \n   const location = useLocation();\n@@ -28,9 +29,9 @@\n         <Route path='/' element={<Home />} />\n         <Route path='/rooms' element={<AllRooms />} />\n         <Route path='/rooms/:id' element={<RoomDetails />} />\n         <Route path='/my-bookings' element={<MyBookings />} />\n-        <Route path='/loader'\n+        <Route path='/loader/:nextUrl' element={<Loader/>} />\n         \n         <Route path='/admin' element={<Layout />}>\n           <Route index element={\n             <AdminRoute>\n"
                 }
             ],
             "date": 1747882477094,

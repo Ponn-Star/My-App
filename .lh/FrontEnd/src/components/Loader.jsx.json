@@ -1,0 +1,30 @@
+{
+    "sourceFile": "FrontEnd/src/components/Loader.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1748886302209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748886316880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n     useEffect(()=>{\r\n         if(nextUrl) {\r\n             setTimeout(()=>{\r\n-                navigate('/')\r\n+                navigate(`'/'`)\r\n             })\r\n         }\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1748886361733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,13 +10,12 @@\n \r\n     useEffect(()=>{\r\n         if(nextUrl) {\r\n             setTimeout(()=>{\r\n-                navigate(`'/'`)\r\n-            })\r\n+                navigate(`/${nextUrl}`)\r\n+            },8000)\r\n         }\r\n-    })\r\n-\r\n+    },[nextUrl])\r\n   return (\r\n     <div>\r\n       \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1748886421221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,11 @@\n             },8000)\r\n         }\r\n     },[nextUrl])\r\n   return (\r\n-    <div>\r\n-      \r\n+    <div className='flex justify-center items-center h-screen'>\r\n+        <div className='animate-spin rounded-full h-24 w-24 border-4 border-gray-300 border-t-primary'></div>\r\n     </div>\r\n-  )\r\n+    )\r\n }\r\n \r\n export default Loader\r\n"
+                }
+            ],
+            "date": 1748886302209,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport { useAppContext } from '../conext/AppContext'\r\nimport { useParams } from 'react-router-dom'\r\nimport { useEffect } from 'react'\r\n\r\nconst Loader = () => {\r\n\r\n    const { navigate } = useAppContext()\r\n    const { nextUrl } = useParams()\r\n\r\n    useEffect(()=>{\r\n        if(nextUrl) {\r\n            setTimeout(()=>{\r\n                navigate('/')\r\n            })\r\n        }\r\n    })\r\n\r\n  return (\r\n    <div>\r\n      \r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Loader\r\n"
+        }
+    ]
+}

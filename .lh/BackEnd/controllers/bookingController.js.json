@@ -1,0 +1,78 @@
+{
+    "sourceFile": "BackEnd/controllers/bookingController.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1748884713092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748884836443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,7 +99,11 @@\n   try{\r\n     const { bookingId } = req.body;\r\n \r\n     const booking = await Booking.findById{bookingId};\r\n-    const roomData = await Room.\r\n+    const roomData = await Room.findById{booking.room}.populate('RoomType');\r\n+    const totalPrice = booking.totalPrice;\r\n+    const { origin } = req.headers;\r\n+\r\n+    \r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1748884856967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,7 +103,8 @@\n     const roomData = await Room.findById{booking.room}.populate('RoomType');\r\n     const totalPrice = booking.totalPrice;\r\n     const { origin } = req.headers;\r\n \r\n+  } catch (error) {\r\n     \r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1748885549886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,8 +103,10 @@\n     const roomData = await Room.findById{booking.room}.populate('RoomType');\r\n     const totalPrice = booking.totalPrice;\r\n     const { origin } = req.headers;\r\n \r\n+    const stripeInstance\r\n+\r\n   } catch (error) {\r\n-    \r\n+\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1748885569468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,9 +103,9 @@\n     const roomData = await Room.findById{booking.room}.populate('RoomType');\r\n     const totalPrice = booking.totalPrice;\r\n     const { origin } = req.headers;\r\n \r\n-    const stripeInstance\r\n+    const stripeInstance = new stripe(process.env.)\r\n \r\n   } catch (error) {\r\n \r\n   }\r\n"
+                },
+                {
+                    "date": 1748885590593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,10 +103,12 @@\n     const roomData = await Room.findById{booking.room}.populate('RoomType');\r\n     const totalPrice = booking.totalPrice;\r\n     const { origin } = req.headers;\r\n \r\n-    const stripeInstance = new stripe(process.env.)\r\n+    const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);\r\n \r\n+    const \r\n+\r\n   } catch (error) {\r\n \r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1748885660458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,19 @@\n     const { origin } = req.headers;\r\n \r\n     const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);\r\n \r\n-    const \r\n+    const line_items = [\r\n+      {\r\n+        price_data:{\r\n+          currency: \"vnd\",\r\n+          product_data:{\r\n+            name: roomData.\r\n+          }\r\n+        },\r\n+        quantity: 1,\r\n+      }\r\n+    ]\r\n \r\n   } catch (error) {\r\n \r\n   }\r\n"
+                },
+                {
+                    "date": 1748885724318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n       {\r\n         price_data:{\r\n           currency: \"vnd\",\r\n           product_data:{\r\n-            name: roomData.\r\n+            name: roomData.room\r\n           }\r\n         },\r\n         quantity: 1,\r\n       }\r\n"
+                },
+                {
+                    "date": 1748885734664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n       {\r\n         price_data:{\r\n           currency: \"vnd\",\r\n           product_data:{\r\n-            name: roomData.room\r\n+            name: roomData.roomType.\r\n           }\r\n         },\r\n         quantity: 1,\r\n       }\r\n"
+                },
+                {
+                    "date": 1748885742592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n       {\r\n         price_data:{\r\n           currency: \"vnd\",\r\n           product_data:{\r\n-            name: roomData.roomType.\r\n+            name: roomData.roomType,\r\n           }\r\n         },\r\n         quantity: 1,\r\n       }\r\n"
+                },
+                {
+                    "date": 1748885852039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import { model } from \"mongoose\";\r\n import Booking from \"../models/Booking\";\r\n import Room from \"../models/Room\";\r\n \r\n const checkAvailability = async ({ checkInDate, checkOutDate, room }) => {\r\n@@ -111,14 +112,22 @@\n         price_data:{\r\n           currency: \"vnd\",\r\n           product_data:{\r\n             name: roomData.roomType,\r\n-          }\r\n+          },\r\n+          unit_amount: totalPrice * 100\r\n         },\r\n         quantity: 1,\r\n       }\r\n     ]\r\n \r\n+    const session = await stripeInstance.checkout.session.create({\r\n+      line_items,\r\n+      mode: \"payment\",\r\n+      success_url: ,\r\n+      cancel_url: ,\r\n+    })\r\n+\r\n   } catch (error) {\r\n \r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1748885882223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,8 +124,11 @@\n       line_items,\r\n       mode: \"payment\",\r\n       success_url: ,\r\n       cancel_url: ,\r\n+      metadata:{\r\n+        bookingId,\r\n+      }\r\n     })\r\n \r\n   } catch (error) {\r\n \r\n"
+                },
+                {
+                    "date": 1748885933869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,10 +122,10 @@\n \r\n     const session = await stripeInstance.checkout.session.create({\r\n       line_items,\r\n       mode: \"payment\",\r\n-      success_url: ,\r\n-      cancel_url: ,\r\n+      success_url: `${origin}/loader/my-bookings`,\r\n+      cancel_url: `${origin}/my-bookings`,\r\n       metadata:{\r\n         bookingId,\r\n       }\r\n     })\r\n"
+                },
+                {
+                    "date": 1748885945160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,8 +128,9 @@\n       metadata:{\r\n         bookingId,\r\n       }\r\n     })\r\n+    res.json()\r\n \r\n   } catch (error) {\r\n \r\n   }\r\n"
+                },
+                {
+                    "date": 1748885976901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,9 @@\n       metadata:{\r\n         bookingId,\r\n       }\r\n     })\r\n-    res.json()\r\n+    res.json({success: true, url: session.url})\r\n \r\n   } catch (error) {\r\n \r\n   }\r\n"
+                },
+                {
+                    "date": 1748886010848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,7 +131,7 @@\n     })\r\n     res.json({success: true, url: session.url})\r\n \r\n   } catch (error) {\r\n-\r\n+    res.json({success: false, url: \"Thanh toán không thành công\"})\r\n   }\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1748884713092,
+            "name": "Commit-0",
+            "content": "import Booking from \"../models/Booking\";\r\nimport Room from \"../models/Room\";\r\n\r\nconst checkAvailability = async ({ checkInDate, checkOutDate, room }) => {\r\n  try {\r\n    const bookings = await Booking.find({\r\n      room,\r\n      checkInDate: { $lte: checkOutDate },\r\n      checkOutDate: { $gte: checkInDate },\r\n    });\r\n    const isAvailable = bookings.length === 0;\r\n    return isAvailable;\r\n  } catch (error) {\r\n    console.error(error.message);\r\n  }\r\n};\r\n\r\n// check-availability\r\nexport const checkAvailabilityAPI = async (req, res) => {\r\n  try {\r\n    const { room, checkInDate, checkOutDate } = req.body;\r\n    const isAvailable = await checkAvailability({ checkInDate, checkOutDate, room });\r\n    res.json({ success: true, isAvailable });\r\n  } catch (error) {\r\n    res.json({ success: false, message: error.message });\r\n  }\r\n};\r\n\r\n//book\r\nexport const createBooking = async (req, res) => {\r\n  try {\r\n    const { room, checkInDate, checkOutDate, guests } = req.body;\r\n    const user = req.user._id;\r\n\r\n    // Before Booking Check Availability\r\n    const isAvailable = await checkAvailability({\r\n      checkInDate,\r\n      checkOutDate,\r\n      room,\r\n    });\r\n\r\n    if(!isAvailable) {\r\n        return res.json({ sucess: false, message: \"Phòng này đã được đặt hết vào hôm nay\"})\r\n    }\r\n    const roomData = await Room.findById(room);\r\n    let totalPrice = roomData.pricePerNight;\r\n\r\n    // Calculate totalPrice based on nights\r\n    const checkIn = new Date(checkInDate);\r\n    const checkOut = new Date(checkOutDate);\r\n    const timeDiff = checkOut.getTime() - checkIn.getTime();\r\n    const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));\r\n\r\n    totalPrice *= nights;\r\n    const booking = await Booking.create({\r\n        user,\r\n        room,\r\n        checkInDate,\r\n        checkOutDate,\r\n        totalPrice,\r\n    })\r\n\r\n    res.json({ success: true, message: \"Đặt phòng thành công!\" });\r\n\r\n    } catch (error) {\r\n        console.log(error);\r\n        res.json({ success: false, message: \"Đặt phòng không thành công. Xin vui lòng thử lại\" })\r\n    }\r\n};\r\n\r\n\r\nexport const getUserBookings = async (req, res) => {\r\n  try {\r\n    const user = req.user._id;\r\n    const bookings = await Booking.find({user}).populate(\"room\").sort({createdAt: -1});\r\n    res.json({success: true, bookings})\r\n  } catch (error) {\r\n    res.json({ success: false, message: \"Không thể xác minh chỗ đặt\" });\r\n  }\r\n};\r\n\r\nexport const getRoomBookings = async (req, res) => {\r\n  try {\r\n    const room = await Room.findOne({ owner: req.auth.userId });\r\n    if (!room) {\r\n      return res.json({ success: false, message: \"Không tìm thấy phòng\" });\r\n    }\r\n    const bookings = await Booking.find({ hotel: room._id }).populate(\"room user\").sort({ createdAt: -1 });\r\n    const totalBookings = bookings.length;\r\n    const totalRevenue = bookings.reduce((acc, booking) => acc + booking.totalPrice, 0);\r\n\r\n    res.json({ success: true, dashboardData: { totalBookings, totalRevenue, bookings } });\r\n  } catch (error) {\r\n    res.json({ success: false, message: \"Không thể xác minh chỗ đặt\" });\r\n  }\r\n};\r\n\r\nexport const stripePayment = async (req, res)=> {\r\n  try{\r\n    const { bookingId } = req.body;\r\n\r\n    const booking = await Booking.findById{bookingId};\r\n    const roomData = await Room.\r\n  }\r\n}"
+        }
+    ]
+}

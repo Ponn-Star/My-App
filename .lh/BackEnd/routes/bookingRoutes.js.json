@@ -1,0 +1,18 @@
+{
+    "sourceFile": "BackEnd/routes/bookingRoutes.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1748886110434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1748886110434,
+            "name": "Commit-0",
+            "content": "import express from 'express';\r\nimport {\r\n  checkAvailabilityAPI,\r\n  createBooking,\r\n  getRoomBookings,\r\n  getUserBookings,\r\n  stripePayment\r\n} from '../controllers/bookingController.js';\r\nimport { protect } from '../middleware/authMiddleware.js';\r\n\r\nconst bookingRouter = express.Router();\r\n\r\nbookingRouter.post('/check-availability', checkAvailabilityAPI);\r\nbookingRouter.post('/book', protect, createBooking);\r\nbookingRouter.get('/user', protect, getUserBookings);\r\nbookingRouter.get('/room', protect, getRoomBookings);\r\n\r\nbookingRouter.post('/stripe-payment', protect, stripePayment);\r\n\r\nexport default bookingRouter;\r\n"
+        }
+    ]
+}

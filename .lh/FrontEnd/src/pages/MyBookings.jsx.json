@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1748623867797,
@@ -12,6 +12,34 @@
                 {
                     "date": 1748623885458,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { assets, BookingsData } from '../assets/assets'\r\n \r\n const MyBookings = () => {\r\n \r\n-    const [bookings, setBookings] = useState(userBookingsDummyData)\r\n+    const [bookings, setBookings] = useState(BookingsData)\r\n \r\n   return (\r\n     <div className='py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <Title title='My Bookings' subTitle='Easily manage your past, current, and upcoming hotel reservations in one place. Plan your trips seamlessly with just a few clicks' align='left'/>\r\n"
+                },
+                {
+                    "date": 1748886574433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n const MyBookings = () => {\r\n \r\n     const [bookings, setBookings] = useState(BookingsData)\r\n \r\n+    const handlePayment = async\r\n+\r\n   return (\r\n     <div className='py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <Title title='My Bookings' subTitle='Easily manage your past, current, and upcoming hotel reservations in one place. Plan your trips seamlessly with just a few clicks' align='left'/>\r\n \r\n"
+                },
+                {
+                    "date": 1748886620021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,16 @@\n const MyBookings = () => {\r\n \r\n     const [bookings, setBookings] = useState(BookingsData)\r\n \r\n-    const handlePayment = async\r\n+    const handlePayment = async (bookingId)=>{\r\n+        try {\r\n \r\n+        } catch (error){\r\n+            \r\n+        }\r\n+    }\r\n+\r\n   return (\r\n     <div className='py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32'>\r\n       <Title title='My Bookings' subTitle='Easily manage your past, current, and upcoming hotel reservations in one place. Plan your trips seamlessly with just a few clicks' align='left'/>\r\n \r\n"
+                },
+                {
+                    "date": 1748886714046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,18 @@\n import React, { useState } from 'react'\r\n import Title from '../components/Title'\r\n import { assets, BookingsData } from '../assets/assets'\r\n+import axios from 'axios'\r\n \r\n const MyBookings = () => {\r\n \r\n     const [bookings, setBookings] = useState(BookingsData)\r\n \r\n     const handlePayment = async (bookingId)=>{\r\n         try {\r\n+            const { data } = await axios.post('/api/bookings/stripe-payment', {bookingId}, {headers: { Authorization: `Bearer ${await getToken()}` }})\r\n+        } catch (error){\r\n \r\n-        } catch (error){\r\n-            \r\n         }\r\n     }\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1748886767152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,22 @@\n import React, { useState } from 'react'\r\n import Title from '../components/Title'\r\n import { assets, BookingsData } from '../assets/assets'\r\n import axios from 'axios'\r\n+import toast from 'react-hot-toast'\r\n \r\n const MyBookings = () => {\r\n \r\n     const [bookings, setBookings] = useState(BookingsData)\r\n \r\n     const handlePayment = async (bookingId)=>{\r\n         try {\r\n             const { data } = await axios.post('/api/bookings/stripe-payment', {bookingId}, {headers: { Authorization: `Bearer ${await getToken()}` }})\r\n+            if (data.success) {\r\n+                window.location.href = data.url\r\n+            } else{\r\n+                toast.error\r\n+            }\r\n         } catch (error){\r\n \r\n         }\r\n     }\r\n"
+                },
+                {
+                    "date": 1748886791467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,12 @@\n             const { data } = await axios.post('/api/bookings/stripe-payment', {bookingId}, {headers: { Authorization: `Bearer ${await getToken()}` }})\r\n             if (data.success) {\r\n                 window.location.href = data.url\r\n             } else{\r\n-                toast.error\r\n+                toast.error(data.message)\r\n             }\r\n         } catch (error){\r\n-\r\n+            toast.error(error)\r\n         }\r\n     }\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1748886798438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             } else{\r\n                 toast.error(data.message)\r\n             }\r\n         } catch (error){\r\n-            toast.error(error)\r\n+            toast.error(error.message)\r\n         }\r\n     }\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1748886842547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                         {booking.isPaid ? \"Paid\" : \"Unpaid\"}\r\n                         </p>\r\n                     </div>\r\n                     {!booking.isPaid && (\r\n-                        <button className='px-4 py-1.5 mt-4 text-xs border border-gray-400 rounded-full hover:bg-gray-50 transition-all cursor-pointer'>\r\n+                        <button onClick={()=> handlePayment(booking._id)} className='px-4 py-1.5 mt-4 text-xs border border-gray-400 rounded-full hover:bg-gray-50 transition-all cursor-pointer'>\r\n                         Pay Now\r\n                         </button>\r\n                     )}\r\n                 </div>\r\n"
                 }
             ],
             "date": 1748623867797,
