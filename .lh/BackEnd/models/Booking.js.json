@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1748875863080,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749115718002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,16 @@\n import mongoose from \"mongoose\";\r\n \r\n const bookingSchema = new mongoose.Schema({\r\n-  user: {type: String, ref: \"User\", require: true},\r\n-  room: {type: String, ref: \"Room\", require: true},\r\n-  checkInDate: {type: Date, require: true},\r\n-  checkOutDate: {type: Date, require: true},\r\n-  totalPrice: {type: Number, require: true},\r\n-  user: {\r\n-    type: String,\r\n-    enum: [\"Chưa kiểm duyệt\", \"Đã xác nhận\", \"Đã hủy\" ],\r\n-    default: \"Chưa kiểm duyệt\",\r\n-  },\r\n-  paymentMethod: {\r\n-    type: String,\r\n-    require: true,\r\n-    default: \"Thanh toán trực tiếp\"\r\n-  },\r\n-  isPaid: { type: Boolean, default: false}\r\n+  user: { type: mongoose.Schema.Types.ObjectId, ref: \"User\", required: true },\r\n+  room: { type: mongoose.Schema.Types.ObjectId, ref: \"Room\", required: true },\r\n+  checkInDate: { type: Date, required: true },\r\n+  checkOutDate: { type: Date, required: true },\r\n+  soKhach: { type: Number, required: true }, // số khách\r\n+  tongTien: { type: Number, required: true }, // tổng tiền\r\n+  phuongThucThanhToan: { type: String, default: \"Thanh toán trực tiếp\" }, // Stripe, ThanhToanTaiCho\r\n+  trangThai: { type: String, enum: [\"Chờ Xác Nhận\", \"Đã Xác Nhận\", \"Đã Hủy\"], default: \"Chờ Xác Nhận\" },\r\n+  daThanhToan: { type: Boolean, default: false },\r\n }, { timestamps: true });\r\n \r\n const Booking = mongoose.model(\"Booking\", bookingSchema);\r\n \r\n"
                 }
             ],
             "date": 1748875863080,

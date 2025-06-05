@@ -4,6 +4,7 @@ export const registerRoom = async (req, res) => {
   try {
     const { roomType, pricePerNight, amenities, images, isAvailable } = req.body;
 
+    // Check if Room Already Registered (by roomType and pricePerNight)
     const room = await Room.findOne({ roomType, pricePerNight });
     if (room) {
       return res.json({ success: false, message: "Room Already Registered" });

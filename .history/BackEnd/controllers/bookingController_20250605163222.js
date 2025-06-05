@@ -87,9 +87,13 @@ export const getUserBookings = async (req, res) => {
 
 export const getRoomBookings = async (req, res) => {
   try {
-    const bookings = await Booking.find().populate("room user").sort({ createdAt: -1 });
+    const room = await Room.findOne({ owner: req.auth.userId });
+    if (!room) {
+      return res.json({ success: false, message: "Không tìm thấy phòng" });
+    }
+    const bookings = await Booking.find({ hotel: room._id }).populate("room user").sort({ createdAt: -1 });
     const totalBookings = bookings.length;
-    const totalRevenue = bookings.reduce((acc, booking) => acc + (booking.tongTien || 0), 0);
+    const totalRevenue = bookings.reduce((acc, booking) => acc + booking.totalPrice, 0);
 
     res.json({ success: true, dashboardData: { totalBookings, totalRevenue, bookings } });
   } catch (error) {
@@ -105,11 +109,11 @@ export const stripePayment = async (req, res)=> {
     if (!booking) {
       return res.json({ success: false, message: "Không tìm thấy đặt phòng" });
     }
-    const roomData = await Room.findById(booking.room);
+    const roomData = await Room.findById(booking.room).populate('roomType');
     if (!roomData) {
       return res.json({ success: false, message: "Không tìm thấy phòng" });
     }
-    const tongTien = booking.tongTien;
+    const totalPrice = booking.totalPrice;
     const { origin } = req.headers;
 
     const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -119,9 +123,9 @@ export const stripePayment = async (req, res)=> {
         price_data:{
           currency: "vnd",
           product_data:{
-            name: roomData.roomType || "Phòng",
+            name: roomData.roomType ? roomData.roomType.name || roomData.roomType : "Phòng",
           },
-          unit_amount: tongTien * 100
+          unit_amount: totalPrice * 100
         },
         quantity: 1,
       }

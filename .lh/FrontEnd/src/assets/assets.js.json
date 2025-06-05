@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 63,
+            "activePatchIndex": 64,
             "patches": [
                 {
                     "date": 1748514675160,
@@ -260,6 +260,10 @@
                 {
                     "date": 1748631277238,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n   {\r\n     id: 3,\r\n     title: \"Xem phim ngoài trời\",\r\n     description: \"Trải nghiệm không gian lửa trại ấm cúng và thưởng thức những bộ phim hấp dẫn dưới bầu trời đầy sao.\",\r\n-    image: \"https://drive.google.com/uc?id=1zmqpAXUl4K-07pG5A__V8TgYP5Yk-crz\"\r\n+    image: xemphim\r\n   }\r\n ];\r\n \r\n // Facility Icon\r\n"
+                },
+                {
+                    "date": 1749115544242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,12 @@\n import totalRevenueIcon from \"./totalRevenueIcon.svg\";\r\n import bancung from './bancung.jpg';\r\n import xemphim from './xemphim.jpg';\r\n import luatrai from './luatrai.jpg';\r\n+// import hydrangeaIcon from './hydrangeaIcon.svg';\r\n+// import mountainLakeIcon from './mountainLakeIcon.svg';\r\n+// import sceneryIcon from './sceneryIcon.svg';\r\n+// import pineForestIcon from './pineForestIcon.svg';\r\n \r\n \r\n \r\n export const assets = {\r\n@@ -71,8 +75,12 @@\n     listIcon,\r\n     uploadArea,\r\n     totalBookingIcon,\r\n     totalRevenueIcon,\r\n+    // hydrangeaIcon,\r\n+    // mountainLakeIcon,\r\n+    // sceneryIcon,\r\n+    // pineForestIcon,\r\n }\r\n \r\n export const roomTypes = [\r\n   \"Lều đơn\",\r\n"
                 }
             ],
             "date": 1748514675160,

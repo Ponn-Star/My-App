@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1748882332956,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749115957232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,22 +2,19 @@\n import User from \"../models/User\";\r\n \r\n export const registerRoom = async (req, res) => {\r\n   try {\r\n-    const { name, address, contact, city } = req.body;\r\n-    const owner = req.user._id;\r\n+    const { roomType, pricePerNight, amenities, images, isAvailable } = req.body;\r\n \r\n-    // Check if User Already Registered\r\n-    const room = await Room.findOne({ owner });\r\n+    // Check if Room Already Registered (by roomType and pricePerNight)\r\n+    const room = await Room.findOne({ roomType, pricePerNight });\r\n     if (room) {\r\n-      return res.json({ success: false, message: \"Hotel Already Registered\" });\r\n+      return res.json({ success: false, message: \"Room Already Registered\" });\r\n     }\r\n \r\n-    await Room.create({ name, address, contact, city, owner });\r\n+    await Room.create({ roomType, pricePerNight, amenities, images, isAvailable });\r\n \r\n-    await User.findByIdAndUpdate(owner, { role: \"hotelOwner\" });\r\n-\r\n-    res.json({ success: true, message: \"Hotel Registered Registered\" });\r\n+    res.json({ success: true, message: \"Room Registered Successfully\" });\r\n   } catch (error) {\r\n-        res.json({ success: false, message: error.message});\r\n+    res.json({ success: false, message: error.message });\r\n   }\r\n };\r\n"
+                },
+                {
+                    "date": 1749116402226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-import Room from \"../models/Room\";\r\n-import User from \"../models/User\";\r\n+import Room from \"../models/Room.js\";\r\n \r\n export const registerRoom = async (req, res) => {\r\n   try {\r\n     const { roomType, pricePerNight, amenities, images, isAvailable } = req.body;\r\n"
                 }
             ],
             "date": 1748882332956,

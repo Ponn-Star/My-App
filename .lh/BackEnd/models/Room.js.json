@@ -1,0 +1,30 @@
+{
+    "sourceFile": "BackEnd/models/Room.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1749115290091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749115717974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import mongoose from \"mongoose\";\r\n \r\n const roomSchema = new mongoose.Schema({\r\n-  name: { type: String, required: true },\r\n+  roomType: { type: String, required: true }, // \"Lều đơn\", \"Lều đôi\", ...\r\n   pricePerNight: { type: Number, required: true },\r\n+  amenities: [{ type: String }], // [\"WiFi Miễn Phí\", ...]\r\n+  images: [{ type: String }], // đường dẫn ảnh\r\n+  isAvailable: { type: Boolean, default: true },\r\n   owner: { type: mongoose.Schema.Types.ObjectId, ref: \"User\" },\r\n-  roomType: { type: String },\r\n   // ...bổ sung các trường khác nếu cần...\r\n }, { timestamps: true });\r\n \r\n export default mongoose.model(\"Room\", roomSchema);\r\n"
+                },
+                {
+                    "date": 1749115727631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,7 @@\n   amenities: [{ type: String }], // [\"WiFi Miễn Phí\", ...]\r\n   images: [{ type: String }], // đường dẫn ảnh\r\n   isAvailable: { type: Boolean, default: true },\r\n   owner: { type: mongoose.Schema.Types.ObjectId, ref: \"User\" },\r\n-  // ...bổ sung các trường khác nếu cần...\r\n }, { timestamps: true });\r\n \r\n export default mongoose.model(\"Room\", roomSchema);\r\n"
+                },
+                {
+                    "date": 1749116408348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,11 @@\n import mongoose from \"mongoose\";\r\n \r\n const roomSchema = new mongoose.Schema({\r\n-  roomType: { type: String, required: true }, // \"Lều đơn\", \"Lều đôi\", ...\r\n+  roomType: { type: String, required: true },\r\n   pricePerNight: { type: Number, required: true },\r\n-  amenities: [{ type: String }], // [\"WiFi Miễn Phí\", ...]\r\n-  images: [{ type: String }], // đường dẫn ảnh\r\n+  amenities: [{ type: String }],\r\n+  images: [{ type: String }],\r\n   isAvailable: { type: Boolean, default: true },\r\n-  owner: { type: mongoose.Schema.Types.ObjectId, ref: \"User\" },\r\n }, { timestamps: true });\r\n \r\n export default mongoose.model(\"Room\", roomSchema);\r\n"
+                }
+            ],
+            "date": 1749115290091,
+            "name": "Commit-0",
+            "content": "import mongoose from \"mongoose\";\r\n\r\nconst roomSchema = new mongoose.Schema({\r\n  name: { type: String, required: true },\r\n  pricePerNight: { type: Number, required: true },\r\n  owner: { type: mongoose.Schema.Types.ObjectId, ref: \"User\" },\r\n  roomType: { type: String },\r\n  // ...bổ sung các trường khác nếu cần...\r\n}, { timestamps: true });\r\n\r\nexport default mongoose.model(\"Room\", roomSchema);\r\n"
+        }
+    ]
+}

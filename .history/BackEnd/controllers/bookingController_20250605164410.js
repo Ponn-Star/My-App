@@ -87,6 +87,7 @@ export const getUserBookings = async (req, res) => {
 
 export const getRoomBookings = async (req, res) => {
   try {
+    // Lấy tất cả bookings của tất cả phòng (nếu không có owner)
     const bookings = await Booking.find().populate("room user").sort({ createdAt: -1 });
     const totalBookings = bookings.length;
     const totalRevenue = bookings.reduce((acc, booking) => acc + (booking.tongTien || 0), 0);

@@ -36,10 +36,10 @@ import totalRevenueIcon from "./totalRevenueIcon.svg";
 import bancung from './bancung.jpg';
 import xemphim from './xemphim.jpg';
 import luatrai from './luatrai.jpg';
-// import hydrangeaIcon from './hydrangeaIcon.svg';
-// import mountainLakeIcon from './mountainLakeIcon.svg';
-// import sceneryIcon from './sceneryIcon.svg';
-// import pineForestIcon from './pineForestIcon.svg';
+import hydrangeaIcon from './hydrangeaIcon.svg';
+import mountainLakeIcon from './mountainLakeIcon.svg';
+import sceneryIcon from './sceneryIcon.svg';
+import pineForestIcon from './pineForestIcon.svg';
 
 
 
@@ -76,10 +76,10 @@ export const assets = {
     uploadArea,
     totalBookingIcon,
     totalRevenueIcon,
-    // hydrangeaIcon,
-    // mountainLakeIcon,
-    // sceneryIcon,
-    // pineForestIcon,
+    hydrangeaIcon,
+    mountainLakeIcon,
+    sceneryIcon,
+    pineForestIcon,
 }
 
 export const roomTypes = [

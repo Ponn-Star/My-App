@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1748875884879,
@@ -12,6 +12,10 @@
                 {
                     "date": 1748875896863,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n   recentSearchedCities: [{type: String, required: true}],\r\n }, {timestamps: true}\r\n );\r\n \r\n-const User = mongoose.model(\"User\", userSchema);\r\n+const User = mongoose.model(\"user\", userSchema);\r\n \r\n export default User;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749115718014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import mongoose from \"mongoose\";\r\n \r\n const userSchema = mongoose.Schema({\r\n-  _id: {type: String, required: true},\r\n-  username: {type: String, required: true},\r\n+  idUser: {type: String, required: true}, // giống UserData\r\n+  Ten: {type: String, required: true}, // tên người dùng\r\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n-  role: {type: String, enum: [\"admin\", \"user\"], default: \"user\"},\r\n-  recentSearchedCities: [{type: String, required: true}],\r\n+  role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n+  recentSearchedCities: [{type: String}],\r\n }, {timestamps: true}\r\n );\r\n \r\n-const User = mongoose.model(\"user\", userSchema);\r\n+const User = mongoose.model(\"User\", userSchema);\r\n \r\n export default User;\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1748875884879,

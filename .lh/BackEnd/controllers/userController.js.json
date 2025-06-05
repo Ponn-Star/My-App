@@ -1,0 +1,18 @@
+{
+    "sourceFile": "BackEnd/controllers/userController.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1749115963135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1749115963134,
+            "name": "Commit-0",
+            "content": "export const getUserData = async (req, res) => {\r\n    try {\r\n        const role = req.user.role;\r\n        const recentSearchedCities = req.user.recentSearchedCities;\r\n        res.json({success: true, role, recentSearchedCities})\r\n    } catch (error) {\r\n        res.json({success: false, message: error.message})\r\n    }\r\n}\r\n\r\nexport const storeRecentSearchedCities = async (req, res) => {\r\n  try {\r\n    const { recentSearchedCity } = req.body;\r\n    const user = req.user;\r\n\r\n    if(user.recentSearchedCities.length < 3){\r\n      user.recentSearchedCities.push(recentSearchedCity)\r\n    } else {\r\n      user.recentSearchedCities.shift();\r\n      user.recentSearchedCities.push(recentSearchedCity)\r\n    }\r\n    await user.save();\r\n    res.json({ success: true, message: \"City added\" })\r\n\r\n  } catch (error) {\r\n    res.json({ success: false, message: error.message })\r\n  }\r\n}\r\n"
+        }
+    ]
+}
