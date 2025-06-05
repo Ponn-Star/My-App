@@ -13,7 +13,7 @@ import AddRoom from './pages/Owner/AddRoom';
 
 function App() {
 
-  const isOwnerPath = useLocation().pathname.includes("owner");
+  const isOwnerPath = useLocation().pathname.includes("admin");
   return (
     <div>
       {!isOwnerPath && <Navbar />}
@@ -23,7 +23,7 @@ function App() {
           <Route path='/rooms' element={<AllRooms />} />
           <Route path='/rooms/:id' element={<RoomDetails />} />
           <Route path='/my-bookings' element={<MyBookings />} />
-          <Route path='/owner' element={<Layout />} >
+          <Route path='/admin' element={<Layout />} >
             <Route index element={<Dashboard />} />
             <Route path='add-room' element={<AddRoom />} />
             <Route path='list-room' element={<ListRoom />} />

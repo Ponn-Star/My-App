@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".history/FrontEnd/src/App_20250512001520.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1749153596636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749153610886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n           <Route path='/' element={<Home />} />\n           <Route path='/rooms' element={<AllRooms />} />\n           <Route path='/rooms/:id' element={<RoomDetails />} />\n           <Route path='/my-bookings' element={<MyBookings />} />\n-          <Route path='/owner' element={<Layout />} >\n+          <Route path='/admin' element={<Layout />} >\n             <Route index element={<Dashboard />} />\n             <Route path='add-room' element={<AddRoom />} />\n             <Route path='list-room' element={<ListRoom />} />\n            </Route>\n"
+                }
+            ],
+            "date": 1749153596636,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport Navbar from './components/Navbar'\nimport { Route, Routes, useLocation } from 'react-router-dom'\nimport Home from './pages/Home'\nimport AllRooms from './pages/AllRooms';\nimport RoomDetails from './pages/RoomDetails';\nimport Footer from './components/Footer';\nimport MyBookings from './pages/MyBookings';\nimport Layout from './pages/Owner/Layout';\nimport Dashboard from './pages/Owner/Dashboard';\nimport ListRoom from './pages/Owner/ListRoom';\nimport AddRoom from './pages/Owner/AddRoom';\n\nfunction App() {\n\n  const isOwnerPath = useLocation().pathname.includes(\"admin\");\n  return (\n    <div>\n      {!isOwnerPath && <Navbar />}\n      <div className='min-h-[70vh]'>\n        <Routes>\n          <Route path='/' element={<Home />} />\n          <Route path='/rooms' element={<AllRooms />} />\n          <Route path='/rooms/:id' element={<RoomDetails />} />\n          <Route path='/my-bookings' element={<MyBookings />} />\n          <Route path='/owner' element={<Layout />} >\n            <Route index element={<Dashboard />} />\n            <Route path='add-room' element={<AddRoom />} />\n            <Route path='list-room' element={<ListRoom />} />\n           </Route>\n        </Routes>\n      </div>\n      <Footer />\n    </div>\n  )\n}\n\nexport default App\n"
+        }
+    ]
+}

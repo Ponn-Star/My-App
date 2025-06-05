@@ -1,0 +1,22 @@
+{
+    "sourceFile": "BackEnd/middleware/authMiddleware.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1749160856113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749162037128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import User from \"../models/User.js\";\r\n \r\n // Middleware to check if user is authenticated\r\n export const protect = async (req, res, next) => {\r\n-    const { userId } = req.auth;\r\n+    // Clerk sẽ gán req.auth.userId nếu token hợp lệ\r\n+    const { userId } = req.auth || {};\r\n     if (!userId) {\r\n         return res.json({ success: false, message: \"not authenticated\" });\r\n     } \r\n     const user = await User.findById(userId);\r\n"
+                }
+            ],
+            "date": 1749160856113,
+            "name": "Commit-0",
+            "content": "import User from \"../models/User.js\";\r\n\r\n// Middleware to check if user is authenticated\r\nexport const protect = async (req, res, next) => {\r\n    const { userId } = req.auth;\r\n    if (!userId) {\r\n        return res.json({ success: false, message: \"not authenticated\" });\r\n    } \r\n    const user = await User.findById(userId);\r\n    if (!user) {\r\n        return res.json({ success: false, message: \"user not found\" });\r\n    }\r\n    req.user = user;\r\n    next();\r\n}\r\n"
+        }
+    ]
+}

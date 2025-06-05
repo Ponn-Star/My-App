@@ -1,0 +1,66 @@
+{
+    "sourceFile": "FrontEnd/src/components/RoomCard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1749151011375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749151032384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import React from 'react'\r\n import { Link } from 'react-router-dom'\r\n import { assets, imageMap } from '../assets/assets'\r\n \r\n-const HOTEL_NAME = \"Forest Scent Glamping\"\r\n const HOTEL_ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n \r\n const HotelCard = ({ room, index }) => {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1749151134155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { assets, imageMap } from '../assets/assets'\r\n \r\n const HOTEL_ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n \r\n-const HotelCard = ({ room, index }) => {\r\n+const RoomCard = ({ room, index }) => {\r\n   return (\r\n     <Link\r\n       to={'/room/' + room._id}\r\n       onClick={() => window.scrollTo(0, 0)}\r\n"
+                },
+                {
+                    "date": 1749151143144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,5 +44,5 @@\n     </Link>\r\n   )\r\n }\r\n \r\n-export default HotelCard\r\n+export default RoomCard\r\n"
+                },
+                {
+                    "date": 1749151200654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,17 +2,26 @@\n import { Link } from 'react-router-dom'\r\n import { assets, imageMap } from '../assets/assets'\r\n \r\n const HOTEL_ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n+const DEFAULT_IMAGE = assets.uploadArea; // hoặc bất kỳ ảnh mặc định nào bạn muốn\r\n \r\n const RoomCard = ({ room, index }) => {\r\n+  // Lấy key ảnh đầu tiên\r\n+  const imgKey = room.images && room.images.length > 0 ? room.images[0] : null;\r\n+  // Lấy biến ảnh từ imageMap, fallback về DEFAULT_IMAGE nếu không có\r\n+  const imgSrc = (imgKey && imageMap[imgKey]) || DEFAULT_IMAGE;\r\n+\r\n+  // Debug: log key và kết quả\r\n+  // console.log(\"RoomCard imgKey:\", imgKey, \"imgSrc:\", imgSrc);\r\n+\r\n   return (\r\n     <Link\r\n       to={'/room/' + room._id}\r\n       onClick={() => window.scrollTo(0, 0)}\r\n       className='relative max-w-70 w-full rounded-xl overflow-hidden bg-white text-gray-500/90 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]'\r\n     >\r\n-      <img src={imageMap[room.images[0]] || room.images[0]} alt={room.roomType} className=\"w-full object-cover\" />\r\n+      <img src={imgSrc} alt={room.roomType} className=\"w-full object-cover\" />\r\n \r\n       {index % 2 === 0 && (\r\n         <p className='px-3 py-1 absolute top-3 left-3 text-xs bg-white text-gray-800 font-medium rounded-full'>\r\n           Best Seller\r\n"
+                },
+                {
+                    "date": 1749151224699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react'\r\n import { Link } from 'react-router-dom'\r\n import { assets, imageMap } from '../assets/assets'\r\n \r\n-const HOTEL_ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n-const DEFAULT_IMAGE = assets.uploadArea; // hoặc bất kỳ ảnh mặc định nào bạn muốn\r\n+const ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n+const DEFAULT_IMAGE = assets.uploadArea;\r\n \r\n const RoomCard = ({ room, index }) => {\r\n   // Lấy key ảnh đầu tiên\r\n   const imgKey = room.images && room.images.length > 0 ? room.images[0] : null;\r\n@@ -37,9 +37,9 @@\n         </div>\r\n \r\n         <div className='flex items-center gap-1 text-sm mt-1'>\r\n           <img src={assets.locationIcon} alt=\"location-icon\" className=\"w-4 h-4\" />\r\n-          <span>{HOTEL_ADDRESS}</span>\r\n+          <span>{ADDRESS}</span>\r\n         </div>\r\n \r\n         <div className='flex items-center justify-between mt-4'>\r\n           <p>\r\n"
+                },
+                {
+                    "date": 1749151658274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,12 @@\n import React from 'react'\r\n import { Link } from 'react-router-dom'\r\n-import { assets, imageMap } from '../assets/assets'\r\n+import { assets } from '../assets/assets'\r\n \r\n const ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n const DEFAULT_IMAGE = assets.uploadArea;\r\n \r\n const RoomCard = ({ room, index }) => {\r\n-  // Lấy key ảnh đầu tiên\r\n-  const imgKey = room.images && room.images.length > 0 ? room.images[0] : null;\r\n-  // Lấy biến ảnh từ imageMap, fallback về DEFAULT_IMAGE nếu không có\r\n-  const imgSrc = (imgKey && imageMap[imgKey]) || DEFAULT_IMAGE;\r\n-\r\n-  // Debug: log key và kết quả\r\n-  // console.log(\"RoomCard imgKey:\", imgKey, \"imgSrc:\", imgSrc);\r\n-\r\n   return (\r\n     <Link\r\n       to={'/room/' + room._id}\r\n       onClick={() => window.scrollTo(0, 0)}\r\n"
+                },
+                {
+                    "date": 1749151789839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,20 @@\n import React from 'react'\r\n import { Link } from 'react-router-dom'\r\n-import { assets } from '../assets/assets'\r\n+import { assets, imageMap } from '../assets/assets'\r\n \r\n const ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n const DEFAULT_IMAGE = assets.uploadArea;\r\n \r\n const RoomCard = ({ room, index }) => {\r\n+  // Lấy key ảnh đầu tiên\r\n+  const imgKey = room.images && room.images.length > 0 ? room.images[0] : null;\r\n+  // Lấy biến ảnh từ imageMap, fallback về DEFAULT_IMAGE nếu không có\r\n+  const imgSrc = (imgKey && imageMap[imgKey]) || DEFAULT_IMAGE;\r\n+\r\n+  // Debug: log key và kết quả\r\n+  // console.log(\"RoomCard imgKey:\", imgKey, \"imgSrc:\", imgSrc);\r\n+\r\n   return (\r\n     <Link\r\n       to={'/room/' + room._id}\r\n       onClick={() => window.scrollTo(0, 0)}\r\n"
+                },
+                {
+                    "date": 1749151926952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,15 @@\n import React from 'react'\r\n import { Link } from 'react-router-dom'\r\n-import { assets, imageMap } from '../assets/assets'\r\n+import { assets } from '../assets/assets'\r\n \r\n const ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n const DEFAULT_IMAGE = assets.uploadArea;\r\n \r\n const RoomCard = ({ room, index }) => {\r\n-  // Lấy key ảnh đầu tiên\r\n   const imgKey = room.images && room.images.length > 0 ? room.images[0] : null;\r\n-  // Lấy biến ảnh từ imageMap, fallback về DEFAULT_IMAGE nếu không có\r\n-  const imgSrc = (imgKey && imageMap[imgKey]) || DEFAULT_IMAGE;\r\n+  const imgSrc = (imgKey && assets[imgKey]) || DEFAULT_IMAGE;\r\n \r\n-  // Debug: log key và kết quả\r\n-  // console.log(\"RoomCard imgKey:\", imgKey, \"imgSrc:\", imgSrc);\r\n-\r\n   return (\r\n     <Link\r\n       to={'/room/' + room._id}\r\n       onClick={() => window.scrollTo(0, 0)}\r\n"
+                },
+                {
+                    "date": 1749155760434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const DEFAULT_IMAGE = assets.uploadArea;\r\n \r\n const RoomCard = ({ room, index }) => {\r\n   const imgKey = room.images && room.images.length > 0 ? room.images[0] : null;\r\n-  const imgSrc = (imgKey && assets[imgKey]) || DEFAULT_IMAGE;\r\n+  const imgSrc = (imgKey && assets[imgKey]) || assets.uploadArea;\r\n \r\n   return (\r\n     <Link\r\n       to={'/room/' + room._id}\r\n"
+                },
+                {
+                    "date": 1749155850462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n       to={'/room/' + room._id}\r\n       onClick={() => window.scrollTo(0, 0)}\r\n       className='relative max-w-70 w-full rounded-xl overflow-hidden bg-white text-gray-500/90 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]'\r\n     >\r\n-      <img src={imgSrc} alt={room.roomType} className=\"w-full object-cover\" />\r\n+      <img src={assets[imgKey] || imgKey} alt={room.roomType} className=\"w-full object-cover\" />\r\n \r\n       {index % 2 === 0 && (\r\n         <p className='px-3 py-1 absolute top-3 left-3 text-xs bg-white text-gray-800 font-medium rounded-full'>\r\n           Best Seller\r\n"
+                },
+                {
+                    "date": 1749155861420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,11 @@\n import { Link } from 'react-router-dom'\r\n import { assets } from '../assets/assets'\r\n \r\n const ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n-const DEFAULT_IMAGE = assets.uploadArea;\r\n \r\n const RoomCard = ({ room, index }) => {\r\n   const imgKey = room.images && room.images.length > 0 ? room.images[0] : null;\r\n-  const imgSrc = (imgKey && assets[imgKey]) || assets.uploadArea;\r\n \r\n   return (\r\n     <Link\r\n       to={'/room/' + room._id}\r\n"
+                },
+                {
+                    "date": 1749157168761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,17 @@\n const ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n \r\n const RoomCard = ({ room, index }) => {\r\n   const imgKey = room.images && room.images.length > 0 ? room.images[0] : null;\r\n+  const imgSrc = (imgKey && assets[imgKey]) || assets.uploadArea;\r\n \r\n   return (\r\n     <Link\r\n-      to={'/room/' + room._id}\r\n+      to={'/rooms/' + room._id}\r\n       onClick={() => window.scrollTo(0, 0)}\r\n       className='relative max-w-70 w-full rounded-xl overflow-hidden bg-white text-gray-500/90 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]'\r\n     >\r\n-      <img src={assets[imgKey] || imgKey} alt={room.roomType} className=\"w-full object-cover\" />\r\n+      <img src={imgSrc} alt={room.roomType} className=\"w-full object-cover\" />\r\n \r\n       {index % 2 === 0 && (\r\n         <p className='px-3 py-1 absolute top-3 left-3 text-xs bg-white text-gray-800 font-medium rounded-full'>\r\n           Best Seller\r\n"
+                }
+            ],
+            "date": 1749151011375,
+            "name": "Commit-0",
+            "content": "import React from 'react'\r\nimport { Link } from 'react-router-dom'\r\nimport { assets, imageMap } from '../assets/assets'\r\n\r\nconst HOTEL_NAME = \"Forest Scent Glamping\"\r\nconst HOTEL_ADDRESS = \"86 Khe Sanh, Phường 10, Thành Phố Đà Lạt, Đà Lạt, Vietnam\"\r\n\r\nconst HotelCard = ({ room, index }) => {\r\n  return (\r\n    <Link\r\n      to={'/room/' + room._id}\r\n      onClick={() => window.scrollTo(0, 0)}\r\n      className='relative max-w-70 w-full rounded-xl overflow-hidden bg-white text-gray-500/90 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]'\r\n    >\r\n      <img src={imageMap[room.images[0]] || room.images[0]} alt={room.roomType} className=\"w-full object-cover\" />\r\n\r\n      {index % 2 === 0 && (\r\n        <p className='px-3 py-1 absolute top-3 left-3 text-xs bg-white text-gray-800 font-medium rounded-full'>\r\n          Best Seller\r\n        </p>\r\n      )}\r\n\r\n      <div className='p-4 pt-5'>\r\n        <div className='flex items-center justify-between'>\r\n          <p className='font-playfair text-xl font-medium text-gray-800'>{room.roomType}</p>\r\n          <div className='flex items-center gap-1'>\r\n            <img src={assets.starIconFilled} alt=\"star-icon\" className=\"w-4 h-4\" /> 4.5\r\n          </div>\r\n        </div>\r\n\r\n        <div className='flex items-center gap-1 text-sm mt-1'>\r\n          <img src={assets.locationIcon} alt=\"location-icon\" className=\"w-4 h-4\" />\r\n          <span>{HOTEL_ADDRESS}</span>\r\n        </div>\r\n\r\n        <div className='flex items-center justify-between mt-4'>\r\n          <p>\r\n            <span className='text-xl text-gray-800'>{room.pricePerNight}</span>.000/Đêm\r\n          </p>\r\n          <button className='px-4 py-2 text-sm font-medium border border-gray-300 rounded bg-gray-50 transition-all cursor-pointer'>\r\n            Book Now\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </Link>\r\n  )\r\n}\r\n\r\nexport default HotelCard\r\n"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1748631870398,
@@ -28,6 +28,10 @@
                 {
                     "date": 1748805002963,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \r\n const Navbar = () => {\r\n     const navLinks = [\r\n         { name: 'Home', path: '/' },\r\n-        { name: 'Rooms', path: './' },\r\n+        { name: 'Rooms', path: '../pages/AllRooms.jsx' },\r\n     ];\r\n \r\n     const [isScrolled, setIsScrolled] = React.useState(false);\r\n     const [isMenuOpen, setIsMenuOpen] = React.useState(false);\r\n"
+                },
+                {
+                    "date": 1749145094911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \r\n const Navbar = () => {\r\n     const navLinks = [\r\n         { name: 'Home', path: '/' },\r\n-        { name: 'Rooms', path: '../pages/AllRooms.jsx' },\r\n+        { name: 'Rooms', path: '/rooms' }, // Sửa path này để điều hướng đúng sang trang AllRooms\r\n     ];\r\n \r\n     const [isScrolled, setIsScrolled] = React.useState(false);\r\n     const [isMenuOpen, setIsMenuOpen] = React.useState(false);\r\n"
                 }
             ],
             "date": 1748631870398,

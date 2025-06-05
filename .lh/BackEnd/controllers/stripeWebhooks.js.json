@@ -1,0 +1,58 @@
+{
+    "sourceFile": "BackEnd/controllers/stripeWebhooks.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1749162707103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749162749397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,9 @@\n     if(event.type === \"payment_intent.succeeded\") {\r\n         const paymentIntent = event.data.object;\r\n         const paymentIntentId = paymentIntent.id;\r\n         // Handle successful payment intent here\r\n-        const session = await stripeInstance.   }\r\n+        const session = await stripeInstance.checkout.sessions.list({\r\n+            payment_intent: paymentIntentId,\r\n+        });\r\n+    }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162765617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,8 @@\n         // Handle successful payment intent here\r\n         const session = await stripeInstance.checkout.sessions.list({\r\n             payment_intent: paymentIntentId,\r\n         });\r\n+\r\n+        const { bookingId } = session.data[0].metadata;\r\n     }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162780419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,8 @@\n             payment_intent: paymentIntentId,\r\n         });\r\n \r\n         const { bookingId } = session.data[0].metadata;\r\n+\r\n+        await Booking\r\n     }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162811963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,7 @@\n         });\r\n \r\n         const { bookingId } = session.data[0].metadata;\r\n \r\n-        await Booking\r\n+        await \r\n     }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162831870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,7 @@\n         });\r\n \r\n         const { bookingId } = session.data[0].metadata;\r\n \r\n-        await \r\n+        await Booking\r\n     }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162853566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import stripe from \"stripe\";\r\n+import Booking from \"../models/Booking.js\";\r\n \r\n // API to handle Stripe Webhooks\r\n \r\n export const stripeWebhooks = async (request, response) => {\r\n@@ -27,7 +28,7 @@\n         });\r\n \r\n         const { bookingId } = session.data[0].metadata;\r\n \r\n-        await Booking\r\n+        await Booking.findByIdAndUpdate()\r\n     }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162921496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,9 @@\n         });\r\n \r\n         const { bookingId } = session.data[0].metadata;\r\n \r\n-        await Booking.findByIdAndUpdate()\r\n+        await Booking.findByIdAndUpdate(bookingId, {isPaid: true, trangThai: \"Đã Xác Nhận\"})\r\n+    }else {\r\n+        console.log(`Unhandled event type event.type}`);\r\n     }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162945561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n         const { bookingId } = session.data[0].metadata;\r\n \r\n         await Booking.findByIdAndUpdate(bookingId, {isPaid: true, trangThai: \"Đã Xác Nhận\"})\r\n     }else {\r\n-        console.log(`Unhandled event type event.type}`);\r\n+        console.log(\"Unhandled event type :\", event.type);\r\n     }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162977744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n         const { bookingId } = session.data[0].metadata;\r\n \r\n         await Booking.findByIdAndUpdate(bookingId, {isPaid: true, trangThai: \"Đã Xác Nhận\"})\r\n     }else {\r\n-        console.log(\"Unhandled event type :\", event.type);\r\n+        console.log(\"Loại sự kiện chưa được xử lý :\", event.type);\r\n     }\r\n };\r\n"
+                },
+                {
+                    "date": 1749162995456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,5 +32,6 @@\n         await Booking.findByIdAndUpdate(bookingId, {isPaid: true, trangThai: \"Đã Xác Nhận\"})\r\n     }else {\r\n         console.log(\"Loại sự kiện chưa được xử lý :\", event.type);\r\n     }\r\n+    response.json({ received: true })\r\n };\r\n"
+                }
+            ],
+            "date": 1749162707103,
+            "name": "Commit-0",
+            "content": "import stripe from \"stripe\";\r\n\r\n// API to handle Stripe Webhooks\r\n\r\nexport const stripeWebhooks = async (request, response) => {\r\n    // Stripe Gateway Initialize\r\n    const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);\r\n    const sig = request.headers['stripe-signature'];\r\n    let event;\r\n\r\n    try {\r\n        event = stripeInstance.webhooks.constructEvent(\r\n            request.body,\r\n            sig,\r\n            process.env.STRIPE_WEBHOOK_SECRET\r\n        );\r\n    } catch (err) {\r\n        response.status(400).send(`Webhook Error: ${err.message}`);\r\n    }\r\n\r\n    if(event.type === \"payment_intent.succeeded\") {\r\n        const paymentIntent = event.data.object;\r\n        const paymentIntentId = paymentIntent.id;\r\n        // Handle successful payment intent here\r\n        const session = await stripeInstance.   }\r\n};\r\n"
+        }
+    ]
+}

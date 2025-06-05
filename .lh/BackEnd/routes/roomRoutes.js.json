@@ -1,0 +1,26 @@
+{
+    "sourceFile": "BackEnd/routes/roomRoutes.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1749145304750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749145428710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import express from \"express\";\r\n import { protect } from \"../middleware/authMiddleware.js\";\r\n-import { registerRoom, getAllRooms } from \"../controllers/roomController.js\";\r\n+import { registerRoom, getAllRooms, seedRooms } from \"../controllers/roomController.js\";\r\n \r\n const roomRouter = express.Router();\r\n \r\n roomRouter.post('/', protect, registerRoom);\r\n roomRouter.get('/', getAllRooms);\r\n+roomRouter.post('/seed', seedRooms);\r\n \r\n export default roomRouter;\r\n"
+                },
+                {
+                    "date": 1749145552572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import express from \"express\";\r\n import { protect } from \"../middleware/authMiddleware.js\";\r\n-import { registerRoom, getAllRooms, seedRooms } from \"../controllers/roomController.js\";\r\n+import { registerRoom, getAllRooms, seedRooms, deleteRoom, updateRoom } from \"../controllers/roomController.js\";\r\n \r\n const roomRouter = express.Router();\r\n \r\n roomRouter.post('/', protect, registerRoom);\r\n roomRouter.get('/', getAllRooms);\r\n roomRouter.post('/seed', seedRooms);\r\n+roomRouter.delete('/:id', protect, deleteRoom);\r\n+roomRouter.put('/:id', protect, updateRoom);\r\n \r\n export default roomRouter;\r\n"
+                }
+            ],
+            "date": 1749145304750,
+            "name": "Commit-0",
+            "content": "import express from \"express\";\r\nimport { protect } from \"../middleware/authMiddleware.js\";\r\nimport { registerRoom, getAllRooms } from \"../controllers/roomController.js\";\r\n\r\nconst roomRouter = express.Router();\r\n\r\nroomRouter.post('/', protect, registerRoom);\r\nroomRouter.get('/', getAllRooms);\r\n\r\nexport default roomRouter;\r\n"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1747882536231,
@@ -12,6 +12,10 @@
                 {
                     "date": 1747882544636,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react'\r\n import Sidebar from '../../components/Admin/Sidebar'\r\n import { Outlet } from 'react-router-dom'\r\n-import Navbar from '../../components/Owner/Navbar'\r\n+import Navbar from '../../components/Admin/Navbar'\r\n \r\n const Layout = () => {\r\n   return (\r\n     <div className='flex flex-col h-screen'>\r\n"
+                },
+                {
+                    "date": 1749154657854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,15 @@\n import React from 'react'\r\n import Sidebar from '../../components/Admin/Sidebar'\r\n import { Outlet } from 'react-router-dom'\r\n import Navbar from '../../components/Admin/Navbar'\r\n+import { useAppContext } from '../../conext/AppContext'\r\n \r\n const Layout = () => {\r\n+  const { role } = useAppContext();\r\n+  if (role !== \"Admin\") {\r\n+    return <div className=\"text-center py-20 text-red-500\">Bạn không có quyền truy cập trang này.</div>\r\n+  }\r\n   return (\r\n     <div className='flex flex-col h-screen'>\r\n       <Navbar />\r\n       <div className='flex h-full'>\r\n"
                 }
             ],
             "date": 1747882536231,

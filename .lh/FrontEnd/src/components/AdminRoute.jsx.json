@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1747930484496,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749155022385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n-import { useUser } from '@clerk/clerk-react';\r\n+import { useAppContext } from '../conext/AppContext';\r\n import { Navigate } from 'react-router-dom';\r\n \r\n const AdminRoute = ({ children }) => {\r\n-  const { user, isLoaded } = useUser();\r\n+  const { role, user } = useAppContext();\r\n \r\n-  if (!isLoaded) return null; // hoặc loading spinner\r\n+  if (!user) return null; // hoặc loading spinner\r\n \r\n-  if (!user || user.publicMetadata.role !== 'admin') {\r\n+  if (role !== 'Admin') {\r\n     return <Navigate to=\"/\" replace />;\r\n   }\r\n \r\n   return children;\r\n"
                 }
             ],
             "date": 1747930484496,
