@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1748875884879,
@@ -16,6 +16,18 @@
                 {
                     "date": 1749115718014,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import mongoose from \"mongoose\";\r\n \r\n const userSchema = mongoose.Schema({\r\n-  _id: {type: String, required: true},\r\n-  username: {type: String, required: true},\r\n+  idUser: {type: String, required: true}, // giống UserData\r\n+  Ten: {type: String, required: true}, // tên người dùng\r\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n-  role: {type: String, enum: [\"admin\", \"user\"], default: \"user\"},\r\n-  recentSearchedCities: [{type: String, required: true}],\r\n+  role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n+  recentSearchedCities: [{type: String}],\r\n }, {timestamps: true}\r\n );\r\n \r\n-const User = mongoose.model(\"user\", userSchema);\r\n+const User = mongoose.model(\"User\", userSchema);\r\n \r\n export default User;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749175696358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import mongoose from \"mongoose\";\r\n \r\n const userSchema = mongoose.Schema({\r\n-  idUser: {type: String, required: true}, // giống UserData\r\n+  idUser: {type: String, required: true, unique: true}, // unique để tránh trùng\r\n   Ten: {type: String, required: true}, // tên người dùng\r\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n   role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n"
+                },
+                {
+                    "date": 1749179039944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n   role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n   recentSearchedCities: [{type: String}],\r\n+  recentSearchedRoomType: [{type: String}], // Thêm dòng này\r\n }, {timestamps: true}\r\n );\r\n \r\n const User = mongoose.model(\"User\", userSchema);\r\n"
+                },
+                {
+                    "date": 1749179163843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,9 @@\n   Ten: {type: String, required: true}, // tên người dùng\r\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n   role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n-  recentSearchedCities: [{type: String}],\r\n-  recentSearchedRoomType: [{type: String}], // Thêm dòng này\r\n+  recentSearchedRoomType: [{type: String}],\r\n }, {timestamps: true}\r\n );\r\n \r\n const User = mongoose.model(\"User\", userSchema);\r\n"
                 }
             ],
             "date": 1748875884879,

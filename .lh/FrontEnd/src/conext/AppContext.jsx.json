@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1748613050031,
@@ -68,6 +68,26 @@
                 {
                     "date": 1749154094003,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n         role,\r\n         setRole,\r\n         rooms,\r\n         setRooms,\r\n-        fetchRooms // Cho phép component khác gọi lại nếu muốn reload danh sách phòng\r\n+        fetchRooms\r\n     };\r\n \r\n     return (\r\n         <AppContext.Provider value={value}>\r\n"
+                },
+                {
+                    "date": 1749164965238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n                 headers: { Authorization: `Bearer ${await getToken()}` }\r\n             });\r\n \r\n             if (data.success) {\r\n-                setRole(data.role === \"Admin\");\r\n-                setRecentSearchedRoomType(data.recentSearchedRoomType || []);\r\n+                setRole(data.role); // <-- Sửa lại, không so sánh === \"Admin\"\r\n+                setRecentSearchedRoomType(data.recentSearchedCities || []);\r\n             } else {\r\n                 setTimeout(() => {\r\n                     fetchUser();\r\n                 }, 5000);\r\n"
+                },
+                {
+                    "date": 1749174837164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 headers: { Authorization: `Bearer ${await getToken()}` }\r\n             });\r\n \r\n             if (data.success) {\r\n-                setRole(data.role); // <-- Sửa lại, không so sánh === \"Admin\"\r\n+---                setRole(data.role); // <-- Sửa lại, không so sánh === \"Admin\"\r\n                 setRecentSearchedRoomType(data.recentSearchedCities || []);\r\n             } else {\r\n                 setTimeout(() => {\r\n                     fetchUser();\r\n"
+                },
+                {
+                    "date": 1749174887132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 headers: { Authorization: `Bearer ${await getToken()}` }\r\n             });\r\n \r\n             if (data.success) {\r\n----                setRole(data.role); // <-- Sửa lại, không so sánh === \"Admin\"\r\n+                setRole(data.role); // <-- Sửa lại, không so sánh === \"Admin\"\r\n                 setRecentSearchedRoomType(data.recentSearchedCities || []);\r\n             } else {\r\n                 setTimeout(() => {\r\n                     fetchUser();\r\n"
+                },
+                {
+                    "date": 1749178034089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n                 headers: { Authorization: `Bearer ${await getToken()}` }\r\n             });\r\n \r\n             if (data.success) {\r\n-                setRole(data.role); // <-- Sửa lại, không so sánh === \"Admin\"\r\n-                setRecentSearchedRoomType(data.recentSearchedCities || []);\r\n+                setRole(data.role); // Đúng rồi\r\n+                setRecentSearchedRoomType(data.recentSearchedRoomType || []); // Sửa lại key này\r\n             } else {\r\n                 setTimeout(() => {\r\n                     fetchUser();\r\n                 }, 5000);\r\n"
+                },
+                {
+                    "date": 1749178041536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n                 headers: { Authorization: `Bearer ${await getToken()}` }\r\n             });\r\n \r\n             if (data.success) {\r\n-                setRole(data.role); // Đúng rồi\r\n-                setRecentSearchedRoomType(data.recentSearchedRoomType || []); // Sửa lại key này\r\n+                setRole(data.role);\r\n+                setRecentSearchedRoomType(data.recentSearchedRoomType || []);\r\n             } else {\r\n                 setTimeout(() => {\r\n                     fetchUser();\r\n                 }, 5000);\r\n"
                 }
             ],
             "date": 1748613050031,

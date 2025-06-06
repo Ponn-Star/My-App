@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1748622426246,
@@ -60,6 +60,14 @@
                 {
                     "date": 1749154291089,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,35 +1,14 @@\n-import React, { useEffect, useState } from 'react'\r\n+import React from 'react'\r\n import HotelCard from './RoomCard'\r\n import Title from './Title'\r\n import { useNavigate } from 'react-router-dom'\r\n-import axios from 'axios'\r\n import { useAppContext } from '../conext/AppContext'\r\n-import toast from 'react-hot-toast'\r\n \r\n const FeaturedDestination = () => {\r\n   const navigate = useNavigate()\r\n-  const { getToken } = useAppContext();\r\n-  const [rooms, setRooms] = useState([])\r\n+  const { rooms } = useAppContext();\r\n \r\n-  useEffect(() => {\r\n-    const fetchRooms = async () => {\r\n-      try {\r\n-        const { data } = await axios.get('/api/rooms', {\r\n-          headers: { Authorization: `Bearer ${await getToken()}` }\r\n-        });\r\n-        if (data.success) {\r\n-          setRooms(data.rooms);\r\n-        } else {\r\n-          toast.error(data.message);\r\n-        }\r\n-      } catch (error) {\r\n-        toast.error(error.message);\r\n-      }\r\n-    };\r\n-    fetchRooms();\r\n-  }, [getToken]);\r\n-\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n         <Title title='Glampings' subTitle='Khám phá và trải nghiệm những dịch vụ mà Forest Scent mang đến cho bạn. Hãy lựa chọn Glamping – nơi hòa quyện giữa thiên nhiên hoang dã và tiện nghi sang trọng, mang đến cho bạn trải nghiệm khó quên.' />\r\n"
+                },
+                {
+                    "date": 1749178119358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import HotelCard from './RoomCard'\r\n import Title from './Title'\r\n import { useNavigate } from 'react-router-dom'\r\n import { useAppContext } from '../conext/AppContext'\r\n+import RoomCard from './RoomCard'\r\n \r\n const FeaturedDestination = () => {\r\n   const navigate = useNavigate()\r\n   const { rooms } = useAppContext();\r\n@@ -14,9 +15,9 @@\n         <Title title='Glampings' subTitle='Khám phá và trải nghiệm những dịch vụ mà Forest Scent mang đến cho bạn. Hãy lựa chọn Glamping – nơi hòa quyện giữa thiên nhiên hoang dã và tiện nghi sang trọng, mang đến cho bạn trải nghiệm khó quên.' />\r\n \r\n         <div className='flex flex-wrap items-center justify-between gap-6 mt-20'>\r\n         {rooms.slice(0, 4).map((room, index) => (\r\n-            <HotelCard key={room._id} room={room} index={index} />\r\n+            <RoomCard key={room._id} room={room} index={index} />\r\n         ))}\r\n         </div>\r\n \r\n         <button onClick={() => { navigate('/rooms'); scrollTo(0, 0); }} \r\n"
+                },
+                {
+                    "date": 1749178189840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n import React from 'react'\r\n-import HotelCard from './RoomCard'\r\n import Title from './Title'\r\n import { useNavigate } from 'react-router-dom'\r\n import { useAppContext } from '../conext/AppContext'\r\n import RoomCard from './RoomCard'\r\n@@ -8,8 +7,10 @@\n const FeaturedDestination = () => {\r\n   const navigate = useNavigate()\r\n   const { rooms } = useAppContext();\r\n \r\n+  if (!rooms) return null; // hoặc loading/error UI\r\n+\r\n   return (\r\n     <div className='flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20'>\r\n \r\n         <Title title='Glampings' subTitle='Khám phá và trải nghiệm những dịch vụ mà Forest Scent mang đến cho bạn. Hãy lựa chọn Glamping – nơi hòa quyện giữa thiên nhiên hoang dã và tiện nghi sang trọng, mang đến cho bạn trải nghiệm khó quên.' />\r\n"
                 }
             ],
             "date": 1748622426246,

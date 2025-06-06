@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1747520508860,
@@ -56,6 +56,10 @@
                 {
                     "date": 1749163113000,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n app.post('api/stripe', express.raw({ type: 'application/json' }),stripeWebhooks);\r\n \r\n app.use(express.json())\r\n app.use(clerkMiddleware())\r\n-app.use(requireAuth()); // Sửa ở đây\r\n+app.use(requireAuth());\r\n \r\n app.use(\"/api/clerk\", clerkWebhooks);\r\n \r\n app.get('/', (req, res) => res.send(\"API is working\"))\r\n"
+                },
+                {
+                    "date": 1749177685095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,14 @@\n \r\n app.post('api/stripe', express.raw({ type: 'application/json' }),stripeWebhooks);\r\n \r\n app.use(express.json())\r\n+\r\n+app.use(\"/api/clerk\", clerkWebhooks);\r\n+\r\n app.use(clerkMiddleware())\r\n app.use(requireAuth());\r\n \r\n-app.use(\"/api/clerk\", clerkWebhooks);\r\n-\r\n app.get('/', (req, res) => res.send(\"API is working\"))\r\n app.use('/api/user', userRouter)\r\n app.use('/api/rooms', roomRouter)\r\n app.use('/api/bookings', bookingRouter)\r\n"
                 }
             ],
             "date": 1747520508860,

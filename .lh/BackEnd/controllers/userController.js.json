@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1749115963135,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749177120743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n export const getUserData = async (req, res) => {\r\n     try {\r\n         const role = req.user.role;\r\n-        const recentSearchedCities = req.user.recentSearchedCities;\r\n-        res.json({success: true, role, recentSearchedCities})\r\n+        const recentSearchedRoomType = req.user.recentSearchedRoomType || [];\r\n+        res.json({success: true, role, recentSearchedRoomType});\r\n     } catch (error) {\r\n-        res.json({success: false, message: error.message})\r\n+        res.json({success: false, message: error.message});\r\n     }\r\n }\r\n \r\n export const storeRecentSearchedCities = async (req, res) => {\r\n"
+                },
+                {
+                    "date": 1749177358201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,22 +7,24 @@\n         res.json({success: false, message: error.message});\r\n     }\r\n }\r\n \r\n-export const storeRecentSearchedCities = async (req, res) => {\r\n+export const storeRecentSearchedRoomType = async (req, res) => {\r\n   try {\r\n-    const { recentSearchedCity } = req.body;\r\n+    const { recentSearchedRoomType } = req.body;\r\n     const user = req.user;\r\n \r\n-    if(user.recentSearchedCities.length < 3){\r\n-      user.recentSearchedCities.push(recentSearchedCity)\r\n+    if (!user.recentSearchedRoomType) user.recentSearchedRoomType = [];\r\n+\r\n+    if (user.recentSearchedRoomType.length < 3) {\r\n+      user.recentSearchedRoomType.push(recentSearchedRoomType);\r\n     } else {\r\n-      user.recentSearchedCities.shift();\r\n-      user.recentSearchedCities.push(recentSearchedCity)\r\n+      user.recentSearchedRoomType.shift();\r\n+      user.recentSearchedRoomType.push(recentSearchedRoomType);\r\n     }\r\n     await user.save();\r\n-    res.json({ success: true, message: \"City added\" })\r\n+    res.json({ success: true, message: \"Room type added\" });\r\n \r\n   } catch (error) {\r\n-    res.json({ success: false, message: error.message })\r\n+    res.json({ success: false, message: error.message });\r\n   }\r\n }\r\n"
                 }
             ],
             "date": 1749115963134,
