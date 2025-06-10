@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1749160856113,
@@ -52,6 +52,66 @@
                 {
                     "date": 1749179710109,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n         const ADMIN_EMAIL = \"an.ht.62cntt@ntu.edu.vn\";\r\n         const isAdmin = (clerkUser.email_addresses?.[0]?.email_address || \"\") === ADMIN_EMAIL;\r\n \r\n         if (!user) {\r\n-            // Nếu chưa có user, tạo mới với trường recentSearchedRoomType là mảng rỗng\r\n             user = await User.create({\r\n                 idUser: userId,\r\n                 Ten: (clerkUser.first_name || \"\") + \" \" + (clerkUser.last_name || \"\"),\r\n                 email: clerkUser.email_addresses?.[0]?.email_address || \"\",\r\n"
+                },
+                {
+                    "date": 1749586200842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n // Middleware to check if user is authenticated\r\n export const protect = async (req, res, next) => {\r\n     const { userId } = req.auth || {};\r\n     if (!userId) {\r\n-        return res.json({ success: false, message: \"not authenticated\" });\r\n+        return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     }\r\n     let user = await User.findOne({ idUser: userId });\r\n     let clerkUser;\r\n     try {\r\n"
+                },
+                {
+                    "date": 1749586525056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import axios from \"axios\";\r\n \r\n // Middleware to check if user is authenticated\r\n export const protect = async (req, res, next) => {\r\n-    const { userId } = req.auth || {};\r\n+    const { userId } = req.auth;\r\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     }\r\n     let user = await User.findOne({ idUser: userId });\r\n"
+                },
+                {
+                    "date": 1749586548693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,44 +7,8 @@\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     }\r\n     let user = await User.findOne({ idUser: userId });\r\n-    let clerkUser;\r\n-    try {\r\n-        // Lấy thông tin user từ Clerk API\r\n-        const clerkRes = await axios.get(\r\n-            `https://api.clerk.dev/v1/users/${userId}`,\r\n-            {\r\n-                headers: {\r\n-                    Authorization: `Bearer ${process.env.CLERK_SECRET_KEY}`\r\n-                }\r\n-            }\r\n-        );\r\n-        clerkUser = clerkRes.data;\r\n-        const ADMIN_EMAIL = \"an.ht.62cntt@ntu.edu.vn\";\r\n-        const isAdmin = (clerkUser.email_addresses?.[0]?.email_address || \"\") === ADMIN_EMAIL;\r\n-\r\n-        if (!user) {\r\n-            user = await User.create({\r\n-                idUser: userId,\r\n-                Ten: (clerkUser.first_name || \"\") + \" \" + (clerkUser.last_name || \"\"),\r\n-                email: clerkUser.email_addresses?.[0]?.email_address || \"\",\r\n-                image: clerkUser.image_url || \"\",\r\n-                role: isAdmin ? \"Admin\" : \"User\",\r\n-                recentSearchedRoomType: []\r\n-            });\r\n-            console.log(\"User created in MongoDB:\", user);\r\n-        } else {\r\n-            // Nếu đã có user, cập nhật role nếu cần\r\n-            if (isAdmin && user.role !== \"Admin\") {\r\n-                user.role = \"Admin\";\r\n-                await user.save();\r\n-                console.log(\"User role updated to Admin:\", user.email);\r\n-            }\r\n-        }\r\n-    } catch (err) {\r\n-        console.error(\"Error Clerk API or MongoDB:\", err?.response?.data || err.message || err);\r\n-        return res.json({ success: false, message: \"user not found and cannot fetch from Clerk\", error: err?.response?.data || err.message });\r\n-    }\r\n+   \r\n     req.user = user;\r\n     next();\r\n }\r\n"
+                },
+                {
+                    "date": 1749586555822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,7 @@\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     }\r\n     let user = await User.findOne({ idUser: userId });\r\n-   \r\n     req.user = user;\r\n     next();\r\n }\r\n"
+                },
+                {
+                    "date": 1749586564566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     const { userId } = req.auth;\r\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     }\r\n-    let user = await User.findOne({ idUser: userId });\r\n+    let user = await User.find({ idUser: userId });\r\n     req.user = user;\r\n     next();\r\n }\r\n"
+                },
+                {
+                    "date": 1749586574411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     const { userId } = req.auth;\r\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     }\r\n-    let user = await User.find({ idUser: userId });\r\n+    let user = await User.findById({ idUser: userId });\r\n     req.user = user;\r\n     next();\r\n }\r\n"
+                },
+                {
+                    "date": 1749586602026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     const { userId } = req.auth;\r\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     }\r\n-    let user = await User.findById({ idUser: userId });\r\n+    let user = await User.findById({ idUser: idUser });\r\n     req.user = user;\r\n     next();\r\n }\r\n"
+                },
+                {
+                    "date": 1749586629377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export const protect = async (req, res, next) => {\r\n     const { userId } = req.auth;\r\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n-    }\r\n+    } else\r\n     let user = await User.findById({ idUser: idUser });\r\n     req.user = user;\r\n     next();\r\n }\r\n"
+                },
+                {
+                    "date": 1749586634565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     const { userId } = req.auth;\r\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     } else\r\n-    let user = await User.findById({ idUser: idUser });\r\n+    const user = await User.findById({ idUser: idUser });\r\n     req.user = user;\r\n     next();\r\n }\r\n"
+                },
+                {
+                    "date": 1749586639706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,4 +10,5 @@\n     const user = await User.findById({ idUser: idUser });\r\n     req.user = user;\r\n     next();\r\n }\r\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749586661177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n import User from \"../models/User.js\";\r\n-import axios from \"axios\";\r\n-\r\n // Middleware to check if user is authenticated\r\n export const protect = async (req, res, next) => {\r\n     const { userId } = req.auth;\r\n     if (!userId) {\r\n"
+                },
+                {
+                    "date": 1749586674211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,6 @@\n     } else\r\n     const user = await User.findById({ idUser: idUser });\r\n     req.user = user;\r\n     next();\r\n+    }\r\n }\r\n"
+                },
+                {
+                    "date": 1749586684078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,10 @@\n export const protect = async (req, res, next) => {\r\n     const { userId } = req.auth;\r\n     if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n-    } else\r\n+    } else{\r\n     const user = await User.findById({ idUser: idUser });\r\n     req.user = user;\r\n     next();\r\n     }\r\n }\r\n\\ No newline at end of file\n-    \n"
+                },
+                {
+                    "date": 1749589141124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import User from \"../models/User.js\";\r\n // Middleware to check if user is authenticated\r\n export const protect = async (req, res, next) => {\r\n-    const { userId } = req.auth;\r\n-    if (!userId) {\r\n+    const { idUser } = req.auth;\r\n+    if (!idUser) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n     } else{\r\n     const user = await User.findById({ idUser: idUser });\r\n     req.user = user;\r\n     next();\r\n\\ No newline at end of file\n     }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1749589426384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import User from \"../models/User.js\";\r\n-// Middleware to check if user is authenticated\r\n+\r\n export const protect = async (req, res, next) => {\r\n-    const { idUser } = req.auth;\r\n-    if (!idUser) {\r\n+    // Clerk mới: req.auth là function, phải gọi req.auth()\r\n+    const authData = typeof req.auth === \"function\" ? req.auth() : req.auth;\r\n+    const userId = authData?.userId;\r\n+    if (!userId) {\r\n         return res.status(401).json({ success: false, message: \"not authenticated\" });\r\n-    } else{\r\n\\ No newline at end of file\n-    const user = await User.findById({ idUser: idUser });\r\n+    }\r\n+    const user = await User.findOne({ idUser: userId });\r\n     req.user = user;\r\n     next();\r\n-    }\r\n-}\n+}\r\n"
                 }
             ],
             "date": 1749160856113,

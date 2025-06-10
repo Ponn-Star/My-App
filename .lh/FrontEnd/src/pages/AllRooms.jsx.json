@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1748622681640,
@@ -68,6 +68,10 @@
                 {
                     "date": 1749152090558,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,13 +81,13 @@\n             />\r\n             <div className='md:w-1/2 flex flex-col gap-2'>\r\n               <p onClick={() => {navigate(`/rooms/${room._id}`); scrollTo(0, 0)}} className='text-gray-800 text-3xl font-playfair cursor-pointer'>{room.roomType}</p>\r\n               <div className='flex items-center'>\r\n-              title='View Room Details'\r\n-              className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'\r\n-            />\r\n-            <div className='md:w-1/2 flex flex-col gap-2'>\r\n-              <p onClick={() => {navigate(`/rooms/${room._id}`); scrollTo(0, 0)}} className='text-gray-800 text-3xl font-playfair cursor-pointer'>{room.roomType}</p>\r\n+                <StarRating/>\r\n+                <p className='ml-2'>200+ reviews</p>\r\n+              </div>\r\n+              <div className='flex flex-wrap items-center gap-4 mb-6 mt-3'>\r\n+                {room.amenities?.map((item, index) => (\r\n               <div className='flex items-center'>\r\n                 <StarRating/>\r\n                 <p className='ml-2'>200+ reviews</p>\r\n               </div>\r\n"
+                },
+                {
+                    "date": 1749186487221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n         <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters && 'border-b'}`} >\r\n           <p className='text-base font-medium text-gray-800'>lọc</p>\r\n           <div className='text-xs cursor-pointer'>\r\n             <span onClick={()=> setOpenFilters(!openFilters)} className='lg:hidden'> {openFilters ?  'HIDE' : 'SHOW' }</span>\r\n-            <span className='hidden lg:block'>Clear</span>\r\n+            <span className='hidden lg:block'>Xóa</span>\r\n           </div>\r\n         </div>\r\n         \r\n         <div className={`${openFilters ? 'h-auto' : \"h-0 lg:h-auto\"} overflow-hidden transition-all duration-700`}>\r\n"
                 }
             ],
             "date": 1748622681640,

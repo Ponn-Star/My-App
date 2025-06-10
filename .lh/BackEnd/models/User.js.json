@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1748875884879,
@@ -28,6 +28,18 @@
                 {
                     "date": 1749179163843,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,9 @@\n   Ten: {type: String, required: true}, // tên người dùng\r\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n   role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n-  recentSearchedCities: [{type: String}],\r\n-  recentSearchedRoomType: [{type: String}], // Thêm dòng này\r\n+  recentSearchedRoomType: [{type: String}],\r\n }, {timestamps: true}\r\n );\r\n \r\n const User = mongoose.model(\"User\", userSchema);\r\n"
+                },
+                {
+                    "date": 1749584022605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   Ten: {type: String, required: true}, // tên người dùng\r\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n   role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n-  recentSearchedRoomType: [{type: String}],\r\n+  recentSearchedRoomType: [{type: String, require}],\r\n }, {timestamps: true}\r\n );\r\n \r\n const User = mongoose.model(\"User\", userSchema);\r\n"
+                },
+                {
+                    "date": 1749584039067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   Ten: {type: String, required: true}, // tên người dùng\r\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n   role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n-  recentSearchedRoomType: [{type: String, require}],\r\n+  recentSearchedRoomType: [{type: String, require: true}],\r\n }, {timestamps: true}\r\n );\r\n \r\n const User = mongoose.model(\"User\", userSchema);\r\n"
+                },
+                {
+                    "date": 1749589013101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   Ten: {type: String, required: true}, // tên người dùng\r\n   email: {type: String, required: true},\r\n   image: {type: String, required: true},\r\n   role: {type: String, enum: [\"Admin\", \"User\"], default: \"User\"},\r\n-  recentSearchedRoomType: [{type: String, require: true}],\r\n+  recentSearchedRoomType: [{type: String, required: true}], // Sửa ở đây\r\n }, {timestamps: true}\r\n );\r\n \r\n const User = mongoose.model(\"User\", userSchema);\r\n"
                 }
             ],
             "date": 1748875884879,

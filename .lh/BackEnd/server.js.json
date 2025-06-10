@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1747520508860,
@@ -60,6 +60,26 @@
                 {
                     "date": 1749177685095,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,14 @@\n \r\n app.post('api/stripe', express.raw({ type: 'application/json' }),stripeWebhooks);\r\n \r\n app.use(express.json())\r\n+\r\n+app.use(\"/api/clerk\", clerkWebhooks);\r\n+\r\n app.use(clerkMiddleware())\r\n app.use(requireAuth());\r\n \r\n-app.use(\"/api/clerk\", clerkWebhooks);\r\n-\r\n app.get('/', (req, res) => res.send(\"API is working\"))\r\n app.use('/api/user', userRouter)\r\n app.use('/api/rooms', roomRouter)\r\n app.use('/api/bookings', bookingRouter)\r\n"
+                },
+                {
+                    "date": 1749586896712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,18 +13,21 @@\n \r\n const app = express()\r\n app.use(cors())\r\n \r\n-app.post('api/stripe', express.raw({ type: 'application/json' }),stripeWebhooks);\r\n+app.post('/api/stripe', express.raw({ type: 'application/json' }), stripeWebhooks);\r\n \r\n app.use(express.json())\r\n \r\n app.use(\"/api/clerk\", clerkWebhooks);\r\n \r\n+// Route này phải đặt trước middleware xác thực!\r\n+app.get('/', (req, res) => res.send(\"API is working\"));\r\n+\r\n+// Các route dưới đây mới dùng middleware xác thực\r\n app.use(clerkMiddleware())\r\n app.use(requireAuth());\r\n \r\n-app.get('/', (req, res) => res.send(\"API is working\"))\r\n app.use('/api/user', userRouter)\r\n app.use('/api/rooms', roomRouter)\r\n app.use('/api/bookings', bookingRouter)\r\n \r\n"
+                },
+                {
+                    "date": 1749586946469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,10 @@\n app.use(express.json())\r\n \r\n app.use(\"/api/clerk\", clerkWebhooks);\r\n \r\n-// Route này phải đặt trước middleware xác thực!\r\n app.get('/', (req, res) => res.send(\"API is working\"));\r\n \r\n-// Các route dưới đây mới dùng middleware xác thực\r\n app.use(clerkMiddleware())\r\n app.use(requireAuth());\r\n \r\n app.use('/api/user', userRouter)\r\n"
+                },
+                {
+                    "date": 1749587158474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n app.use(\"/api/clerk\", clerkWebhooks);\r\n \r\n app.get('/', (req, res) => res.send(\"API is working\"));\r\n \r\n-app.use(clerkMiddleware())\r\n+\r\n app.use(requireAuth());\r\n \r\n app.use('/api/user', userRouter)\r\n app.use('/api/rooms', roomRouter)\r\n"
+                },
+                {
+                    "date": 1749587196735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n \r\n app.post('/api/stripe', express.raw({ type: 'application/json' }), stripeWebhooks);\r\n \r\n app.use(express.json())\r\n+app.use(clerkMiddleware())\r\n \r\n app.use(\"/api/clerk\", clerkWebhooks);\r\n \r\n app.get('/', (req, res) => res.send(\"API is working\"));\r\n"
+                },
+                {
+                    "date": 1749587204506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n app.use(\"/api/clerk\", clerkWebhooks);\r\n \r\n app.get('/', (req, res) => res.send(\"API is working\"));\r\n \r\n-\r\n app.use(requireAuth());\r\n \r\n app.use('/api/user', userRouter)\r\n app.use('/api/rooms', roomRouter)\r\n"
                 }
             ],
             "date": 1747520508860,
